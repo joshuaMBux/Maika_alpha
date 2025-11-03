@@ -2,6 +2,9 @@
 rasa>=3.6.0
 rasa-sdk>=3.6.0
 
+# Fijar SQLAlchemy para compatibilidad con Rasa 3.x
+SQLAlchemy<2.0
+
 # Dependencias para funcionalidades avanzadas
 python-dateutil>=2.8.0  # Para manejo de fechas
 

@@ -293,3 +293,62 @@ nlu:
     - dos
     - tres
     - cuatro
+
+# Intents del motor dinámico educativo
+- intent: aprender_verso
+  examples: |
+    - quiero aprender un versículo
+    - muéstrame el verso del día
+    - dame un versículo para hoy
+    - aprender un verso bíblico
+    - versículo del día
+    - quiero memorizar un versículo
+    - enséñame un verso
+    - ¿qué verso me recomiendas?
+
+- intent: repasar_verso
+  examples: |
+    - quiero repasar el versículo
+    - repasemos el verso
+    - repasar el verso del día
+    - ya lo sé, ponlo más difícil
+    - fue fácil
+    - estuvo bien
+    - otra vez por favor
+
+- intent: jugar_trivia
+  examples: |
+    - quiero jugar trivia
+    - empecemos una trivia bíblica
+    - iniciar trivia
+    - jugar preguntas bíblicas
+    - dame una trivia sobre la biblia
+    - trivia por favor
+    - quiero 5 preguntas
+
+- intent: responder_trivia
+  examples: |
+    - la opción 1
+    - elijo 2
+    - mi respuesta es 3
+    - creo que es 4
+    - respuesta 1
+    - opción 2
+    - 1 es mi respuesta
+
+- intent: empezar_mision
+  examples: |
+    - quiero una misión para hoy
+    - misión del día
+    - dame una misión
+    - ¿qué misión me toca?
+    - una actividad para hoy
+    - reto de hoy
+
+- intent: bingo_valores
+  examples: |
+    - quiero jugar bingo de valores
+    - bingo de valores
+    - iniciemos el bingo
+    - bingo 3x3
+    - un bingo por favor
