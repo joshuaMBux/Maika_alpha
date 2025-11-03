@@ -1,0 +1,36 @@
+{
+  "questions": [
+    {
+      "question": "¿Quién construyó el arca?",
+      "options": ["Moisés", "Noé", "Abraham", "David"],
+      "correct": 1,
+      "explanation": "Dios mandó a Noé a construir el arca (Génesis 6)."
+    },
+    {
+      "question": "¿En qué ciudad nació Jesús?",
+      "options": ["Nazaret", "Belén", "Jerusalén", "Capernaúm"],
+      "correct": 1,
+      "explanation": "Jesús nació en Belén (Lucas 2)."
+    },
+    {
+      "question": "¿Cuántos días tardó Dios en crear el mundo?",
+      "options": ["5", "6", "7", "8"],
+      "correct": 1,
+      "explanation": "Seis días de creación y el séptimo reposó (Génesis 1-2)."
+    },
+    {
+      "question": "¿Quién derrotó a Goliat?",
+      "options": ["Saúl", "Jonatán", "David", "Samuel"],
+      "correct": 2,
+      "explanation": "David derrotó a Goliat (1 Samuel 17)."
+    },
+    {
+      "question": "¿Cuál es el primer libro de la Biblia?",
+      "options": ["Éxodo", "Génesis", "Levítico", "Números"],
+      "correct": 1,
+      "explanation": "Génesis es el primer libro."
+    }
+  ]
+}
+
+

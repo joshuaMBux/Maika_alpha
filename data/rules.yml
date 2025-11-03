@@ -98,3 +98,34 @@ rules:
   steps:
   - intent: fallback
   - action: action_fallback
+
+# Motor dinámico educativo
+- rule: mostrar verso del día
+  steps:
+  - intent: aprender_verso
+  - action: action_mostrar_verso
+
+- rule: repasar verso (SRS)
+  steps:
+  - intent: repasar_verso
+  - action: action_repaso_verso
+
+- rule: iniciar trivia
+  steps:
+  - intent: jugar_trivia
+  - action: action_iniciar_trivia
+
+- rule: responder trivia
+  steps:
+  - intent: responder_trivia
+  - action: action_responder_trivia
+
+- rule: mision del dia
+  steps:
+  - intent: empezar_mision
+  - action: action_mision_hoy
+
+- rule: bingo de valores
+  steps:
+  - intent: bingo_valores
+  - action: action_bingo

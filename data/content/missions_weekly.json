@@ -1,0 +1,13 @@
+{
+  "daily": [
+    {"title": "Verso y dibujo", "description": "Lee un versículo y haz un dibujo que lo represente."},
+    {"title": "Ayuda en casa", "description": "Ayuda en una tarea del hogar sin que te lo pidan."},
+    {"title": "Gracias a Dios", "description": "Escribe tres cosas por las que estás agradecido hoy."}
+  ],
+  "weekly": [
+    {"title": "Memoriza un versículo", "description": "Aprende de memoria Juan 3:16 y recítalo a alguien."},
+    {"title": "Servicio a otros", "description": "Haz una acción de servicio por alguien de tu iglesia o familia."}
+  ]
+}
+
+

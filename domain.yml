@@ -27,6 +27,13 @@ intents:
   - negar_respuesta
   - mostrar_estadisticas
   - fallback
+  # Dinámico educativo
+  - aprender_verso
+  - repasar_verso
+  - jugar_trivia
+  - responder_trivia
+  - empezar_mision
+  - bingo_valores
 
 entities:
   - libro_biblico
@@ -59,6 +66,34 @@ slots:
     type: float
     mappings:
     - type: from_text
+  edad_rango:
+    type: text
+    mappings:
+    - type: from_text
+  quiz_session_id:
+    type: text
+    mappings:
+    - type: from_text
+  modo_familiar:
+    type: bool
+    mappings:
+    - type: from_text
+  srs_ease:
+    type: float
+    mappings:
+    - type: from_text
+  srs_interval:
+    type: float
+    mappings:
+    - type: from_text
+  mission_title:
+    type: text
+    mappings:
+    - type: from_text
+  bingo_board:
+    type: any
+    mappings:
+    - type: custom
 
 responses:
   utter_saludar:
@@ -148,6 +183,13 @@ actions:
   - action_show_stats
   - action_fallback
   - action_search_topic
+  # Acciones dinámicas educativas
+  - action_mostrar_verso
+  - action_repaso_verso
+  - action_iniciar_trivia
+  - action_responder_trivia
+  - action_mision_hoy
+  - action_bingo
 
 session_config:
   session_expiration_time: 60

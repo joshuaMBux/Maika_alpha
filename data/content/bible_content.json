@@ -1,0 +1,10 @@
+{
+  "verses": [
+    { "book": "Juan", "chapter": 3, "verse": 16, "text": "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna." },
+    { "book": "Salmos", "chapter": 23, "verse": 1, "text": "El Señor es mi pastor; nada me faltará." },
+    { "book": "Filipenses", "chapter": 4, "verse": 13, "text": "Todo lo puedo en Cristo que me fortalece." }
+  ],
+  "values": ["Amor", "Gozo", "Paz", "Paciencia", "Bondad", "Fe", "Mansedumbre", "Templanza", "Gratitud"]
+}
+
+
