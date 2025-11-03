@@ -1,0 +1,584 @@
+{
+    "verses": [
+      {
+        "book": "Génesis",
+        "chapter": "1",
+        "verse": "1",
+        "text": "En el principio creó Dios los cielos y la tierra."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "1",
+        "verse": "2",
+        "text": "Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "1",
+        "verse": "3",
+        "text": "Y dijo Dios: Sea la luz; y fue la luz."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "1",
+        "verse": "26",
+        "text": "Entonces dijo Dios: Hagamos al hombre a nuestra imagen, conforme a nuestra semejanza; y señoree en los peces del mar, en las aves de los cielos, en las bestias, en toda la tierra, y en todo animal que se arrastra sobre la tierra."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "1",
+        "verse": "27",
+        "text": "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "3",
+        "verse": "15",
+        "text": "Y pondré enemistad entre ti y la mujer, y entre tu simiente y la simiente suya; ésta te herirá en la cabeza, y tú le herirás en el calcañar."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "12",
+        "verse": "1",
+        "text": "Pero el Señor había dicho a Abram: Vete de tu tierra y de tu parentela, y de la casa de tu padre, a la tierra que te mostraré."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "12",
+        "verse": "2",
+        "text": "Y haré de ti una nación grande, y te bendeciré, y engrandeceré tu nombre, y serás bendición."
+      },
+      {
+        "book": "Génesis",
+        "chapter": "22",
+        "verse": "14",
+        "text": "Y llamó Abraham el nombre de aquel lugar, El Señor Proveerá. Por tanto se dice hoy: En el monte del Señor se proveerá."
+      },
+      {
+        "book": "Éxodo",
+        "chapter": "3",
+        "verse": "14",
+        "text": "Y respondió Dios a Moisés: YO SOY EL QUE SOY. Y dijo: Así dirás a los hijos de Israel: YO SOY me envió a vosotros."
+      },
+      {
+        "book": "Éxodo",
+        "chapter": "14",
+        "verse": "14",
+        "text": "El Señor peleará por vosotros, y vosotros estaréis tranquilos."
+      },
+      {
+        "book": "Éxodo",
+        "chapter": "20",
+        "verse": "1",
+        "text": "Y habló Dios todas estas palabras, diciendo:"
+      },
+      {
+        "book": "Éxodo",
+        "chapter": "20",
+        "verse": "2",
+        "text": "Yo soy el Señor tu Dios, que te saqué de la tierra de Egipto, de casa de servidumbre."
+      },
+      {
+        "book": "Éxodo",
+        "chapter": "20",
+        "verse": "3",
+        "text": "No tendrás dioses ajenos delante de mí."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "1",
+        "verse": "1",
+        "text": "Bienaventurado el varón que no anduvo en consejo de malos, ni estuvo en camino de pecadores, ni en silla de escarnecedores se ha sentado."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "1",
+        "verse": "2",
+        "text": "Sino que en la ley del Señor está su delicia, y en su ley medita de día y de noche."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "23",
+        "verse": "1",
+        "text": "El Señor es mi pastor, nada me faltará."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "23",
+        "verse": "2",
+        "text": "En lugares de delicados pastos me hará descansar; junto a aguas de reposo me pastoreará."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "23",
+        "verse": "3",
+        "text": "Confortará mi alma; me guiará por sendas de justicia por amor de su nombre."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "23",
+        "verse": "4",
+        "text": "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo; tu vara y tu cayado me infundirán aliento."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "23",
+        "verse": "5",
+        "text": "Aderezas mesa delante de mí en presencia de mis angustiadores; unges mi cabeza con aceite; mi copa está rebosando."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "23",
+        "verse": "6",
+        "text": "Ciertamente el bien y la misericordia me seguirán todos los días de mi vida, y en la casa del Señor moraré por largos días."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "51",
+        "verse": "10",
+        "text": "Crea en mí, oh Dios, un corazón limpio, y renueva un espíritu recto dentro de mí."
+      },
+      {
+        "book": "Salmos",
+        "chapter": "119",
+        "verse": "105",
+        "text": "Lámpara es a mis pies tu palabra, y lumbrera a mi camino."
+      },
+      {
+        "book": "Proverbios",
+        "chapter": "3",
+        "verse": "5",
+        "text": "Confía en el Señor con todo tu corazón, y no te apoyes en tu propia prudencia."
+      },
+      {
+        "book": "Proverbios",
+        "chapter": "3",
+        "verse": "6",
+        "text": "Reconócelo en todos tus caminos, y él enderezará tus sendas."
+      },
+      {
+        "book": "Proverbios",
+        "chapter": "3",
+        "verse": "7",
+        "text": "No seas sabio en tu propia opinión; teme al Señor, y apártate del mal."
+      },
+      {
+        "book": "Proverbios",
+        "chapter": "16",
+        "verse": "3",
+        "text": "Encomienda al Señor tus obras, y tus pensamientos serán afirmados."
+      },
+      {
+        "book": "Proverbios",
+        "chapter": "22",
+        "verse": "6",
+        "text": "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él."
+      },
+      {
+        "book": "Isaías",
+        "chapter": "40",
+        "verse": "31",
+        "text": "Pero los que esperan en el Señor tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán."
+      },
+      {
+        "book": "Isaías",
+        "chapter": "53",
+        "verse": "5",
+        "text": "Mas él herido fue por nuestras rebeliones, molido por nuestros pecados; el castigo de nuestra paz fue sobre él, y por su llaga fuimos nosotros curados."
+      },
+      {
+        "book": "Isaías",
+        "chapter": "55",
+        "verse": "8",
+        "text": "Porque mis pensamientos no son vuestros pensamientos, ni vuestros caminos mis caminos, dijo el Señor."
+      },
+      {
+        "book": "Isaías",
+        "chapter": "55",
+        "verse": "9",
+        "text": "Como son más altos los cielos que la tierra, así son mis caminos más altos que vuestros caminos, y mis pensamientos más que vuestros pensamientos."
+      },
+      {
+        "book": "Jeremías",
+        "chapter": "29",
+        "verse": "11",
+        "text": "Porque yo sé los pensamientos que tengo acerca de vosotros, dice el Señor, pensamientos de paz, y no de mal, para daros el fin que esperáis."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "1",
+        "verse": "21",
+        "text": "Y dará a luz un hijo, y llamarás su nombre Jesús, porque él salvará a su pueblo de sus pecados."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "5",
+        "verse": "3",
+        "text": "Bienaventurados los pobres en espíritu, porque de ellos es el reino de los cielos."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "5",
+        "verse": "4",
+        "text": "Bienaventurados los que lloran, porque ellos recibirán consolación."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "5",
+        "verse": "5",
+        "text": "Bienaventurados los mansos, porque ellos recibirán la tierra por heredad."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "6",
+        "verse": "33",
+        "text": "Mas buscad primeramente el reino de Dios y su justicia, y todas estas cosas os serán añadidas."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "7",
+        "verse": "7",
+        "text": "Pedid, y se os dará; buscad, y hallaréis; llamad, y se os abrirá."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "11",
+        "verse": "28",
+        "text": "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "28",
+        "verse": "19",
+        "text": "Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo."
+      },
+      {
+        "book": "Mateo",
+        "chapter": "28",
+        "verse": "20",
+        "text": "Enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén."
+      },
+      {
+        "book": "Juan",
+        "chapter": "1",
+        "verse": "1",
+        "text": "En el principio era el Verbo, y el Verbo era con Dios, y el Verbo era Dios."
+      },
+      {
+        "book": "Juan",
+        "chapter": "1",
+        "verse": "14",
+        "text": "Y aquel Verbo fue hecho carne, y habitó entre nosotros (y vimos su gloria, gloria como del unigénito del Padre), lleno de gracia y de verdad."
+      },
+      {
+        "book": "Juan",
+        "chapter": "3",
+        "verse": "16",
+        "text": "Porque de tal manera amó Dios al mundo que ha dado a su Hijo unigénito, para que todo aquel que en él cree no se pierda, mas tenga vida eterna."
+      },
+      {
+        "book": "Juan",
+        "chapter": "3",
+        "verse": "17",
+        "text": "Porque no envió Dios a su Hijo al mundo para condenar al mundo, sino para que el mundo sea salvo por él."
+      },
+      {
+        "book": "Juan",
+        "chapter": "14",
+        "verse": "6",
+        "text": "Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí."
+      },
+      {
+        "book": "Juan",
+        "chapter": "14",
+        "verse": "27",
+        "text": "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo."
+      },
+      {
+        "book": "Juan",
+        "chapter": "15",
+        "verse": "5",
+        "text": "Yo soy la vid, vosotros los pámpanos; el que permanece en mí, y yo en él, éste lleva mucho fruto; porque separados de mí nada podéis hacer."
+      },
+      {
+        "book": "Romanos",
+        "chapter": "3",
+        "verse": "23",
+        "text": "Por cuanto todos pecaron, y están destituidos de la gloria de Dios."
+      },
+      {
+        "book": "Romanos",
+        "chapter": "6",
+        "verse": "23",
+        "text": "Porque la paga del pecado es muerte, mas la dádiva de Dios es vida eterna en Cristo Jesús Señor nuestro."
+      },
+      {
+        "book": "Romanos",
+        "chapter": "8",
+        "verse": "28",
+        "text": "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados."
+      },
+      {
+        "book": "Romanos",
+        "chapter": "10",
+        "verse": "9",
+        "text": "Que si confesares con tu boca que Jesús es el Señor, y creyeres en tu corazón que Dios le levantó de los muertos, serás salvo."
+      },
+      {
+        "book": "Romanos",
+        "chapter": "12",
+        "verse": "1",
+        "text": "Así que, hermanos, os ruego por las misericordias de Dios, que presentéis vuestros cuerpos en sacrificio vivo, santo, agradable a Dios, que es vuestro culto racional."
+      },
+      {
+        "book": "Romanos",
+        "chapter": "12",
+        "verse": "2",
+        "text": "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento, para que comprobéis cuál sea la buena voluntad de Dios, agradable y perfecta."
+      },
+      {
+        "book": "Filipenses",
+        "chapter": "4",
+        "verse": "6",
+        "text": "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias."
+      },
+      {
+        "book": "Filipenses",
+        "chapter": "4",
+        "verse": "7",
+        "text": "Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús."
+      },
+      {
+        "book": "Filipenses",
+        "chapter": "4",
+        "verse": "13",
+        "text": "Todo lo puedo en Cristo que me fortalece."
+      },
+      {
+        "book": "Colosenses",
+        "chapter": "3",
+        "verse": "23",
+        "text": "Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres."
+      },
+      {
+        "book": "Hebreos",
+        "chapter": "11",
+        "verse": "1",
+        "text": "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve."
+      },
+      {
+        "book": "Hebreos",
+        "chapter": "11",
+        "verse": "6",
+        "text": "Pero sin fe es imposible agradar a Dios; porque es necesario que el que se acerca a Dios crea que le hay, y que es galardonador de los que le buscan."
+      },
+      {
+        "book": "Santiago",
+        "chapter": "1",
+        "verse": "5",
+        "text": "Y si alguno de vosotros tiene falta de sabiduría, pídala a Dios, el cual da a todos abundantemente y sin reproche, y le será dada."
+      },
+      {
+        "book": "Santiago",
+        "chapter": "1",
+        "verse": "6",
+        "text": "Pero pida con fe, no dudando nada; porque el que duda es semejante a la onda del mar, que es arrastrada por el viento y echada de una parte a otra."
+      },
+      {
+        "book": "1 Pedro",
+        "chapter": "5",
+        "verse": "7",
+        "text": "Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros."
+      },
+      {
+        "book": "1 Juan",
+        "chapter": "1",
+        "verse": "9",
+        "text": "Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados, y limpiarnos de toda maldad."
+      },
+      {
+        "book": "Apocalipsis",
+        "chapter": "3",
+        "verse": "20",
+        "text": "He aquí, yo estoy a la puerta y llamo; si alguno oye mi voz y abre la puerta, entraré a él, y cenaré con él, y él conmigo."
+      }
+    ],
+    "stories": [
+      {
+        "topic": "Moisés",
+        "summary": "Moisés fue elegido por Dios para liberar a Israel de la esclavitud en Egipto. A pesar de sus dudas iniciales, Dios lo usó poderosamente para realizar milagros, incluyendo las diez plagas y la apertura del Mar Rojo. Su historia nos enseña sobre la fe, la obediencia y cómo Dios usa a personas ordinarias para hacer cosas extraordinarias."
+      },
+      {
+        "topic": "David y Goliat",
+        "summary": "El joven David derrotó al gigante Goliat con una honda y una piedra, confiando en el poder de Dios. Esta historia nos enseña que con Dios, no hay gigante que no podamos vencer. La fe en Dios es más poderosa que cualquier adversidad."
+      },
+      {
+        "topic": "Noé",
+        "summary": "Noé construyó un arca durante 120 años por fe, a pesar de que nunca había llovido. Su obediencia y fe salvaron a su familia y preservaron la vida en la tierra. Nos enseña sobre la perseverancia en la fe y la confianza en las promesas de Dios."
+      },
+      {
+        "topic": "José",
+        "summary": "José fue vendido como esclavo por sus hermanos, pero Dios lo elevó para ser gobernador de Egipto. Su historia nos muestra cómo Dios puede convertir el mal en bien y usar las pruebas para cumplir sus propósitos."
+      },
+      {
+        "topic": "Daniel",
+        "summary": "Daniel mantuvo su fe en Dios mientras servía en Babilonia. Fue arrojado al foso de los leones por orar, pero Dios lo protegió. Su historia nos enseña sobre la fidelidad a Dios en medio de la adversidad."
+      },
+      {
+        "topic": "Rut",
+        "summary": "Rut, una extranjera, eligió seguir a su suegra Noemí y al Dios de Israel. Su lealtad y fe fueron recompensadas cuando se convirtió en antepasada del rey David y de Jesús. Su historia nos enseña sobre la lealtad y la provisión de Dios."
+      },
+      {
+        "topic": "Abraham",
+        "summary": "Abraham, el padre de la fe, dejó su tierra natal por obedecer a Dios. Su fe fue probada cuando Dios le pidió sacrificar a su hijo Isaac, pero Dios proveyó un carnero. Su historia nos enseña sobre la fe, la obediencia y la provisión de Dios."
+      },
+      {
+        "topic": "Pedro",
+        "summary": "Pedro, un pescador común, fue llamado por Jesús para ser pescador de hombres. A pesar de negar a Jesús tres veces, fue restaurado y llegó a ser un pilar de la iglesia primitiva. Su historia nos enseña sobre el perdón, la restauración y el poder transformador de Dios."
+      }
+    ],
+    "concepts": [
+      {
+        "term": "fe",
+        "definition": "Confianza plena en Dios y sus promesas. Es la certeza de lo que se espera, la convicción de lo que no se ve (Hebreos 11:1). Es confiar completamente en Dios y sus promesas."
+      },
+      {
+        "term": "gracia",
+        "definition": "Don inmerecido que Dios concede a la humanidad. Es su favor y misericordia hacia nosotros, a pesar de nuestros pecados."
+      },
+      {
+        "term": "arrepentimiento",
+        "definition": "Cambio de dirección espiritual, alejarse del pecado y volverse hacia Dios con un corazón contrito y humilde."
+      },
+      {
+        "term": "salvación",
+        "definition": "El regalo de Dios por medio de Jesucristo, que nos libera del pecado y nos da vida eterna. Es por gracia mediante la fe."
+      },
+      {
+        "term": "adoración",
+        "definition": "Rendir honor, gloria y alabanza a Dios con todo nuestro ser. Es una respuesta de amor y gratitud hacia nuestro Creador."
+      },
+      {
+        "term": "santificación",
+        "definition": "El proceso de ser apartado para Dios y crecer en santidad. Es un trabajo continuo del Espíritu Santo en nuestras vidas."
+      },
+      {
+        "term": "redención",
+        "definition": "Ser comprado de vuelta del pecado y la esclavitud. Cristo pagó el precio por nuestros pecados en la cruz."
+      },
+      {
+        "term": "justificación",
+        "definition": "Ser declarado justo ante Dios por medio de la fe en Jesucristo. Es un acto legal de Dios donde nos considera justos."
+      },
+      {
+        "term": "perdón",
+        "definition": "El acto de Dios de perdonar nuestros pecados por medio de Jesucristo. También se refiere a perdonar a otros como Dios nos ha perdonado."
+      },
+      {
+        "term": "amor",
+        "definition": "El amor de Dios es incondicional y sacrificial. Como cristianos, estamos llamados a amar a Dios y a nuestro prójimo como a nosotros mismos."
+      }
+    ],
+    "church": {
+      "address": "Av. San Martín #1234, Barrio Equipetrol, Santa Cruz, Bolivia",
+      "hours": [
+        "Domingo 10:00 - Servicio de Adoración",
+        "Domingo 11:30 - Escuela Dominical",
+        "Miércoles 19:00 - Estudio Bíblico",
+        "Jueves 19:30 - Reunión de Oración"
+      ],
+      "pastor": "Pr. Juan Pérez",
+      "phone": "(591) 3-123-4567",
+      "email": "pastor@iglesia.com",
+      "website": "www.iglesia.com",
+      "social_media": {
+        "facebook": "IglesiaCristiana",
+        "instagram": "@iglesiacristiana",
+        "youtube": "Iglesia Cristiana"
+      }
+    },
+    "events": [
+      {
+        "name": "Conferencia de Jóvenes",
+        "date": "2024-01-15",
+        "time": "18:00",
+        "description": "Conferencia especial para jóvenes con temas relevantes para su generación."
+      },
+      {
+        "name": "Bautismos",
+        "date": "2024-01-20",
+        "time": "16:00",
+        "description": "Ceremonia de bautismos en el río Piraí."
+      },
+      {
+        "name": "Campaña de Evangelismo",
+        "date": "2024-01-25",
+        "time": "19:00",
+        "description": "Campaña evangelística en el centro de la ciudad."
+      }
+    ],
+    "ministries": [
+      {
+        "name": "Ministerio de Jóvenes",
+        "leader": "Carlos Rodríguez",
+        "meeting_time": "Sábados 15:00",
+        "description": "Ministerio dedicado a los jóvenes de 13-25 años."
+      },
+      {
+        "name": "Ministerio de Niños",
+        "leader": "María González",
+        "meeting_time": "Sábados 16:30",
+        "description": "Ministerio para niños de 3-12 años."
+      },
+      {
+        "name": "Ministerio de Mujeres",
+        "leader": "Ana Martínez",
+        "meeting_time": "Martes 15:00",
+        "description": "Ministerio para mujeres de todas las edades."
+      },
+      {
+        "name": "Ministerio de Hombres",
+        "leader": "Roberto Silva",
+        "meeting_time": "Viernes 19:00",
+        "description": "Ministerio para hombres de todas las edades."
+      }
+    ],
+    "quiz_questions": [
+      {
+        "id": 1,
+        "question": "¿Quién construyó el arca según la Biblia?",
+        "options": ["Moisés", "Noé", "Abraham", "David"],
+        "correct_answer": 1,
+        "explanation": "Noé construyó el arca por fe, siguiendo las instrucciones de Dios."
+      },
+      {
+        "id": 2,
+        "question": "¿Cuál es el versículo más conocido de Juan 3?",
+        "options": ["Juan 3:15", "Juan 3:16", "Juan 3:17", "Juan 3:18"],
+        "correct_answer": 1,
+        "explanation": "Juan 3:16 es el versículo más conocido: 'Porque de tal manera amó Dios al mundo...'"
+      },
+      {
+        "id": 3,
+        "question": "¿Qué significa 'fe' según Hebreos 11:1?",
+        "options": ["Creer en Dios", "La certeza de lo que se espera", "Confiar en uno mismo", "Tener esperanza"],
+        "correct_answer": 1,
+        "explanation": "La fe es la certeza de lo que se espera, la convicción de lo que no se ve."
+      },
+      {
+        "id": 4,
+        "question": "¿Quién derrotó a Goliat?",
+        "options": ["Saúl", "David", "Josué", "Sansón"],
+        "correct_answer": 1,
+        "explanation": "David derrotó a Goliat con una honda y una piedra, confiando en Dios."
+      },
+      {
+        "id": 5,
+        "question": "¿Cuál es el primer libro de la Biblia?",
+        "options": ["Éxodo", "Génesis", "Levítico", "Números"],
+        "correct_answer": 1,
+        "explanation": "Génesis es el primer libro de la Biblia, que significa 'origen' o 'principio'."
+      }
+    ]
+  }
+  

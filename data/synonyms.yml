@@ -1,0 +1,93 @@
+version: "3.1"
+
+synonyms:
+- synonym: Juan 3:16
+  examples: |
+    - Juan 3:16
+    - juan 3:16
+    - Juan capitulo 3 versiculo 16
+    - juan capitulo 3 versiculo 16
+
+- synonym: Génesis 1:1
+  examples: |
+    - Génesis 1:1
+    - genesis 1:1
+    - Génesis capitulo 1 versiculo 1
+    - genesis capitulo 1 versiculo 1
+
+- synonym: Salmos 23
+  examples: |
+    - Salmos 23
+    - salmos 23
+    - Salmos capitulo 23
+    - salmos capitulo 23
+
+- synonym: Romanos 8:28
+  examples: |
+    - Romanos 8:28
+    - romanos 8:28
+    - Romanos capitulo 8 versiculo 28
+    - romanos capitulo 8 versiculo 28
+
+- synonym: Filipenses 4:13
+  examples: |
+    - Filipenses 4:13
+    - filipenses 4:13
+    - Filipenses capitulo 4 versiculo 13
+    - filipenses capitulo 4 versiculo 13
+
+- synonym: amor
+  examples: |
+    - amor
+    - amado
+    - amar
+    - amante
+
+- synonym: fe
+  examples: |
+    - fe
+    - creer
+    - creencia
+    - confianza
+
+- synonym: esperanza
+  examples: |
+    - esperanza
+    - esperar
+    - esperanzado
+    - confianza
+
+- synonym: paz
+  examples: |
+    - paz
+    - pacífico
+    - tranquilidad
+    - calma
+
+- synonym: perdón
+  examples: |
+    - perdón
+    - perdonar
+    - perdonado
+    - reconciliación
+
+- synonym: gracia
+  examples: |
+    - gracia
+    - gracioso
+    - misericordia
+    - favor
+
+- synonym: salvación
+  examples: |
+    - salvación
+    - salvar
+    - salvado
+    - redención
+
+- synonym: adoración
+  examples: |
+    - adoración
+    - adorar
+    - alabanza
+    - culto 

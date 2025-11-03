@@ -1,0 +1,154 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - despedida
+  - afirmar
+  - negar
+  - estado_bien
+  - estado_mal
+  - desafio_bot
+  # Nuevas intenciones para educación bíblica
+  - preguntar_versiculo
+  - pedir_historia_biblica
+  - preguntar_concepto_biblico
+  - pedir_devocional
+  - preguntar_eventos
+  - pedir_horarios
+  - preguntar_oracion
+  - pedir_ayuda_espiritual
+  - preguntar_estudio_biblico
+  - pedir_consejo_pastoral
+  # Nuevas intenciones avanzadas
+  - buscar_por_tema
+  - start_quiz
+  - responder_quiz
+  - confirmar_respuesta
+  - negar_respuesta
+  - mostrar_estadisticas
+  - fallback
+
+entities:
+  - libro_biblico
+  - capitulo
+  - versiculo
+  - concepto
+  - tema_oracion
+  - tipo_evento
+  - tema_busqueda
+  - tipo_interaccion
+
+slots:
+  nombre_usuario:
+    type: text
+    mappings:
+    - type: from_text
+  ultimo_versiculo:
+    type: text
+    mappings:
+    - type: from_text
+  tema_interes:
+    type: text
+    mappings:
+    - type: from_text
+  quiz_data:
+    type: any
+    mappings:
+    - type: custom
+  current_question:
+    type: float
+    mappings:
+    - type: from_text
+
+responses:
+  utter_saludar:
+    - text: "¡Hola! Soy tu asistente espiritual. ¿En qué puedo ayudarte hoy? Puedo ayudarte con estudios bíblicos, devocionales, eventos de la iglesia y más."
+
+  utter_animar:
+    - text: "Aquí tienes algo para animarte:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_eso_ayudo:
+    - text: "¿Te ayudó eso?"
+
+  utter_feliz:
+    - text: "¡Genial! Sigue así."
+
+  utter_despedida:
+    - text: "¡Que Dios te bendiga! Recuerda que estoy aquí para ayudarte en tu caminar espiritual."
+
+  utter_soy_un_bot:
+    - text: "Soy un bot impulsado por Rasa, diseñado para ayudarte en tu crecimiento espiritual."
+
+  # Nuevas respuestas para educación bíblica
+  utter_versiculo_no_encontrado:
+    - text: "No encontré ese versículo específico, pero puedo ayudarte con otros pasajes bíblicos o explicar conceptos bíblicos."
+
+  utter_historia_biblica:
+    - text: "Te comparto esta historia bíblica que puede ayudarte en tu caminar espiritual."
+
+  utter_concepto_biblico:
+    - text: "Este concepto bíblico es fundamental para entender nuestra fe."
+
+  utter_devocional_diario:
+    - text: "Aquí tienes tu devocional diario para reflexionar:"
+
+  utter_eventos_iglesia:
+    - text: "Estos son los próximos eventos en nuestra iglesia:"
+
+  utter_horarios_servicios:
+    - text: "Los horarios de nuestros servicios son:"
+
+  utter_oracion_guiada:
+    - text: "Te ayudo con una oración guiada para este momento:"
+
+  utter_ayuda_espiritual:
+    - text: "Entiendo que estás pasando por un momento difícil. Recuerda que Dios está contigo y aquí tienes algunos recursos para ayudarte:"
+
+  utter_estudio_biblico:
+    - text: "Te recomiendo este estudio bíblico que puede ser de bendición para ti:"
+
+  utter_consejo_pastoral:
+    - text: "Para consejo pastoral específico, te recomiendo contactar directamente con nuestro pastor. ¿Te ayudo con información de contacto?"
+
+  # Nuevas respuestas para funcionalidades avanzadas
+  utter_buscar_tema:
+    - text: "Buscaré versículos relacionados con ese tema:"
+
+  utter_start_quiz:
+    - text: "¡Perfecto! Empezemos con el quiz bíblico. Tendrás 3 preguntas para responder."
+
+  utter_confirmar_respuesta:
+    - text: "¡Me alegra haber podido ayudarte! ¿Hay algo más en lo que pueda asistirte?"
+
+  utter_negar_respuesta:
+    - text: "Entiendo. ¿En qué puedo ayudarte de manera diferente?"
+
+  utter_fallback:
+    - text: "No estoy seguro de entenderte completamente. Puedo ayudarte con búsqueda de versículos, historias bíblicas, conceptos, devocionales, información de la iglesia, oraciones guiadas y quiz bíblico. ¿Qué te gustaría hacer?"
+
+  utter_mostrar_estadisticas:
+    - text: "Aquí tienes tus estadísticas y el ranking:"
+
+actions:
+  - action_buscar_versiculo
+  - action_buscar_por_tema
+  - action_obtener_historia_biblica
+  - action_explicar_concepto
+  - action_generar_devocional
+  - action_obtener_eventos
+  - action_obtener_horarios
+  - action_oracion_guiada
+  - action_ayuda_espiritual
+  - action_estudio_biblico
+  - action_consejo_pastoral
+  - action_start_quiz
+  - action_process_quiz_answer
+  - action_confirm_response
+  - action_show_stats
+  - action_fallback
+  - action_search_topic
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

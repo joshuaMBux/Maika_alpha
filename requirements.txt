@@ -1,0 +1,18 @@
+# Dependencias principales para Rasa
+rasa>=3.6.0
+rasa-sdk>=3.6.0
+
+# Dependencias para funcionalidades avanzadas
+python-dateutil>=2.8.0  # Para manejo de fechas
+
+# Dependencias opcionales para mejoras futuras
+# requests>=2.25.0  # Para APIs externas
+# beautifulsoup4>=4.9.0  # Para web scraping
+# pillow>=8.0.0  # Para procesamiento de imágenes
+# numpy>=1.19.0  # Para análisis de datos
+# pandas>=1.3.0  # Para análisis de datos avanzado
+
+# Dependencias de desarrollo (opcionales)
+# pytest>=6.0.0  # Para testing
+# black>=21.0.0  # Para formateo de código
+# flake8>=3.8.0  # Para linting 

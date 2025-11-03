@@ -1,0 +1,295 @@
+version: "3.1"
+
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - buenas noches
+    - qué tal
+    - hey
+    - ¿qué hay?
+    - muy buenas
+    - saludos
+    - ¡hola amigo!
+
+- intent: despedida
+  examples: |
+    - adiós
+    - hasta luego
+    - nos vemos
+    - chao
+    - cuídate
+    - hasta pronto
+    - que tengas un buen día
+    - hasta la próxima
+    - bye
+
+- intent: afirmar
+  examples: |
+    - sí
+    - claro
+    - por supuesto
+    - correcto
+    - así es
+    - sin duda
+    - desde luego
+    - muy bien
+
+- intent: negar
+  examples: |
+    - no
+    - para nada
+    - no creo
+    - de ninguna manera
+    - no, gracias
+    - no me gusta
+    - jamás
+    - no realmente
+
+- intent: estado_bien
+  examples: |
+    - perfecto
+    - genial
+    - maravilloso
+    - me siento muy bien
+    - estupendo
+    - excelente
+    - fantástico
+    - estoy feliz
+    - muy contento
+    - súper emocionado
+
+- intent: estado_mal
+  examples: |
+    - mi día fue horrible
+    - estoy triste
+    - no me siento bien
+    - decepcionado
+    - muy triste
+    - angustiado
+    - infeliz
+    - no muy bien
+    - realmente mal
+    - me siento decaído
+
+- intent: desafio_bot
+  examples: |
+    - ¿eres un bot?
+    - ¿eres humano?
+    - ¿estoy hablando con un bot?
+    - ¿estoy hablando con un humano?
+    - ¿eres una máquina?
+    - ¿cómo sé que no eres un robot?
+
+# Nuevas intenciones para educación bíblica
+- intent: preguntar_versiculo
+  examples: |
+    - ¿puedes mostrarme el versículo [Juan 3:16](libro_biblico:Juan capitulo:3 versiculo:16)?
+    - busco [Génesis 1:1](libro_biblico:Génesis capitulo:1 versiculo:1)
+    - ¿qué dice [Salmos 23](libro_biblico:Salmos capitulo:23)?
+    - necesito el versículo [Romanos 8:28](libro_biblico:Romanos capitulo:8 versiculo:28)
+    - ¿puedes citar [Filipenses 4:13](libro_biblico:Filipenses capitulo:4 versiculo:13)?
+    - busco un versículo sobre amor
+    - ¿tienes algún versículo sobre esperanza?
+    - necesito un pasaje bíblico
+    - ¿qué dice la Biblia sobre la fe?
+
+- intent: pedir_historia_biblica
+  examples: |
+    - cuéntame la historia de [Moisés](concepto:Moisés)
+    - ¿qué pasó con [David y Goliat](concepto:David y Goliat)?
+    - narra la historia de [Noé](concepto:Noé)
+    - cuéntame sobre [José](concepto:José)
+    - ¿puedes contarme una historia bíblica?
+    - necesito una historia bíblica para niños
+    - cuéntame sobre [Daniel](concepto:Daniel)
+    - ¿qué historia bíblica me recomiendas?
+
+- intent: preguntar_concepto_biblico
+  examples: |
+    - ¿qué es la [fe](concepto:fe)?
+    - explícame qué es la [gracia](concepto:gracia)
+    - ¿qué significa [arrepentimiento](concepto:arrepentimiento)?
+    - define [salvación](concepto:salvación)
+    - ¿qué es la [santificación](concepto:santificación)?
+    - explícame el concepto de [redención](concepto:redención)
+    - ¿qué significa [justificación](concepto:justificación)?
+    - define [adoración](concepto:adoración)
+
+- intent: pedir_devocional
+  examples: |
+    - necesito un devocional
+    - ¿tienes un devocional para hoy?
+    - quiero un devocional diario
+    - dame algo para reflexionar
+    - necesito meditar en la palabra
+    - ¿puedes darme un devocional?
+    - quiero un tiempo de reflexión
+    - necesito alimento espiritual
+
+- intent: preguntar_eventos
+  examples: |
+    - ¿qué eventos hay en la iglesia?
+    - ¿cuándo es el próximo evento?
+    - ¿hay algún evento especial?
+    - ¿qué actividades hay esta semana?
+    - ¿cuándo es el estudio bíblico?
+    - ¿hay algún evento para jóvenes?
+    - ¿cuándo es la próxima reunión?
+    - ¿qué eventos hay este mes?
+
+- intent: pedir_horarios
+  examples: |
+    - ¿cuáles son los horarios de la iglesia?
+    - ¿a qué hora es el servicio?
+    - ¿cuándo son los servicios?
+    - ¿qué horarios tienen?
+    - ¿a qué hora empieza el culto?
+    - ¿cuándo es la escuela dominical?
+    - ¿qué horarios de servicios tienen?
+    - ¿a qué hora es la oración?
+
+- intent: preguntar_oracion
+  examples: |
+    - necesito una oración
+    - ¿puedes orar por mí?
+    - ayúdame con una oración
+    - necesito orar por [mi familia](tema_oracion:familia)
+    - ¿tienes una oración para [momentos difíciles](tema_oracion:momentos difíciles)?
+    - quiero orar por [sanidad](tema_oracion:sanidad)
+    - necesito una oración de [agradecimiento](tema_oracion:agradecimiento)
+    - ayúdame a orar
+
+- intent: pedir_ayuda_espiritual
+  examples: |
+    - necesito ayuda espiritual
+    - estoy pasando por un momento difícil
+    - necesito consejo espiritual
+    - estoy confundido espiritualmente
+    - necesito dirección espiritual
+    - estoy luchando espiritualmente
+    - necesito apoyo espiritual
+    - estoy en crisis espiritual
+
+- intent: preguntar_estudio_biblico
+  examples: |
+    - ¿tienes algún estudio bíblico?
+    - necesito un estudio bíblico
+    - ¿puedes recomendarme un estudio?
+    - quiero estudiar la Biblia
+    - necesito un estudio sobre [fe](concepto:fe)
+    - ¿tienes estudios para principiantes?
+    - quiero un estudio profundo
+    - necesito material de estudio
+
+- intent: pedir_consejo_pastoral
+  examples: |
+    - necesito hablar con el pastor
+    - ¿puedo contactar al pastor?
+    - necesito consejo pastoral
+    - ¿cómo contacto al pastor?
+    - necesito hablar con un líder
+    - ¿puedo pedir consejo pastoral?
+    - necesito dirección pastoral
+    - ¿cómo puedo hablar con el pastor?
+
+# Nuevas intenciones avanzadas
+- intent: buscar_por_tema
+  examples: |
+    - busco versículos sobre [amor](tema_busqueda:amor)
+    - ¿qué dice la Biblia sobre [fe](tema_busqueda:fe)?
+    - necesito versículos de [esperanza](tema_busqueda:esperanza)
+    - ¿tienes pasajes sobre [paz](tema_busqueda:paz)?
+    - busco textos sobre [perdón](tema_busqueda:perdón)
+    - ¿qué dice la Biblia sobre [confianza](tema_busqueda:confianza)?
+    - necesito versículos de [consuelo](tema_busqueda:consuelo)
+    - ¿tienes pasajes sobre [gracia](tema_busqueda:gracia)?
+    - busco textos sobre [salvación](tema_busqueda:salvación)
+    - ¿qué dice la Biblia sobre [adoración](tema_busqueda:adoración)?
+
+- intent: start_quiz
+  examples: |
+    - quiero hacer un [quiz](tipo_interaccion)
+    - ¿puedo hacer un [quiz bíblico](tipo_interaccion)?
+    - empieza el [quiz](tipo_interaccion)
+    - quiero jugar un [quiz](tipo_interaccion)
+    - ¿hay algún [quiz](tipo_interaccion) disponible?
+    - quiero probar mis conocimientos bíblicos con un [quiz](tipo_interaccion)
+    - empieza el [test bíblico](tipo_interaccion)
+    - quiero hacer una [prueba](tipo_interaccion)
+    - quiero hacer un [quiz bíblico](tipo_interaccion)
+    - [hazme preguntas bíblicas](tipo_interaccion)
+    - quiero responder un [cuestionario bíblico](tipo_interaccion)
+    - ponme un [test de la biblia](tipo_interaccion)
+    - quiero un [cuestionario de preguntas bíblicas](tipo_interaccion)
+    - dame un [quiz de la biblia](tipo_interaccion)
+    - quiero jugar un [quiz bíblico](tipo_interaccion)
+    - hazme un [test bíblico](tipo_interaccion)
+    - quiero responder [preguntas de la biblia](tipo_interaccion)
+    - quiero un [juego de preguntas bíblicas](tipo_interaccion)
+
+- intent: confirmar_respuesta
+  examples: |
+    - sí, fue útil
+    - sí, gracias
+    - muy útil
+    - sí, me ayudó
+    - gracias, fue muy útil
+    - sí, fue muy útil
+    - me sirvió mucho
+
+- intent: negar_respuesta
+  examples: |
+    - no, no fue útil
+    - no me sirvió
+    - no fue lo que buscaba
+    - no, no me ayudó
+    - no fue útil
+    - no me sirvió de nada
+    - no fue lo que necesitaba
+    - no, no fue lo que esperaba
+    - no me ayudó mucho
+
+- intent: mostrar_estadisticas
+  examples: |
+    - quiero ver mis estadísticas
+    - muéstrame mis estadísticas
+    - estadísticas
+    - mis resultados
+    - mi progreso
+    - ranking
+    - leaderboard
+    - puntuaciones
+    - mis quizzes
+    - mi historial
+    - ver mi progreso
+    - cómo voy
+    - mis puntajes
+    - estadísticas del quiz
+    - mi ranking
+
+- intent: fallback
+  examples: |
+    - no entiendo
+    - no sé qué quieres decir
+    - no comprendo
+    - no entiendo tu respuesta
+    - no sé qué hacer
+    - no entiendo lo que dices
+    - no comprendo tu mensaje
+    - no sé qué quieres
+    - no entiendo tu pregunta
+    - no comprendo tu respuesta
+
+- intent: responder_quiz
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - uno
+    - dos
+    - tres
+    - cuatro

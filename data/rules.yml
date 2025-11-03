@@ -1,0 +1,100 @@
+version: "3.1"
+
+rules:
+
+- rule: decir despedida cuando el usuario se despide
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: decir que soy un bot cuando el usuario pregunta si es un bot
+  steps:
+  - intent: desafio_bot
+  - action: utter_soy_un_bot
+
+# Nuevas reglas para educación bíblica
+- rule: buscar versículo cuando se pide
+  steps:
+  - intent: preguntar_versiculo
+  - action: action_buscar_versiculo
+
+- rule: obtener historia bíblica cuando se pide
+  steps:
+  - intent: pedir_historia_biblica
+  - action: action_obtener_historia_biblica
+
+- rule: explicar concepto bíblico cuando se pregunta
+  steps:
+  - intent: preguntar_concepto_biblico
+  - action: action_explicar_concepto
+
+- rule: generar devocional cuando se pide
+  steps:
+  - intent: pedir_devocional
+  - action: action_generar_devocional
+
+- rule: obtener eventos cuando se preguntan
+  steps:
+  - intent: preguntar_eventos
+  - action: action_obtener_eventos
+
+- rule: obtener horarios cuando se piden
+  steps:
+  - intent: pedir_horarios
+  - action: action_obtener_horarios
+
+- rule: oración guiada cuando se pide
+  steps:
+  - intent: preguntar_oracion
+  - action: action_oracion_guiada
+
+- rule: ayuda espiritual cuando se pide
+  steps:
+  - intent: pedir_ayuda_espiritual
+  - action: action_ayuda_espiritual
+
+- rule: estudio bíblico cuando se pide
+  steps:
+  - intent: preguntar_estudio_biblico
+  - action: action_estudio_biblico
+
+- rule: consejo pastoral cuando se pide
+  steps:
+  - intent: pedir_consejo_pastoral
+  - action: action_consejo_pastoral
+
+# Nuevas reglas para funcionalidades avanzadas
+- rule: buscar por tema cuando se pide
+  steps:
+  - intent: buscar_por_tema
+  - action: action_buscar_por_tema
+
+- rule: empezar quiz cuando se pide
+  steps:
+  - intent: start_quiz
+  - action: action_start_quiz
+
+- rule: mostrar estadísticas del usuario
+  steps:
+  - intent: mostrar_estadisticas
+  - action: action_show_stats
+
+- rule: confirmar respuesta cuando es útil
+  steps:
+  - intent: confirmar_respuesta
+  - action: action_confirm_response
+
+- rule: negar respuesta cuando no es útil
+  steps:
+  - intent: negar_respuesta
+  - action: action_confirm_response
+
+- rule: procesar respuesta de quiz
+  steps:
+  - intent: responder_quiz
+  - action: action_process_quiz_answer
+
+- rule: fallback cuando no entiende
+  steps:
+  - intent: fallback
+  - action: action_fallback

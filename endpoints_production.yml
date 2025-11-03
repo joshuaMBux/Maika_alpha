@@ -1,0 +1,33 @@
+# Configuración de endpoints para producción
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# Configuración para servidor web
+server:
+  url: "0.0.0.0"
+  port: 5005
+  cors: "*"
+  enable_api: true
+  auth_token: "tu_token_secreto_aqui"
+  jwt_secret: "tu_jwt_secret_aqui"
+  jwt_method: "HS256"
+
+# Configuración de base de datos para producción (opcional)
+# tracker_store:
+#   type: redis
+#   url: localhost
+#   port: 6379
+#   db: 0
+#   password: tu_password_redis
+
+# Configuración de event broker (opcional)
+# event_broker:
+#   url: localhost
+#   username: username
+#   password: password
+#   queue: queue
+
+
+
+
+

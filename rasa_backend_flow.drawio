@@ -1,0 +1,74 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="Flujo Rasa Backend" id="0">
+    <mxGraphModel dx="586" dy="354" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Recibe mensaje del usuario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="40" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Procesa con motor NLP&#xa;- Extrae intención&#xa;- Extrae entidades" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="110" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Determina acción a ejecutar&#xa;- Respuesta simple&#xa;- Acción personalizada" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="190" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="¿Es acción personalizada?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="170" y="270" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Ejecuta acción en actions.py&#xa;- Busca en índices&#xa;- Consulta DB&#xa;- Genera respuesta dinámica" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="350" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Respuesta simple (utter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="380" y="270" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Devuelve respuesta al usuario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="450" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Guarda métricas y estadísticas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="520" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Pregunta si la respuesta fue útil" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="590" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Espera siguiente mensaje" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="660" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="12" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="4" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="5" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="5" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="6" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="7" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="8" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="9" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" style="endArrow=block;html=1;fontColor=#000000;" parent="1" source="10" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

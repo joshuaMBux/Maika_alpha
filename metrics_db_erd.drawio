@@ -1,0 +1,29 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ERD metrics.db">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- quiz_results -->
+        <mxCell id="2" value="quiz_results&#xa;id: INTEGER (PK)&#xa;user_id: TEXT&#xa;score: FLOAT&#xa;total_questions: INTEGER&#xa;completed_at: DATETIME" style="swimlane;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <!-- user_queries -->
+        <mxCell id="3" value="user_queries&#xa;id: INTEGER (PK)&#xa;user_id: TEXT&#xa;intent: TEXT&#xa;entities: TEXT&#xa;timestamp: DATETIME" style="swimlane;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="340" y="60" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <!-- usage_stats -->
+        <mxCell id="4" value="usage_stats&#xa;id: INTEGER (PK)&#xa;user_id: TEXT&#xa;action: TEXT&#xa;success: BOOLEAN&#xa;timestamp: DATETIME" style="swimlane;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="220" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <!-- Relaciones -->
+        <mxCell id="5" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1" source="2" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile> 

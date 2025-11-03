@@ -1,0 +1,39 @@
+stories:
+- story: consulta versiculo y confirmacion
+  steps:
+  - user: |
+      hola
+    intent: saludar
+  - action: utter_saludar
+  - user: |
+      necesito el versiculo Juan 3:16
+    intent: preguntar_versiculo
+  - action: action_buscar_versiculo
+  - action: utter_eso_ayudo
+  - user: |
+      si, gracias
+    intent: afirmar
+  - action: action_confirm_response
+
+- story: flujo de quiz completo
+  steps:
+  - user: |
+      hola
+    intent: saludar
+  - action: utter_saludar
+  - user: |
+      quiero hacer un quiz
+    intent: start_quiz
+  - action: utter_start_quiz
+  - action: action_start_quiz
+  - user: |
+      es la opcion 1
+    intent: responder_quiz
+  - action: action_process_quiz_answer
+
+- story: consulta de estadisticas
+  steps:
+  - user: |
+      muestrame mis estadisticas
+    intent: mostrar_estadisticas
+  - action: action_show_stats

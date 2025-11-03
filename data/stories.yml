@@ -1,0 +1,150 @@
+version: "3.1"
+
+stories:
+
+- story: camino feliz
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: estado_bien
+  - action: utter_feliz
+
+- story: camino triste afirmativo
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: estado_mal
+  - action: utter_animar
+  - action: utter_eso_ayudo
+  - intent: afirmar
+  - action: utter_feliz
+
+- story: camino triste negativo
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: estado_mal
+  - action: utter_animar
+  - action: utter_eso_ayudo
+  - intent: negar
+  - action: utter_despedida
+
+# Nuevas historias para educación bíblica
+- story: pedir versículo específico
+  steps:
+  - intent: preguntar_versiculo
+  - action: action_buscar_versiculo
+
+- story: pedir historia bíblica
+  steps:
+  - intent: pedir_historia_biblica
+  - action: action_obtener_historia_biblica
+
+- story: preguntar concepto bíblico
+  steps:
+  - intent: preguntar_concepto_biblico
+  - action: action_explicar_concepto
+
+- story: pedir devocional
+  steps:
+  - intent: pedir_devocional
+  - action: action_generar_devocional
+
+- story: preguntar eventos
+  steps:
+  - intent: preguntar_eventos
+  - action: action_obtener_eventos
+
+- story: pedir horarios
+  steps:
+  - intent: pedir_horarios
+  - action: action_obtener_horarios
+
+- story: pedir oración
+  steps:
+  - intent: preguntar_oracion
+  - action: action_oracion_guiada
+
+- story: pedir ayuda espiritual
+  steps:
+  - intent: pedir_ayuda_espiritual
+  - action: action_ayuda_espiritual
+
+- story: preguntar estudio bíblico
+  steps:
+  - intent: preguntar_estudio_biblico
+  - action: action_estudio_biblico
+
+- story: pedir consejo pastoral
+  steps:
+  - intent: pedir_consejo_pastoral
+  - action: action_consejo_pastoral
+
+- story: interacción completa de educación
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: pedir_devocional
+  - action: action_generar_devocional
+  - intent: preguntar_versiculo
+  - action: action_buscar_versiculo
+  - intent: preguntar_eventos
+  - action: action_obtener_eventos
+  - intent: despedida
+  - action: utter_despedida
+
+# Nuevas historias para funcionalidades avanzadas
+- story: buscar por tema
+  steps:
+  - intent: buscar_por_tema
+  - action: action_buscar_por_tema
+
+- story: empezar quiz
+  steps:
+  - intent: start_quiz
+  - action: action_start_quiz
+
+- story: mostrar estadísticas
+  steps:
+  - intent: mostrar_estadisticas
+  - action: action_show_stats
+
+- story: confirmar respuesta útil
+  steps:
+  - intent: confirmar_respuesta
+  - action: action_confirm_response
+
+- story: negar respuesta útil
+  steps:
+  - intent: negar_respuesta
+  - action: action_confirm_response
+
+- story: fallback cuando no entiende
+  steps:
+  - intent: fallback
+  - action: action_fallback
+
+- story: flujo completo con confirmaciones
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: buscar_por_tema
+  - action: action_buscar_por_tema
+  - intent: confirmar_respuesta
+  - action: action_confirm_response
+  - intent: start_quiz
+  - action: action_start_quiz
+  - intent: despedida
+  - action: utter_despedida
+
+- story: flujo de quiz completo
+  steps:
+  - intent: start_quiz
+  - action: action_start_quiz
+  - intent: responder_quiz
+  - action: action_process_quiz_answer
+  - intent: responder_quiz
+  - action: action_process_quiz_answer
+  - intent: responder_quiz
+  - action: action_process_quiz_answer
+
