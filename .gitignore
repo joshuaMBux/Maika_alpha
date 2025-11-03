@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -97,3 +97,26 @@ celerybeat.pid
 .mypy_cache/
 .dmypy.json
 dmypy.json 
+# Secrets y variables de entorno
+credentials.yml
+.env.*
+*.key
+*.pem
+*.p12
+*.cer
+*.crt
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+# Artefactos de Python
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+# Entornos/IDE
+.venv/
+# Respaldos/archivos temporales
+*.bak
+*.bkp
+# Sistemas
