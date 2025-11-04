@@ -1,9 +1,10 @@
 import random
+from typing import List
 from .utils import load_json, get_content_path
 from .db import add_xp
 
 
-def generate_bingo_board(size: int = 3) -> list[list[str]]:
+def generate_bingo_board(size: int = 3) -> List[List[str]]:
     bank = load_json(get_content_path("bible_content.json"), {"values": [
         "Amor", "Gozo", "Paz", "Paciencia", "Bondad", "Fe", "Mansedumbre", "Templanza", "Gratitud"
     ]})

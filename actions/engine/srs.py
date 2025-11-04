@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta
+from typing import Optional, List, Dict, Tuple
 from .db import upsert_srs_review, get_due_srs_items, add_xp
 from .utils import load_json, get_content_path
 
 
-def verse_of_the_day(age_range: str | None = None) -> dict:
+def verse_of_the_day(age_range: Optional[str] = None) -> Dict:
     bank = load_json(get_content_path("bible_content.json"), {"verses": []})
     verses = bank.get("verses", [])
     if not verses:
@@ -20,7 +21,7 @@ def verse_of_the_day(age_range: str | None = None) -> dict:
     }
 
 
-def srs_schedule(ease: float, interval_days: int, result: str) -> tuple[float, int]:
+def srs_schedule(ease: float, interval_days: int, result: str) -> Tuple[float, int]:
     # Algoritmo SM-2 simplificado
     if result == "again":
         return max(1.3, ease - 0.2), 0
@@ -50,7 +51,7 @@ def review_result(user_id: str, item_id: str, ease: float, interval_days: int, r
     return {"ease": new_ease, "interval_days": next_interval, "due_at": due_at.isoformat()}
 
 
-def due_reviews(user_id: str) -> list[dict]:
+def due_reviews(user_id: str) -> List[Dict]:
     now_iso = datetime.utcnow().isoformat()
     rows = get_due_srs_items(user_id, now_iso)
     return [dict(r) for r in rows]

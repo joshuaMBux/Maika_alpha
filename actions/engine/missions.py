@@ -1,10 +1,11 @@
 from datetime import datetime
 import json
+from typing import Optional, Dict
 from .utils import load_json, get_content_path
 from .db import add_xp
 
 
-def daily_mission(age_range: str | None = None) -> dict:
+def daily_mission(age_range: Optional[str] = None) -> Dict:
     data = load_json(get_content_path("missions_weekly.json"), {"daily": [], "weekly": []})
     daily = data.get("daily", [])
     if not daily:
@@ -13,7 +14,7 @@ def daily_mission(age_range: str | None = None) -> dict:
     return daily[idx]
 
 
-def weekly_mission(age_range: str | None = None) -> dict:
+def weekly_mission(age_range: Optional[str] = None) -> Dict:
     data = load_json(get_content_path("missions_weekly.json"), {"daily": [], "weekly": []})
     weekly = data.get("weekly", [])
     if not weekly:

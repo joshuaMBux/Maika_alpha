@@ -540,7 +540,8 @@ class ActionProcessQuizAnswer(Action):
             dispatcher.utter_message(text="No hay un quiz activo. Inicia uno nuevo con 'quiero hacer un quiz'.")
             return []
         
-        current_question = quiz_data.get("current_question", 0)
+        # Detectar si es quiz (current_question) o trivia (current)
+        current_question = quiz_data.get("current_question", quiz_data.get("current", 0))
         score = quiz_data.get("score", 0)
         questions = quiz_data.get("questions", [])
         
@@ -550,22 +551,36 @@ class ActionProcessQuizAnswer(Action):
         
         # Verificar respuesta
         question = questions[current_question]
-        correct_answer = question["correct_answer"]
+        # Detectar si es quiz (correct_answer) o trivia (correct)
+        correct_answer = question.get("correct_answer") or question.get("correct", 0)
         is_correct = (answer_number == correct_answer)
         
         if is_correct:
             score += 1
-            dispatcher.utter_message(text=f"¡Correcto! 🎉\n\n{question['explanation']}")
+            dispatcher.utter_message(text=f"¡Correcto! 🎉\n\n{question.get('explanation', '')}")
         else:
-            dispatcher.utter_message(text=f"Incorrecto. La respuesta correcta era: {question['options'][correct_answer]}\n\n{question['explanation']}")
+            correct_option = question['options'][correct_answer] if correct_answer < len(question['options']) else ""
+            dispatcher.utter_message(text=f"Incorrecto. La respuesta correcta era: {correct_option}\n\n{question.get('explanation', '')}")
         
-        # Actualizar datos del quiz
+        # Actualizar datos del quiz/trivia
         quiz_data["score"] = score
+        # Actualizar el campo correcto según el tipo
+        if "current_question" in quiz_data:
         quiz_data["current_question"] = current_question + 1
+        else:
+            quiz_data["current"] = current_question + 1
         
         # Verificar si es la última pregunta
         if current_question + 1 >= len(questions):
-            # Finalizar quiz
+            # Detectar si es trivia o quiz para el mensaje final
+            quiz_session_id = tracker.get_slot("quiz_session_id")
+            is_trivia = "current" in quiz_data or quiz_session_id == "local"
+            
+            if is_trivia or quiz_session_id == "local":
+                # Formato para trivia
+                dispatcher.utter_message(text=f"¡Terminaste! Puntaje: {score}/{len(questions)}")
+            else:
+                # Formato para quiz
             percentage = (score / len(questions)) * 100
             
             # Guardar resultado en SQLite
@@ -584,15 +599,25 @@ class ActionProcessQuizAnswer(Action):
             
             dispatcher.utter_message(text=response)
             
-            # Limpiar slot del quiz
+            # Limpiar slot del quiz/trivia
             return [SlotSet("quiz_data", None)]
             
         else:
+            # Detectar si es trivia o quiz para el formato del mensaje
+            quiz_session_id = tracker.get_slot("quiz_session_id")
+            is_trivia = "current" in quiz_data or quiz_session_id == "local"
+            
             # Mostrar siguiente pregunta
             next_question = questions[current_question + 1]
             options_text = "\n".join([f"{i+1}. {option}" for i, option in enumerate(next_question["options"])])
             
+            if is_trivia or quiz_session_id == "local":
+                # Formato para trivia
+                response = f"Trivia bíblica ({current_question + 2}/{len(questions)})\n\n{next_question['question']}\n\n{options_text}"
+            else:
+                # Formato para quiz
             response = f"Pregunta {current_question + 2} de {len(questions)}:\n\n{next_question['question']}\n\n{options_text}\n\nResponde con el número de tu opción (1, 2, 3 o 4)."
+            
             dispatcher.utter_message(text=response)
             
             # Actualizar slot con los nuevos datos

@@ -1,9 +1,10 @@
 import json
 import os
 from datetime import datetime
+from typing import Union, Optional, Dict, List
 
 
-def load_json(path: str, default: dict | list | None = None):
+def load_json(path: str, default: Optional[Union[Dict, List]] = None):
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)

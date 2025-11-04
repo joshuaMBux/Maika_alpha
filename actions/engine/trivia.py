@@ -1,14 +1,15 @@
 import random
 import json
+from typing import Dict, Tuple
 from .utils import load_json, get_content_path
 from .db import add_xp
 
 
-def load_trivia_bank() -> dict:
+def load_trivia_bank() -> Dict:
     return load_json(get_content_path("trivia_bank.json"), {"questions": []})
 
 
-def start_trivia(user_id: str, num_questions: int = 5) -> dict:
+def start_trivia(user_id: str, num_questions: int = 5) -> Dict:
     bank = load_trivia_bank()
     questions = list(bank.get("questions", []))
     if not questions:
@@ -18,7 +19,7 @@ def start_trivia(user_id: str, num_questions: int = 5) -> dict:
     return {"questions": selected, "current": 0, "score": 0}
 
 
-def answer_trivia(user_id: str, session: dict, answer_index: int) -> tuple[dict, str]:
+def answer_trivia(user_id: str, session: Dict, answer_index: int) -> Tuple[Dict, str]:
     idx = session.get("current", 0)
     questions = session.get("questions", [])
     if idx >= len(questions):

@@ -2,6 +2,7 @@ import os
 import sqlite3
 from contextlib import contextmanager
 from datetime import datetime
+from typing import Optional, List
 
 
 DB_PATH = os.getenv("MAIKA_DB", "metrics.db")
@@ -86,7 +87,7 @@ def migrate() -> None:
         )
 
 
-def ensure_user(user_id: str, display_name: str | None = None) -> None:
+def ensure_user(user_id: str, display_name: Optional[str] = None) -> None:
     with get_connection() as conn:
         cur = conn.cursor()
         cur.execute("SELECT 1 FROM users WHERE user_id = ?", (user_id,))
@@ -97,7 +98,7 @@ def ensure_user(user_id: str, display_name: str | None = None) -> None:
             )
 
 
-def add_xp(user_id: str, kind: str, amount: int, meta_json: str | None = None) -> None:
+def add_xp(user_id: str, kind: str, amount: int, meta_json: Optional[str] = None) -> None:
     ensure_user(user_id)
     with get_connection() as conn:
         conn.execute(
@@ -122,7 +123,7 @@ def upsert_srs_review(
     due_at_iso: str,
     ease: float,
     interval_days: int,
-    last_result: str | None,
+    last_result: Optional[str],
 ) -> None:
     with get_connection() as conn:
         cur = conn.cursor()
@@ -150,7 +151,7 @@ def upsert_srs_review(
             )
 
 
-def get_due_srs_items(user_id: str, now_iso: str) -> list[sqlite3.Row]:
+def get_due_srs_items(user_id: str, now_iso: str) -> List[sqlite3.Row]:
     with get_connection(True) as conn:
         cur = conn.execute(
             "SELECT * FROM srs_reviews WHERE user_id = ? AND due_at <= ? ORDER BY due_at ASC",
