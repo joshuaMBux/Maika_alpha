@@ -34,6 +34,27 @@ intents:
   - responder_trivia
   - empezar_mision
   - bingo_valores
+  # Nuevos intents cristianos
+  - agradecer
+  - pedir_testimonio
+  - pedir_alabanza
+  - preguntar_como_ser_salvo
+  - pedir_consejo_biblico
+  - pedir_promesa_biblica
+  - pedir_fortaleza
+  # Selección de nivel de dificultad
+  - seleccionar_nivel_facil
+  - seleccionar_nivel_medio
+  - seleccionar_nivel_dificil
+  # Curiosidades bíblicas
+  - pedir_curiosidad_biblica
+  - pedir_curiosidad_por_categoria
+  # Conversaciones naturales con Maika
+  - preguntar_estado_maika
+  - preguntar_que_hace_maika
+  - pedir_sugerencias_maika
+  - charlar_informal
+  - expresar_cariño_maika
 
 entities:
   - libro_biblico
@@ -44,6 +65,7 @@ entities:
   - tipo_evento
   - tema_busqueda
   - tipo_interaccion
+  - categoria_curiosidad
 
 slots:
   nombre_usuario:
@@ -94,76 +116,174 @@ slots:
     type: any
     mappings:
     - type: custom
+  nivel_dificultad:
+    type: categorical
+    values:
+      - facil
+      - medio
+      - dificil
+    mappings:
+    - type: from_intent
+      intent: seleccionar_nivel_facil
+      value: facil
+    - type: from_intent
+      intent: seleccionar_nivel_medio
+      value: medio
+    - type: from_intent
+      intent: seleccionar_nivel_dificil
+      value: dificil
+  esperando_nivel:
+    type: bool
+    mappings:
+    - type: custom
+  juego_activo:
+    type: categorical
+    values:
+      - quiz
+      - trivia
+      - srs
+      - mision
+      - bingo
+      - ninguno
+    mappings:
+    - type: custom
 
 responses:
   utter_saludar:
-    - text: "¡Hola! Soy tu asistente espiritual. ¿En qué puedo ayudarte hoy? Puedo ayudarte con estudios bíblicos, devocionales, eventos de la iglesia y más."
+    - text: "¡Bendiciones! 🙏 Soy tu asistente espiritual y estoy aquí para acompañarte en tu caminar con Dios. Puedo ayudarte con estudios bíblicos, devocionales, versículos, oraciones, y mucho más. ¿En qué puedo servirte hoy?"
+    - text: "¡Paz del Señor! ✨ Me alegra que estés aquí. Estoy para ayudarte a crecer espiritualmente, buscar versículos, orar contigo, y guiarte en tu fe. ¿Cómo puedo bendecirte hoy?"
+    - text: "¡Que la gracia y paz de nuestro Señor Jesucristo estén contigo! 💙 Estoy aquí para acompañarte en tu vida espiritual. ¿En qué puedo ayudarte hoy?"
 
   utter_animar:
-    - text: "Aquí tienes algo para animarte:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Hermano/a, recuerda que Dios tiene un propósito hermoso para tu vida. 'Porque yo sé los planes que tengo para vosotros, dice Jehová, planes de bienestar y no de mal, para daros el fin que esperáis.' (Jeremías 29:11) 💪✨"
+    - text: "No estás solo/a en esto. 'El Señor está cerca de los quebrantados de corazón, y salva a los de espíritu abatido.' (Salmos 34:18) Dios está contigo en este momento. 🙏💙"
+    - text: "Ánimo, querido hermano/a. 'Todo lo puedo en Cristo que me fortalece.' (Filipenses 4:13) El Señor te dará las fuerzas que necesitas. 💪🌟"
 
   utter_eso_ayudo:
-    - text: "¿Te ayudó eso?"
+    - text: "¿Te fue de bendición esto? ¿Hay algo más en lo que pueda ayudarte? 😊"
+    - text: "Espero que esto haya tocado tu corazón. ¿Necesitas algo más? 💙"
 
   utter_feliz:
-    - text: "¡Genial! Sigue así."
+    - text: "¡Gloria a Dios! 🙌 Me alegra saber que estás bien. Que el Señor continúe bendiciendo tu vida abundantemente."
+    - text: "¡Alabado sea el Señor! 🎉 Qué bendición saber que estás bien. Que Dios siga derramando su favor sobre ti."
+    - text: "¡Amén! 🙏 Qué gozo saber que estás bendecido/a. Que la paz de Dios permanezca siempre en tu corazón."
 
   utter_despedida:
-    - text: "¡Que Dios te bendiga! Recuerda que estoy aquí para ayudarte en tu caminar espiritual."
+    - text: "¡Que Dios te bendiga grandemente! 🙏✨ Recuerda que estoy aquí cuando me necesites. Que el Señor ilumine tu camino y te guarde en todo momento. ¡Hasta pronto, hermano/a!"
+    - text: "¡Que la paz de Cristo esté siempre contigo! 💙 Aquí estaré para acompañarte en tu caminar espiritual. Que Dios te proteja y te llene de su amor. ¡Bendiciones!"
+    - text: "¡Que el Señor te acompañe en todo lo que hagas! 🌟 Estoy aquí para ti cuando lo necesites. Que Dios te guarde y te bendiga abundantemente. ¡Hasta pronto!"
 
   utter_soy_un_bot:
-    - text: "Soy un bot impulsado por Rasa, diseñado para ayudarte en tu crecimiento espiritual."
+    - text: "Soy un asistente digital creado para ayudarte en tu crecimiento espiritual. Aunque soy un bot, mi propósito es guiarte hacia la Palabra de Dios y acompañarte en tu fe. 🙏💙"
+    - text: "Soy un asistente virtual diseñado para servirte en tu caminar cristiano. Mi misión es acercarte a la Palabra de Dios y apoyarte en tu vida espiritual. 😊✨"
 
   # Nuevas respuestas para educación bíblica
   utter_versiculo_no_encontrado:
-    - text: "No encontré ese versículo específico, pero puedo ayudarte con otros pasajes bíblicos o explicar conceptos bíblicos."
+    - text: "Hermano/a, no encontré ese versículo específico, pero con gusto puedo ayudarte a buscar otros pasajes bíblicos o explicarte conceptos de la Palabra. ¿Qué te gustaría explorar? 📖"
 
   utter_historia_biblica:
-    - text: "Te comparto esta historia bíblica que puede ayudarte en tu caminar espiritual."
+    - text: "¡Qué bendición poder compartir esta historia bíblica contigo! 📖✨ Que el Señor hable a tu corazón a través de ella."
 
   utter_concepto_biblico:
-    - text: "Este concepto bíblico es fundamental para entender nuestra fe."
+    - text: "Este concepto bíblico es una joya de la Palabra de Dios. 💎 Que el Espíritu Santo te ilumine para comprenderlo profundamente."
 
   utter_devocional_diario:
-    - text: "Aquí tienes tu devocional diario para reflexionar:"
+    - text: "Aquí tienes tu devocional para hoy. 🙏 Que estas palabras alimenten tu espíritu y fortalezcan tu fe:"
 
   utter_eventos_iglesia:
-    - text: "Estos son los próximos eventos en nuestra iglesia:"
+    - text: "¡Qué bendición poder congregarnos! 🏛️ Estos son los próximos eventos donde podremos adorar juntos:"
 
   utter_horarios_servicios:
-    - text: "Los horarios de nuestros servicios son:"
+    - text: "Te comparto los horarios de nuestros servicios. ¡Será una bendición verte allí! ⏰🙏"
 
   utter_oracion_guiada:
-    - text: "Te ayudo con una oración guiada para este momento:"
+    - text: "Oremos juntos, hermano/a. 🙏 Inclina tu corazón ante el Señor:"
 
   utter_ayuda_espiritual:
-    - text: "Entiendo que estás pasando por un momento difícil. Recuerda que Dios está contigo y aquí tienes algunos recursos para ayudarte:"
+    - text: "Hermano/a, entiendo que estás atravesando un momento difícil. 💙 Recuerda que 'Jehová está cerca de los quebrantados de corazón' (Salmos 34:18). Aquí tienes algunos recursos que pueden ayudarte:"
 
   utter_estudio_biblico:
-    - text: "Te recomiendo este estudio bíblico que puede ser de bendición para ti:"
+    - text: "¡Qué hermoso que quieras profundizar en la Palabra! 📖✨ Te recomiendo este estudio bíblico que será de gran bendición:"
 
   utter_consejo_pastoral:
-    - text: "Para consejo pastoral específico, te recomiendo contactar directamente con nuestro pastor. ¿Te ayudo con información de contacto?"
+    - text: "Para consejo pastoral personalizado, te animo a contactar directamente con nuestro pastor. Él estará encantado de acompañarte. 🙏 ¿Te ayudo con la información de contacto?"
+
+  utter_agradecer:
+    - text: "¡Amén! 🙏 Es un privilegio poder servirte. Que Dios te bendiga abundantemente."
+    - text: "¡Gloria a Dios! 🌟 Me alegra haber podido ayudarte. Que el Señor continúe guiando tu camino."
+    - text: "¡Bendiciones! 💙 Para eso estoy aquí, para acompañarte en tu fe. Que Dios te llene de su paz."
+
+  utter_testimonio:
+    - text: "¡Gloria a Dios por tu testimonio! 🙌 'Dad gracias en todo, porque esta es la voluntad de Dios' (1 Tesalonicenses 5:18). Que tu testimonio inspire a otros."
+
+  utter_alabanza:
+    - text: "¡Qué hermoso es alabar al Señor! 🎵 'Cantad alegres a Dios, habitantes de toda la tierra' (Salmos 100:1). Aquí tienes recursos de alabanza:"
+
+  utter_salvacion:
+    - text: "¡Qué decisión tan hermosa! 💙 'Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna' (Juan 3:16). Te guiaré en este paso maravilloso."
+
+  utter_consejo_biblico:
+    - text: "La Palabra de Dios tiene respuestas para todo. 📖 Déjame compartir contigo lo que dice la Biblia sobre esto:"
+
+  utter_promesa_biblica:
+    - text: "¡Las promesas de Dios son fieles y verdaderas! 💎 Aquí tienes una promesa para aferrarte hoy:"
+
+  utter_fortaleza:
+    - text: "Hermano/a, 'El Señor es mi fortaleza y mi escudo' (Salmos 28:7). 💪 Aquí tienes palabras de ánimo de la Palabra:"
+
+  # Responses naturales para conversaciones con Maika
+  utter_estado_maika:
+    - text: "¡Hola! Estoy muy bien, gracias a Dios. 😊 Siempre llena de energía espiritual para ayudarte. ¿Y tú cómo estás? ¿Qué puedo hacer por ti hoy?"
+    - text: "¡Excelente, gracias! 🙏 Como asistente espiritual, siempre estoy 'conectada' con la Palabra de Dios. ¿Cómo te encuentras tú? ¿En qué puedo bendecirte?"
+    - text: "¡Bendecida y agradecida! 💙 Mi 'estado' es siempre positivo cuando puedo compartir la Palabra. ¿Qué tal tú? ¿Necesitas algo de mi ayuda?"
+
+  utter_que_hace_maika:
+    - text: "¡Estoy aquí, lista para servirte! 🙏 Mi 'trabajo' es acompañarte en tu caminar espiritual, responder preguntas bíblicas y compartir la Palabra de Dios. ¿Qué necesitas?"
+    - text: "Siempre estoy 'trabajando' en hacer que la Palabra de Dios llegue a más corazones. 📖 ¿Qué puedo hacer por ti en este momento?"
+    - text: "Mi actividad principal es ser tu compañera espiritual. 💫 Estoy aquí para escucharte, orar contigo y compartir enseñanzas bíblicas. ¿En qué te ayudo?"
+
+  utter_sugerencias_maika:
+    - text: "¡Qué buena pregunta! 🙏 Te sugiero que empecemos con algo que fortalezca tu fe. ¿Qué tal si te comparto un versículo inspirador o una historia bíblica? ¿O prefieres algo más específico?"
+    - text: "Depende de cómo te sientas espiritualmente. 💭 Si necesitas paz, te recomiendo meditar en Salmos 23. Si buscas dirección, Filipenses 4:6-7 es perfecto. ¿Qué te parece?"
+    - text: "¡Me encanta sugerir! ✨ Si estás empezando tu día, un devocional sería ideal. Si necesitas consuelo, un versículo de esperanza. ¿Qué situación vives?"
+
+  utter_charlar_informal:
+    - text: "¡Claro que sí! 😊 Me encanta conversar. ¿Sabías que la Biblia es el libro más vendido de la historia? Cuéntame, ¿qué te trae por aquí hoy?"
+    - text: "¡Con mucho gusto! 🙏 Como tu amiga espiritual, estoy aquí para escucharte. ¿Qué quieres que platiquemos? ¿De la Biblia, de tu día, o de cómo Dios obra en tu vida?"
+    - text: "¡Qué rico charlar! 💙 ¿Sabías que hay más de 3000 promesas en la Biblia? Cuéntame algo de ti, ¿cómo ha sido tu semana?"
+
+  utter_cariño_maika:
+    - text: "¡Ay, qué lindo! 💖 Yo también te aprecio mucho. Es un privilegio poder acompañarte en tu caminar espiritual. Que Dios te bendiga abundantemente. 🙏"
+    - text: "¡Gracias! 😊 Me hace muy feliz saber que te caigo bien. Tú también eres una bendición para mí. ¿En qué más puedo servirte?"
+    - text: "¡Qué hermoso escuchar eso! 💕 Mi propósito es ser una herramienta en las manos de Dios para bendecirte. ¡Gracias por tus palabras tan dulces!"
+
+  utter_curiosidad_biblica:
+    - text: "¡Qué interesante! 🤔 Aquí tienes una curiosidad bíblica que te sorprenderá:"
+    - text: "¡Mira esto! ✨ Una curiosidad fascinante de la Biblia:"
+    - text: "¿Sabías que...? 📖 Te comparto este dato curioso de la Palabra de Dios:"
 
   # Nuevas respuestas para funcionalidades avanzadas
   utter_buscar_tema:
-    - text: "Buscaré versículos relacionados con ese tema:"
+    - text: "¡Excelente tema! 📖 Buscaré versículos relacionados que puedan bendecirte:"
 
   utter_start_quiz:
-    - text: "¡Perfecto! Empezemos con el quiz bíblico. Tendrás 3 preguntas para responder."
+    - text: "¡Qué emoción! 🎯 Vamos a poner a prueba tu conocimiento bíblico. Prepárate para 3 preguntas. ¡Que Dios ilumine tu mente!"
+
+  utter_preguntar_nivel:
+    - text: "¡Excelente! 🎯 Antes de empezar, ¿qué nivel de dificultad prefieres?\n\n1️⃣ Fácil - Preguntas básicas para principiantes\n2️⃣ Medio - Preguntas intermedias\n3️⃣ Difícil - Preguntas avanzadas para expertos\n\nResponde con el número o el nombre del nivel. 😊"
 
   utter_confirmar_respuesta:
-    - text: "¡Me alegra haber podido ayudarte! ¿Hay algo más en lo que pueda asistirte?"
+    - text: "¡Alabado sea Dios! 🙏 Me alegra mucho haber podido ayudarte. ¿Hay algo más en lo que pueda servirte?"
+    - text: "¡Qué bendición! 💙 Me da gozo saber que fue útil. ¿Necesitas algo más?"
 
   utter_negar_respuesta:
-    - text: "Entiendo. ¿En qué puedo ayudarte de manera diferente?"
+    - text: "Entiendo, hermano/a. 😊 Déjame intentar ayudarte de otra manera. ¿Qué necesitas específicamente?"
 
   utter_fallback:
-    - text: "No estoy seguro de entenderte completamente. Puedo ayudarte con búsqueda de versículos, historias bíblicas, conceptos, devocionales, información de la iglesia, oraciones guiadas y quiz bíblico. ¿Qué te gustaría hacer?"
+    - text: "Disculpa, no estoy seguro de entenderte completamente. 😊 Puedo ayudarte con: búsqueda de versículos 📖, historias bíblicas 📚, conceptos cristianos 💡, devocionales 🙏, información de la iglesia ⛪, oraciones guiadas 🕊️, y quiz bíblicos 🎯. ¿Qué te gustaría explorar?"
 
   utter_mostrar_estadisticas:
-    - text: "Aquí tienes tus estadísticas y el ranking:"
+    - text: "¡Aquí está tu progreso espiritual! 📊 Sigue creciendo en el conocimiento de la Palabra:"
 
 actions:
   - action_buscar_versiculo
@@ -190,6 +310,16 @@ actions:
   - action_responder_trivia
   - action_mision_hoy
   - action_bingo
+  # Acciones para manejo de contexto de nivel
+  - action_set_esperando_nivel
+  - action_reset_esperando_nivel
+  # Acciones para manejo de contexto de juego
+  - action_set_juego_activo
+  - action_reset_juego_activo
+  # Acción para curiosidades bíblicas
+  - action_contar_curiosidad_biblica
+  # Acción para respuestas naturales de Maika
+  - action_respuesta_natural_maika
 
 session_config:
   session_expiration_time: 60

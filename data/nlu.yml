@@ -13,6 +13,20 @@ nlu:
     - muy buenas
     - saludos
     - ¡hola amigo!
+    - bendiciones
+    - que Dios te bendiga
+    - paz del Señor
+    - la paz de Cristo
+    - hola hermano
+    - hola hermana
+    - bendecido día
+    - que tengas un día bendecido
+    - buenos días en el Señor
+    - buenas tardes hermano
+    - hola en Cristo
+    - saludos en el nombre del Señor
+    - paz y bien
+    - gracia y paz
 
 - intent: despedida
   examples: |
@@ -25,6 +39,20 @@ nlu:
     - que tengas un buen día
     - hasta la próxima
     - bye
+    - que Dios te bendiga
+    - bendiciones
+    - que el Señor te guarde
+    - que Dios te acompañe
+    - hasta pronto hermano
+    - nos vemos en Cristo
+    - que tengas un bendecido día
+    - que la paz de Dios esté contigo
+    - hasta luego hermano
+    - que el Señor te proteja
+    - bendiciones en tu camino
+    - que Dios ilumine tu día
+    - paz del Señor
+    - que Cristo te acompañe
 
 - intent: afirmar
   examples: |
@@ -60,6 +88,21 @@ nlu:
     - estoy feliz
     - muy contento
     - súper emocionado
+    - bendecido
+    - muy bendecido
+    - Dios es bueno
+    - gracias a Dios estoy bien
+    - bendecido por el Señor
+    - lleno de gozo
+    - con la paz de Dios
+    - en las manos de Dios
+    - Dios me ha bendecido
+    - alabado sea Dios
+    - gloria a Dios
+    - todo bien gracias a Dios
+    - el Señor me cuida
+    - con la gracia de Dios
+    - lleno del Espíritu Santo
 
 - intent: estado_mal
   examples: |
@@ -73,6 +116,21 @@ nlu:
     - no muy bien
     - realmente mal
     - me siento decaído
+    - necesito oración
+    - estoy pasando por pruebas
+    - necesito fortaleza
+    - me siento débil espiritualmente
+    - estoy en un valle
+    - necesito la ayuda de Dios
+    - me siento solo
+    - necesito consuelo
+    - estoy atravesando dificultades
+    - necesito paz
+    - mi fe está siendo probada
+    - estoy luchando
+    - necesito esperanza
+    - me siento desanimado
+    - necesito un milagro
 
 - intent: desafio_bot
   examples: |
@@ -95,6 +153,21 @@ nlu:
     - ¿tienes algún versículo sobre esperanza?
     - necesito un pasaje bíblico
     - ¿qué dice la Biblia sobre la fe?
+    - dame una palabra de Dios
+    - necesito una promesa bíblica
+    - quiero leer la palabra
+    - comparte un versículo conmigo
+    - dame un texto bíblico
+    - necesito una palabra de aliento
+    - ¿qué dice la escritura sobre?
+    - busco una promesa de Dios
+    - dame un pasaje de la Biblia
+    - quiero meditar en la palabra
+    - necesito un versículo para hoy
+    - comparte la palabra de Dios
+    - dame un texto sagrado
+    - busco escrituras sobre
+    - necesito un versículo de consuelo
 
 - intent: pedir_historia_biblica
   examples: |
@@ -117,6 +190,7 @@ nlu:
     - explícame el concepto de [redención](concepto:redención)
     - ¿qué significa [justificación](concepto:justificación)?
     - define [adoración](concepto:adoración)
+
 
 - intent: pedir_devocional
   examples: |
@@ -161,6 +235,22 @@ nlu:
     - quiero orar por [sanidad](tema_oracion:sanidad)
     - necesito una oración de [agradecimiento](tema_oracion:agradecimiento)
     - ayúdame a orar
+    - quiero elevar una oración
+    - guíame en oración
+    - necesito intercesión
+    - ayúdame a hablar con Dios
+    - quiero orar pero no sé cómo
+    - enséñame a orar
+    - necesito clamar a Dios
+    - quiero presentar mi petición
+    - ayúdame a orar por [mi trabajo](tema_oracion:trabajo)
+    - necesito orar por [mis hijos](tema_oracion:hijos)
+    - quiero agradecer a Dios
+    - necesito una oración de protección
+    - ayúdame a orar por [sanidad](tema_oracion:sanidad)
+    - quiero orar por [mi país](tema_oracion:país)
+    - necesito orar por [sabiduría](tema_oracion:sabiduría)
+    - ayúdame a interceder
 
 - intent: pedir_ayuda_espiritual
   examples: |
@@ -229,6 +319,55 @@ nlu:
     - hazme un [test bíblico](tipo_interaccion)
     - quiero responder [preguntas de la biblia](tipo_interaccion)
     - quiero un [juego de preguntas bíblicas](tipo_interaccion)
+
+- intent: seleccionar_nivel_facil
+  examples: |
+    - fácil
+    - nivel fácil
+    - quiero nivel fácil
+    - el fácil
+    - facil
+    - nivel facil
+    - 1
+    - opción 1
+    - principiante
+    - básico
+    - nivel básico
+    - soy principiante
+    - quiero empezar fácil
+
+- intent: seleccionar_nivel_medio
+  examples: |
+    - medio
+    - nivel medio
+    - quiero nivel medio
+    - el medio
+    - intermedio
+    - nivel intermedio
+    - 2
+    - opción 2
+    - moderado
+    - nivel moderado
+    - tengo algo de conocimiento
+    - conozco algo de la Biblia
+
+- intent: seleccionar_nivel_dificil
+  examples: |
+    - difícil
+    - nivel difícil
+    - quiero nivel difícil
+    - el difícil
+    - dificil
+    - nivel dificil
+    - 3
+    - opción 3
+    - avanzado
+    - nivel avanzado
+    - experto
+    - nivel experto
+    - reto
+    - quiero un reto
+    - conozco bien la Biblia
 
 - intent: confirmar_respuesta
   examples: |
@@ -352,3 +491,197 @@ nlu:
     - iniciemos el bingo
     - bingo 3x3
     - un bingo por favor
+
+- intent: agradecer
+  examples: |
+    - gracias
+    - muchas gracias
+    - te agradezco
+    - gracias por tu ayuda
+    - muy agradecido
+    - mil gracias
+    - gracias hermano
+    - Dios te bendiga por tu ayuda
+    - que Dios te recompense
+    - gracias por todo
+    - te lo agradezco mucho
+    - bendiciones por tu ayuda
+    - gracias en el nombre de Jesús
+    - que el Señor te bendiga
+    - agradecido contigo
+
+- intent: pedir_testimonio
+  examples: |
+    - quiero compartir un testimonio
+    - tengo un testimonio
+    - quiero dar testimonio
+    - Dios hizo algo maravilloso
+    - quiero contar lo que Dios hizo
+    - tengo una bendición que compartir
+    - quiero glorificar a Dios
+    - Dios me bendijo
+    - quiero compartir mi experiencia con Dios
+    - el Señor me ayudó
+
+- intent: pedir_alabanza
+  examples: |
+    - quiero alabar a Dios
+    - dame una canción de alabanza
+    - quiero adorar
+    - necesito música cristiana
+    - quiero una canción de adoración
+    - dame un himno
+    - quiero alabar al Señor
+    - música para adorar
+    - canciones cristianas
+    - himnos de alabanza
+
+- intent: preguntar_como_ser_salvo
+  examples: |
+    - ¿cómo puedo ser salvo?
+    - quiero aceptar a Jesús
+    - ¿cómo recibo a Cristo?
+    - quiero ser cristiano
+    - ¿cómo me salvo?
+    - quiero entregar mi vida a Jesús
+    - ¿cómo acepto a Cristo en mi corazón?
+    - quiero nacer de nuevo
+    - ¿cómo puedo conocer a Dios?
+    - quiero ser hijo de Dios
+    - ¿qué debo hacer para ser salvo?
+
+- intent: pedir_consejo_biblico
+  examples: |
+    - ¿qué dice la Biblia sobre el perdón?
+    - necesito consejo bíblico
+    - ¿qué haría Jesús?
+    - dame un consejo de la palabra
+    - ¿qué dice Dios sobre esto?
+    - necesito sabiduría bíblica
+    - ¿qué enseña la Biblia sobre?
+    - dame dirección de la palabra
+    - ¿qué dice la escritura sobre?
+    - necesito guía bíblica
+
+- intent: pedir_promesa_biblica
+  examples: |
+    - dame una promesa de Dios
+    - necesito una promesa bíblica
+    - ¿qué promete Dios?
+    - quiero una promesa de la Biblia
+    - dame una promesa para hoy
+    - necesito aferrarme a una promesa
+    - ¿cuáles son las promesas de Dios?
+    - dame una palabra de promesa
+    - necesito recordar las promesas de Dios
+
+- intent: pedir_fortaleza
+  examples: |
+    - necesito fortaleza
+    - dame fuerzas
+    - necesito ser fuerte
+    - ayúdame a ser valiente
+    - necesito valor
+    - dame ánimo
+    - necesito fortaleza espiritual
+    - ayúdame a no rendirme
+    - necesito perseverar
+    - dame palabras de aliento
+
+# Intents para conversaciones naturales con Maika
+- intent: preguntar_estado_maika
+  examples: |
+    - ¿cómo estás?
+    - ¿cómo te encuentras?
+    - ¿qué tal estás?
+    - ¿cómo estás hoy?
+    - ¿cómo te sientes?
+    - ¿estás bien?
+    - ¿cómo va todo?
+    - ¿qué tal tu día?
+    - ¿cómo amaneciste?
+    - ¿cómo estás Maika?
+    - ¿cómo te va?
+
+- intent: preguntar_que_hace_maika
+  examples: |
+    - ¿qué estás haciendo?
+    - ¿qué haces?
+    - ¿en qué estás?
+    - ¿qué actividad tienes?
+    - ¿qué haces ahora?
+    - ¿estás ocupada?
+    - ¿qué tienes entre manos?
+    - ¿qué estás trabajando?
+    - ¿en qué andas?
+    - ¿qué planes tienes?
+
+- intent: pedir_sugerencias_maika
+  examples: |
+    - ¿qué sugieres?
+    - ¿qué me recomiendas?
+    - ¿qué harías tú?
+    - dame una idea
+    - ¿qué opinas?
+    - ¿qué me aconsejas?
+    - ¿qué harías en mi lugar?
+    - dame una sugerencia
+    - ¿qué me propones?
+    - ¿tienes alguna idea?
+
+- intent: charlar_informal
+  examples: |
+    - cuéntame algo
+    - platiquemos
+    - hablemos
+    - conversemos
+    - charlemos un rato
+    - quiero conversar
+    - platícame
+    - cuéntame de ti
+    - háblame de algo
+    - quiero charlar
+
+- intent: expresar_cariño_maika
+  examples: |
+    - te quiero
+    - te amo
+    - eres genial
+    - me caes bien
+    - eres mi favorita
+    - te adoro
+    - eres maravillosa
+    - me gustas mucho
+    - eres increíble
+    - te aprecio
+
+# Intents para curiosidades bíblicas
+- intent: pedir_curiosidad_biblica
+  examples: |
+    - cuéntame una curiosidad bíblica
+    - ¿sabes alguna curiosidad de la Biblia?
+    - dame un dato interesante de la Biblia
+    - ¿qué curiosidad bíblica me puedes contar?
+    - cuéntame algo curioso de la Biblia
+    - dato interesante sobre la Biblia
+    - curiosidad bíblica por favor
+    - ¿qué dato curioso sabes de la Biblia?
+    - cuéntame un hecho interesante de la Biblia
+    - curiosidad bíblica
+    - algo curioso de la Biblia
+    - dato bíblico interesante
+    - cuéntame una rareza bíblica
+    - ¿qué cosa rara hay en la Biblia?
+
+- intent: pedir_curiosidad_por_categoria
+  examples: |
+    - cuéntame una curiosidad sobre [milagros](categoria_curiosidad:milagros)
+    - dame un dato sobre [historias bíblicas](categoria_curiosidad:historias)
+    - curiosidad sobre [edades](categoria_curiosidad:edades)
+    - dato interesante de [profecías](categoria_curiosidad:profecias)
+    - cuéntame algo de [batallas](categoria_curiosidad:batallas)
+    - curiosidad bíblica sobre [construcciones](categoria_curiosidad:construcciones)
+    - dato sobre [conversiones](categoria_curiosidad:conversiones)
+    - cuéntame una rareza sobre [libros](categoria_curiosidad:libros)
+    - curiosidad de [palabras](categoria_curiosidad:palabras)
+    - dato interesante sobre [composicion](categoria_curiosidad:composicion)

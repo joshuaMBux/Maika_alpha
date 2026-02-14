@@ -476,7 +476,7 @@ class ActionConsejoPastoral(Action):
 
 # GAMIFICACIÓN - SISTEMA DE QUIZ
 class ActionStartQuiz(Action):
-    """Inicia un quiz bíblico de 3 preguntas"""
+    """Inicia un quiz bíblico de 3 preguntas con nivel de dificultad"""
     
     def name(self) -> Text:
         return "action_start_quiz"
@@ -493,14 +493,58 @@ class ActionStartQuiz(Action):
         user_id = tracker.sender_id
         save_usage_stat(user_id, "quiz_start", True)
         
+        # Detectar nivel de dificultad del intent
+        intent = tracker.get_intent_of_latest_message()
+        difficulty = None
+        nivel_emoji = ""
+        
+        if intent == "seleccionar_nivel_facil":
+            difficulty = "facil"
+            nivel_emoji = "⭐ Nivel Fácil"
+        elif intent == "seleccionar_nivel_medio":
+            difficulty = "medio"
+            nivel_emoji = "⭐⭐ Nivel Medio"
+        elif intent == "seleccionar_nivel_dificil":
+            difficulty = "dificil"
+            nivel_emoji = "⭐⭐⭐ Nivel Difícil"
+        else:
+            # Intentar obtener del slot
+            difficulty = tracker.get_slot("nivel_dificultad")
+            if difficulty == "facil":
+                nivel_emoji = "⭐ Nivel Fácil"
+            elif difficulty == "medio":
+                nivel_emoji = "⭐⭐ Nivel Medio"
+            elif difficulty == "dificil":
+                nivel_emoji = "⭐⭐⭐ Nivel Difícil"
+        
+        # Filtrar preguntas por dificultad
+        all_questions = QUIZ_DATA["questions"]
+        original_count = len(all_questions)
+        if difficulty:
+            filtered_questions = [q for q in all_questions if q.get("difficulty", "").lower() == difficulty.lower()]
+            print(f"[DEBUG] Usuario {user_id} seleccionó dificultad '{difficulty}': {len(filtered_questions)} preguntas filtradas de {original_count} totales")
+            # Si no hay suficientes preguntas del nivel, usar todas
+            if len(filtered_questions) >= 3:
+                all_questions = filtered_questions
+                print(f"[DEBUG] Usando preguntas filtradas por dificultad")
+            else:
+                print(f"[DEBUG] No hay suficientes preguntas filtradas ({len(filtered_questions)}), usando todas las preguntas")
+
+        # Mejorar aleatoriedad con semilla basada en tiempo y user_id
+        import time
+        seed_value = int(time.time() * 1000) + hash(user_id) % 10000
+        random.seed(seed_value)
+
         # Seleccionar 3 preguntas aleatorias
-        questions = random.sample(QUIZ_DATA["questions"], 3)
+        questions = random.sample(all_questions, min(3, len(all_questions)))
+        print(f"[DEBUG] Preguntas seleccionadas: {[q.get('question', '')[:50] + '...' for q in questions]}")
         
         # Guardar las preguntas en el slot para el quiz
         quiz_data = {
             "questions": questions,
             "current_question": 0,
             "score": 0,
+            "difficulty": difficulty,
             "start_time": datetime.now().isoformat()
         }
         
@@ -508,12 +552,12 @@ class ActionStartQuiz(Action):
         question = questions[0]
         options_text = "\n".join([f"{i+1}. {option}" for i, option in enumerate(question["options"])])
         
-        response = f"**Quiz Bíblico**\n\nPregunta 1 de 3:\n\n{question['question']}\n\n{options_text}\n\nResponde con el número de tu opción (1, 2, 3 o 4)."
+        response = f"**Quiz Bíblico** {nivel_emoji}\n\nPregunta 1 de 3:\n\n{question['question']}\n\n{options_text}\n\nResponde con el número de tu opción (1, 2, 3 o 4)."
         
         dispatcher.utter_message(text=response)
         
         # Guardar en slot para usar en el procesamiento
-        return [SlotSet("quiz_data", quiz_data)]
+        return [SlotSet("quiz_data", quiz_data), SlotSet("nivel_dificultad", difficulty)]
 
 class ActionProcessQuizAnswer(Action):
     """Procesa la respuesta del quiz y muestra la siguiente pregunta"""
@@ -566,7 +610,7 @@ class ActionProcessQuizAnswer(Action):
         quiz_data["score"] = score
         # Actualizar el campo correcto según el tipo
         if "current_question" in quiz_data:
-        quiz_data["current_question"] = current_question + 1
+            quiz_data["current_question"] = current_question + 1
         else:
             quiz_data["current"] = current_question + 1
         
@@ -581,7 +625,7 @@ class ActionProcessQuizAnswer(Action):
                 dispatcher.utter_message(text=f"¡Terminaste! Puntaje: {score}/{len(questions)}")
             else:
                 # Formato para quiz
-            percentage = (score / len(questions)) * 100
+                percentage = (score / len(questions)) * 100
             
             # Guardar resultado en SQLite
             user_id = tracker.sender_id
@@ -616,7 +660,11 @@ class ActionProcessQuizAnswer(Action):
                 response = f"Trivia bíblica ({current_question + 2}/{len(questions)})\n\n{next_question['question']}\n\n{options_text}"
             else:
                 # Formato para quiz
-            response = f"Pregunta {current_question + 2} de {len(questions)}:\n\n{next_question['question']}\n\n{options_text}\n\nResponde con el número de tu opción (1, 2, 3 o 4)."
+                response = (
+                    f"Pregunta {current_question + 2} de {len(questions)}:\n\n"
+                    f"{next_question['question']}\n\n{options_text}\n\n"
+                    "Responde con el número de tu opción (1, 2, 3 o 4)."
+                )
             
             dispatcher.utter_message(text=response)
             
@@ -706,5 +754,197 @@ class ActionShowStats(Action):
         for i, player in enumerate(leaderboard, 1):
             response += f"{i}. Usuario {player['user_id'][:8]}... - {player['best_percentage']:.1f}% ({player['best_score']}/{3})\n"
         
+        dispatcher.utter_message(text=response)
+        return []
+
+
+class ActionSetEsperandoNivel(Action):
+    """Marca que el bot está esperando selección de nivel"""
+    
+    def name(self) -> Text:
+        return "action_set_esperando_nivel"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("esperando_nivel", True)]
+
+
+class ActionResetEsperandoNivel(Action):
+    """Resetea el flag de esperando nivel"""
+    
+    def name(self) -> Text:
+        return "action_reset_esperando_nivel"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("esperando_nivel", False)]
+
+
+class ActionSetJuegoActivo(Action):
+    """Marca qué juego está activo actualmente"""
+    
+    def name(self) -> Text:
+        return "action_set_juego_activo"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Detectar qué juego se está iniciando basado en el intent
+        intent = tracker.get_intent_of_latest_message()
+        
+        juego_map = {
+            "start_quiz": "quiz",
+            "jugar_trivia": "trivia",
+            "aprender_verso": "srs",
+            "repasar_verso": "srs",
+            "empezar_mision": "mision",
+            "bingo_valores": "bingo"
+        }
+        
+        juego = juego_map.get(intent, "ninguno")
+        
+        print(f"[DEBUG] Juego activo establecido: {juego} (intent: {intent})")
+        
+        return [SlotSet("juego_activo", juego)]
+
+
+class ActionResetJuegoActivo(Action):
+    """Resetea el juego activo a ninguno"""
+
+    def name(self) -> Text:
+        return "action_reset_juego_activo"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        print(f"[DEBUG] Juego activo reseteado a ninguno")
+
+        return [SlotSet("juego_activo", "ninguno")]
+
+class ActionContarCuriosidadBiblica(Action):
+    """Cuenta una curiosidad bíblica aleatoria o por categoría"""
+
+    def name(self) -> Text:
+        return "action_contar_curiosidad_biblica"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # Extraer categoría si se especifica
+        categoria = next((entity["value"] for entity in tracker.latest_message["entities"]
+                         if entity["entity"] == "categoria_curiosidad"), None)
+
+        try:
+            with open("data/bible_curiosities.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            curiosities = data.get("curiosities", [])
+
+            if not curiosities:
+                dispatcher.utter_message(text="Lo siento, no tengo curiosidades disponibles en este momento.")
+                return []
+
+            # Filtrar por categoría si se especifica
+            if categoria:
+                filtered_curiosities = [c for c in curiosities if c.get("category", "").lower() == categoria.lower()]
+                if not filtered_curiosities:
+                    # Si no hay de esa categoría, usar todas
+                    selected_curiosity = random.choice(curiosities)
+                    dispatcher.utter_message(text=f"No encontré curiosidades sobre '{categoria}', pero aquí tienes una interesante:")
+                else:
+                    selected_curiosity = random.choice(filtered_curiosities)
+            else:
+                selected_curiosity = random.choice(curiosities)
+
+            # Formatear la respuesta
+            response = f"**{selected_curiosity['title']}**\n\n{selected_curiosity['fact']}\n\n*Esta es una curiosidad fascinante de la Palabra de Dios!* 📖✨"
+
+            dispatcher.utter_message(text=response)
+
+            # Guardar estadística de uso
+            user_id = tracker.sender_id
+            save_usage_stat(user_id, "bible_curiosity", True)
+
+        except Exception as e:
+            print(f"Error cargando curiosidades bíblicas: {e}")
+            dispatcher.utter_message(text="Lo siento, tuve un problema al buscar curiosidades. ¿Te gustaría que te cuente una historia bíblica en su lugar?")
+
+        dispatcher.utter_message(text="¿Te fue útil esta respuesta?")
+        return []
+
+class ActionRespuestaNaturalMaika(Action):
+    """Acción para respuestas naturales y personalizadas de Maika"""
+
+    def name(self) -> Text:
+        return "action_respuesta_natural_maika"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # Obtener el intent actual
+        intent = tracker.get_intent_of_latest_message()
+
+        # Respuestas dinámicas basadas en el intent
+        if intent == "preguntar_estado_maika":
+            responses = [
+                "¡Hola! Estoy muy bien, gracias a Dios. 😊 Siempre llena de energía espiritual para ayudarte. ¿Y tú cómo estás? ¿Qué puedo hacer por ti hoy?",
+                "¡Excelente, gracias! 🙏 Como asistente espiritual, siempre estoy 'conectada' con la Palabra de Dios. ¿Cómo te encuentras tú? ¿En qué puedo bendecirte?",
+                "¡Bendecida y agradecida! 💙 Mi 'estado' es siempre positivo cuando puedo compartir la Palabra. ¿Qué tal tú? ¿Necesitas algo de mi ayuda?"
+            ]
+            response = random.choice(responses)
+
+        elif intent == "preguntar_que_hace_maika":
+            responses = [
+                "¡Estoy aquí, lista para servirte! 🙏 Mi 'trabajo' es acompañarte en tu caminar espiritual, responder preguntas bíblicas y compartir la Palabra de Dios. ¿Qué necesitas?",
+                "Siempre estoy 'trabajando' en hacer que la Palabra de Dios llegue a más corazones. 📖 ¿Qué puedo hacer por ti en este momento?",
+                "Mi actividad principal es ser tu compañera espiritual. 💫 Estoy aquí para escucharte, orar contigo y compartir enseñanzas bíblicas. ¿En qué te ayudo?"
+            ]
+            response = random.choice(responses)
+
+        elif intent == "pedir_sugerencias_maika":
+            # Sugerencias basadas en el contexto del usuario
+            last_intent = None
+            for event in reversed(tracker.events):
+                if event.get("event") == "user" and event.get("parse_data", {}).get("intent", {}).get("name"):
+                    last_intent = event["parse_data"]["intent"]["name"]
+                    break
+
+            if last_intent in ["pedir_ayuda_espiritual", "estado_mal"]:
+                response = "Veo que estás pasando por un momento difícil. 💙 Te sugiero que empecemos con algo que te dé paz. ¿Qué tal si medito en Salmos 23 contigo, o prefieres que oremos juntos?"
+            elif last_intent in ["start_quiz", "jugar_trivia"]:
+                response = "¡Veo que te gusta aprender! 🎯 Te sugiero que combines el estudio con la práctica. ¿Quieres que te recomiende un versículo para memorizar después del quiz?"
+            else:
+                responses = [
+                    "¡Qué buena pregunta! 🙏 Te sugiero que empecemos con algo que fortalezca tu fe. ¿Qué tal si te comparto un versículo inspirador o una historia bíblica? ¿O prefieres algo más específico?",
+                    "Depende de cómo te sientas espiritualmente. 💭 Si necesitas paz, te recomiendo meditar en Salmos 23. Si buscas dirección, Filipenses 4:6-7 es perfecto. ¿Qué te parece?",
+                    "¡Me encanta sugerir! ✨ Si estás empezando tu día, un devocional sería ideal. Si necesitas consuelo, un versículo de esperanza. ¿Qué situación vives?"
+                ]
+                response = random.choice(responses)
+
+        elif intent == "charlar_informal":
+            responses = [
+                "¡Claro que sí! 😊 Me encanta conversar. ¿Sabías que la Biblia es el libro más vendido de la historia? Cuéntame, ¿qué te trae por aquí hoy?",
+                "¡Con mucho gusto! 🙏 Como tu amiga espiritual, estoy aquí para escucharte. ¿Qué quieres que platiquemos? ¿De la Biblia, de tu día, o de cómo Dios obra en tu vida?",
+                "¡Qué rico charlar! 💙 ¿Sabías que hay más de 3000 promesas en la Biblia? Cuéntame algo de ti, ¿cómo ha sido tu semana?"
+            ]
+            response = random.choice(responses)
+
+        elif intent == "expresar_cariño_maika":
+            responses = [
+                "¡Ay, qué lindo! 💖 Yo también te aprecio mucho. Es un privilegio poder acompañarte en tu caminar espiritual. Que Dios te bendiga abundantemente. 🙏",
+                "¡Gracias! 😊 Me hace muy feliz saber que te caigo bien. Tú también eres una bendición para mí. ¿En qué más puedo servirte?",
+                "¡Qué hermoso escuchar eso! 💕 Mi propósito es ser una herramienta en las manos de Dios para bendecirte. ¡Gracias por tus palabras tan dulces!"
+            ]
+            response = random.choice(responses)
+
+        else:
+            response = "¡Hola! 😊 ¿En qué puedo ayudarte hoy?"
+
         dispatcher.utter_message(text=response)
         return []

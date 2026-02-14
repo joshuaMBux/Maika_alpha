@@ -1,0 +1,86 @@
+version: "3.1"
+
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - qué tal
+    - hey
+    - bendiciones
+
+- intent: preguntar_versiculo
+  examples: |
+    - muéstrame Juan 3:16
+    - quiero el versículo de Salmos 23:1
+    - búscame Génesis 1:1
+    - busco un versículo sobre amor
+
+- intent: pedir_historia_biblica
+  examples: |
+    - cuéntame la historia de Moisés
+    - háblame sobre David y Goliat
+    - narra la historia de Noé
+
+- intent: preguntar_concepto_biblico
+  examples: |
+    - qué es la fe
+    - explícame qué es la gracia
+    - qué significa arrepentimiento
+
+- intent: pedir_curiosidad_biblica
+  examples: |
+    - cuéntame una curiosidad bíblica
+    - dame un dato interesante de la Biblia
+    - curiosidad bíblica por favor
+
+- intent: pedir_sugerencias_maika
+  examples: |
+    - qué sugieres
+    - qué me recomiendas
+    - dame una idea
+
+- intent: preguntar_estado_maika
+  examples: |
+    - cómo estás
+    - qué tal estás
+    - cómo te encuentras
+
+- intent: start_quiz
+  examples: |
+    - quiero hacer un quiz
+    - empecemos un quiz bíblico
+    - quiero probar mis conocimientos
+
+- intent: pedir_devocional
+  examples: |
+    - dame un devocional
+    - necesito un devocional diario
+
+- intent: pedir_ayuda_espiritual
+  examples: |
+    - necesito ayuda espiritual
+    - estoy pasando por un momento difícil
+
+- intent: pedir_consejo_biblico
+  examples: |
+    - qué dice la Biblia sobre el perdón
+    - necesito consejo bíblico
+
+- intent: afirmar
+  examples: |
+    - sí
+    - claro
+    - por supuesto
+
+- intent: negar
+  examples: |
+    - no
+    - para nada
+
+- intent: despedida
+  examples: |
+    - adiós
+    - hasta luego
+    - chao

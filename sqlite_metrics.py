@@ -368,4 +368,96 @@ def get_leaderboard(limit: int = 10) -> List[Dict]:
 
 def get_usage_stats(days: int = 30) -> Dict[str, Any]:
     """Función helper para obtener estadísticas de uso"""
-    return metrics_manager.get_usage_stats(days) 
+    return metrics_manager.get_usage_stats(days)
+
+def save_model_evaluation(evaluation_data: Dict[str, Any]) -> bool:
+    """
+    Guarda los resultados de evaluación del modelo
+
+    Args:
+        evaluation_data: Diccionario con métricas de evaluación
+
+    Returns:
+        bool: True si se guardó exitosamente
+    """
+    try:
+        with metrics_manager.get_connection() as conn:
+            cursor = conn.cursor()
+
+            # Crear tabla si no existe
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS model_evaluations (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    accuracy REAL NOT NULL,
+                    precision REAL NOT NULL,
+                    recall REAL NOT NULL,
+                    f1_score REAL NOT NULL,
+                    test_examples INTEGER NOT NULL,
+                    unique_intents INTEGER NOT NULL,
+                    evaluation_data TEXT,
+                    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+
+            # Insertar datos de evaluación
+            cursor.execute("""
+                INSERT INTO model_evaluations (
+                    accuracy, precision, recall, f1_score,
+                    test_examples, unique_intents, evaluation_data
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (
+                evaluation_data.get("accuracy", 0),
+                evaluation_data.get("precision", 0),
+                evaluation_data.get("recall", 0),
+                evaluation_data.get("f1_score", 0),
+                evaluation_data.get("test_examples", 0),
+                evaluation_data.get("unique_intents", 0),
+                str(evaluation_data)
+            ))
+
+            conn.commit()
+            return True
+
+    except Exception as e:
+        print(f"Error guardando evaluación del modelo: {e}")
+        return False
+
+def get_evaluation_history(limit: int = 10) -> List[Dict]:
+    """
+    Obtiene el historial de evaluaciones del modelo
+
+    Args:
+        limit: Número máximo de resultados
+
+    Returns:
+        List[Dict]: Lista de evaluaciones históricas
+    """
+    try:
+        with metrics_manager.get_connection() as conn:
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT accuracy, precision, recall, f1_score, test_examples,
+                       unique_intents, timestamp
+                FROM model_evaluations
+                ORDER BY timestamp DESC
+                LIMIT ?
+            """, (limit,))
+
+            results = []
+            for row in cursor.fetchall():
+                results.append({
+                    "accuracy": row[0],
+                    "precision": row[1],
+                    "recall": row[2],
+                    "f1_score": row[3],
+                    "test_examples": row[4],
+                    "unique_intents": row[5],
+                    "timestamp": row[6]
+                })
+
+            return results
+
+    except Exception as e:
+        print(f"Error obteniendo historial de evaluaciones: {e}")
+        return []

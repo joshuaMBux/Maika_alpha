@@ -90,4 +90,123 @@ synonyms:
     - adoración
     - adorar
     - alabanza
-    - culto 
+    - culto
+
+- synonym: Dios
+  examples: |
+    - Dios
+    - Señor
+    - Jehová
+    - Padre Celestial
+    - Creador
+    - Altísimo
+    - el Señor
+
+- synonym: Jesús
+  examples: |
+    - Jesús
+    - Cristo
+    - Jesucristo
+    - el Salvador
+    - el Mesías
+    - el Hijo de Dios
+
+- synonym: oración
+  examples: |
+    - oración
+    - orar
+    - plegaria
+    - súplica
+    - intercesión
+    - clamar
+
+- synonym: Biblia
+  examples: |
+    - Biblia
+    - Escrituras
+    - Palabra de Dios
+    - Sagradas Escrituras
+    - la Palabra
+
+- synonym: bendición
+  examples: |
+    - bendición
+    - bendecir
+    - bendecido
+    - bendito
+    - favor
+
+- synonym: fortaleza
+  examples: |
+    - fortaleza
+    - fuerza
+    - poder
+    - valentía
+    - ánimo
+    - vigor
+
+- synonym: consuelo
+  examples: |
+    - consuelo
+    - consolar
+    - confortación
+    - alivio
+    - ánimo
+
+- synonym: testimonio
+  examples: |
+    - testimonio
+    - testificar
+    - dar testimonio
+    - compartir experiencia
+
+- synonym: hermano
+  examples: |
+    - hermano
+    - hermana
+    - hermanos
+    - hermanas
+    - familia en Cristo
+
+- synonym: iglesia
+  examples: |
+    - iglesia
+    - congregación
+    - templo
+    - casa de Dios
+    - comunidad
+
+- synonym: Espíritu Santo
+  examples: |
+    - Espíritu Santo
+    - Espíritu de Dios
+    - Consolador
+    - Parácleto
+
+- synonym: arrepentimiento
+  examples: |
+    - arrepentimiento
+    - arrepentirse
+    - arrepentido
+    - conversión
+
+- synonym: santificación
+  examples: |
+    - santificación
+    - santificar
+    - santidad
+    - consagración
+
+- synonym: justificación
+  examples: |
+    - justificación
+    - justificar
+    - justicia
+    - justo
+
+- synonym: redención
+  examples: |
+    - redención
+    - redimir
+    - rescate
+    - liberación

@@ -1,0 +1,37 @@
+@startuml NLU Model Maika
+
+title Diagrama del Modelo NLU - Estructura Básica
+
+component "Usuario" as User
+
+component "NLU Pipeline" as NLU
+
+component "Training Data" as Data {
+
+  component "Intents" as Intents
+
+  component "Entities" as Entities
+
+  component "Corpus" as Corpus
+
+}
+
+component "Rules" as Rules
+
+component "Actions" as Actions
+
+component "Response" as Response
+
+User --> NLU : Input text
+
+Data --> NLU : Entrena
+
+NLU --> Rules : Intent + Entities
+
+Rules --> Actions : Dispara
+
+Actions --> Response : Genera
+
+Response --> User : Output
+
+@enduml

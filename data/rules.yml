@@ -5,6 +5,7 @@ rules:
 - rule: decir despedida cuando el usuario se despide
   steps:
   - intent: despedida
+  - action: action_reset_juego_activo
   - action: utter_despedida
 
 - rule: decir que soy un bot cuando el usuario pregunta si es un bot
@@ -69,10 +70,12 @@ rules:
   - intent: buscar_por_tema
   - action: action_buscar_por_tema
 
-- rule: empezar quiz cuando se pide
+- rule: preguntar nivel cuando se pide quiz
   steps:
   - intent: start_quiz
-  - action: action_start_quiz
+  - action: action_set_juego_activo
+  - action: utter_preguntar_nivel
+  - action: action_set_esperando_nivel
 
 - rule: mostrar estadísticas del usuario
   steps:
@@ -103,29 +106,107 @@ rules:
 - rule: mostrar verso del día
   steps:
   - intent: aprender_verso
+  - action: action_set_juego_activo
   - action: action_mostrar_verso
 
 - rule: repasar verso (SRS)
+  condition:
+  - slot_was_set:
+    - juego_activo: srs
   steps:
   - intent: repasar_verso
   - action: action_repaso_verso
 
-- rule: iniciar trivia
+- rule: preguntar nivel cuando se pide trivia
   steps:
   - intent: jugar_trivia
-  - action: action_iniciar_trivia
-
-- rule: responder trivia
-  steps:
-  - intent: responder_trivia
-  - action: action_responder_trivia
+  - action: action_set_juego_activo
+  - action: utter_preguntar_nivel
+  - action: action_set_esperando_nivel
 
 - rule: mision del dia
   steps:
   - intent: empezar_mision
+  - action: action_set_juego_activo
   - action: action_mision_hoy
 
 - rule: bingo de valores
   steps:
   - intent: bingo_valores
+  - action: action_set_juego_activo
   - action: action_bingo
+
+
+
+# Nuevas reglas cristianas
+- rule: responder agradecimiento
+  steps:
+  - intent: agradecer
+  - action: utter_agradecer
+
+- rule: recibir testimonio
+  steps:
+  - intent: pedir_testimonio
+  - action: utter_testimonio
+
+- rule: pedir alabanza
+  steps:
+  - intent: pedir_alabanza
+  - action: utter_alabanza
+
+- rule: guiar a salvación
+  steps:
+  - intent: preguntar_como_ser_salvo
+  - action: utter_salvacion
+
+- rule: dar consejo bíblico
+  steps:
+  - intent: pedir_consejo_biblico
+  - action: utter_consejo_biblico
+
+- rule: compartir promesa bíblica
+  steps:
+  - intent: pedir_promesa_biblica
+  - action: utter_promesa_biblica
+
+- rule: dar fortaleza
+  steps:
+  - intent: pedir_fortaleza
+  - action: utter_fortaleza
+
+# Reglas para conversaciones naturales con Maika
+- rule: responder estado de Maika
+  steps:
+  - intent: preguntar_estado_maika
+  - action: action_respuesta_natural_maika
+
+- rule: responder qué hace Maika
+  steps:
+  - intent: preguntar_que_hace_maika
+  - action: action_respuesta_natural_maika
+
+- rule: dar sugerencias de Maika
+  steps:
+  - intent: pedir_sugerencias_maika
+  - action: action_respuesta_natural_maika
+
+- rule: charlar informalmente con Maika
+  steps:
+  - intent: charlar_informal
+  - action: action_respuesta_natural_maika
+
+- rule: responder cariño a Maika
+  steps:
+  - intent: expresar_cariño_maika
+  - action: action_respuesta_natural_maika
+
+# Reglas para curiosidades bíblicas
+- rule: contar curiosidad bíblica
+  steps:
+  - intent: pedir_curiosidad_biblica
+  - action: action_contar_curiosidad_biblica
+
+- rule: contar curiosidad por categoría
+  steps:
+  - intent: pedir_curiosidad_por_categoria
+  - action: action_contar_curiosidad_biblica

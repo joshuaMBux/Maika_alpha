@@ -4,33 +4,725 @@
       "question": "¿Quién construyó el arca?",
       "options": ["Moisés", "Noé", "Abraham", "David"],
       "correct": 1,
-      "explanation": "Dios mandó a Noé a construir el arca (Génesis 6)."
+      "difficulty": "facil",
+      "explanation": "Dios mandó a Noé a construir el arca para salvarse del diluvio (Génesis 6)."
     },
     {
       "question": "¿En qué ciudad nació Jesús?",
       "options": ["Nazaret", "Belén", "Jerusalén", "Capernaúm"],
       "correct": 1,
-      "explanation": "Jesús nació en Belén (Lucas 2)."
+      "difficulty": "facil",
+      "explanation": "Jesús nació en Belén, cumpliendo la profecía de Miqueas 5:2 (Lucas 2:4-7)."
     },
     {
       "question": "¿Cuántos días tardó Dios en crear el mundo?",
       "options": ["5", "6", "7", "8"],
       "correct": 1,
-      "explanation": "Seis días de creación y el séptimo reposó (Génesis 1-2)."
+      "difficulty": "facil",
+      "explanation": "Dios creó el mundo en seis días y descansó el séptimo (Génesis 1-2)."
     },
     {
       "question": "¿Quién derrotó a Goliat?",
       "options": ["Saúl", "Jonatán", "David", "Samuel"],
       "correct": 2,
-      "explanation": "David derrotó a Goliat (1 Samuel 17)."
+      "difficulty": "facil",
+      "explanation": "David, siendo joven, derrotó al gigante Goliat con una honda y una piedra (1 Samuel 17)."
     },
     {
       "question": "¿Cuál es el primer libro de la Biblia?",
       "options": ["Éxodo", "Génesis", "Levítico", "Números"],
       "correct": 1,
-      "explanation": "Génesis es el primer libro."
+      "difficulty": "facil",
+      "explanation": "Génesis es el primer libro de la Biblia y significa 'principio' u 'origen'."
+    },
+    {
+      "question": "¿Cuántos apóstoles tuvo Jesús?",
+      "options": ["10", "11", "12", "13"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Jesús eligió a 12 apóstoles para que estuvieran con Él (Marcos 3:14)."
+    },
+    {
+      "question": "¿Quién fue tragado por un gran pez?",
+      "options": ["Jonás", "Pedro", "Pablo", "Juan"],
+      "correct": 0,
+      "difficulty": "facil",
+      "explanation": "Jonás fue tragado por un gran pez durante tres días (Jonás 1:17)."
+    },
+    {
+      "question": "¿Qué comieron los israelitas en el desierto?",
+      "options": ["Pan", "Maná", "Pescado", "Frutas"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Dios proveyó maná del cielo para alimentar a los israelitas (Éxodo 16)."
+    },
+    {
+      "question": "¿Quién fue el primer hombre creado por Dios?",
+      "options": ["Noé", "Abraham", "Adán", "Moisés"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Adán fue el primer hombre creado por Dios del polvo de la tierra (Génesis 2:7)."
+    },
+    {
+      "question": "¿Cuántos mandamientos dio Dios a Moisés?",
+      "options": ["5", "8", "10", "12"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Dios dio los Diez Mandamientos a Moisés en el Monte Sinaí (Éxodo 20)."
+    },
+    {
+      "question": "¿Quién fue vendido por sus hermanos como esclavo?",
+      "options": ["Isaac", "Jacob", "José", "Benjamín"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "José fue vendido por sus hermanos a mercaderes ismaelitas (Génesis 37:28)."
+    },
+    {
+      "question": "¿Cuántos días ayunó Jesús en el desierto?",
+      "options": ["30", "40", "50", "60"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Jesús ayunó 40 días y 40 noches en el desierto antes de ser tentado (Mateo 4:2)."
+    },
+    {
+      "question": "¿Quién negó a Jesús tres veces?",
+      "options": ["Juan", "Pedro", "Judas", "Tomás"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Pedro negó conocer a Jesús tres veces antes del canto del gallo (Mateo 26:69-75)."
+    },
+    {
+      "question": "¿En qué río fue bautizado Jesús?",
+      "options": ["Nilo", "Éufrates", "Jordán", "Tigris"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Juan el Bautista bautizó a Jesús en el río Jordán (Mateo 3:13)."
+    },
+    {
+      "question": "¿Cuántos libros tiene el Nuevo Testamento?",
+      "options": ["24", "27", "30", "33"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "El Nuevo Testamento contiene 27 libros, desde Mateo hasta Apocalipsis."
+    },
+    {
+      "question": "¿Quién interpretó el sueño del faraón?",
+      "options": ["Moisés", "José", "Daniel", "Samuel"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "José interpretó el sueño del faraón sobre las siete vacas gordas y flacas (Génesis 41)."
+    },
+    {
+      "question": "¿Qué mujer fue jueza de Israel?",
+      "options": ["Rut", "Ester", "Débora", "Raquel"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Débora fue profetisa y jueza de Israel (Jueces 4:4)."
+    },
+    {
+      "question": "¿Cuántos años vagaron los israelitas por el desierto?",
+      "options": ["20", "30", "40", "50"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Los israelitas vagaron 40 años por el desierto antes de entrar a Canaán (Números 14:33)."
+    },
+    {
+      "question": "¿Quién escribió la mayoría de los Salmos?",
+      "options": ["Salomón", "David", "Moisés", "Asaf"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "El rey David escribió aproximadamente 73 de los 150 Salmos."
+    },
+    {
+      "question": "¿Qué apóstol era recaudador de impuestos?",
+      "options": ["Pedro", "Juan", "Mateo", "Felipe"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Mateo (también llamado Leví) era recaudador de impuestos antes de seguir a Jesús (Mateo 9:9)."
+    },
+    {
+      "question": "¿Cuántos años tenía Abraham cuando nació Isaac?",
+      "options": ["75", "90", "100", "120"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Abraham tenía 100 años cuando nació su hijo Isaac (Génesis 21:5)."
+    },
+    {
+      "question": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+      "options": ["Elías", "Eliseo", "Isaías", "Jeremías"],
+      "correct": 0,
+      "difficulty": "dificil",
+      "explanation": "Elías fue llevado al cielo en un torbellino con un carro de fuego (2 Reyes 2:11)."
+    },
+    {
+      "question": "¿Cuántos hijos tuvo Jacob?",
+      "options": ["10", "11", "12", "13"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Jacob tuvo 12 hijos que se convirtieron en las 12 tribus de Israel (Génesis 35:22-26)."
+    },
+    {
+      "question": "¿Qué rey de Israel construyó el primer templo?",
+      "options": ["David", "Salomón", "Josías", "Ezequías"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "Salomón construyó el primer templo en Jerusalén (1 Reyes 6)."
+    },
+    {
+      "question": "¿Cuántos días estuvo Lázaro en la tumba antes de ser resucitado?",
+      "options": ["1", "2", "3", "4"],
+      "correct": 3,
+      "difficulty": "dificil",
+      "explanation": "Lázaro había estado en la tumba cuatro días cuando Jesús lo resucitó (Juan 11:17)."
+    },
+    {
+      "question": "¿Qué profeta vio la visión del valle de los huesos secos?",
+      "options": ["Isaías", "Jeremías", "Ezequiel", "Daniel"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Ezequiel tuvo la visión del valle de los huesos secos (Ezequiel 37)."
+    },
+    {
+      "question": "¿Cuántos capítulos tiene el libro de Apocalipsis?",
+      "options": ["20", "22", "24", "26"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "El libro de Apocalipsis tiene 22 capítulos."
+    },
+    {
+      "question": "¿Quién fue el sucesor de Moisés?",
+      "options": ["Aarón", "Caleb", "Josué", "Samuel"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Josué fue elegido por Dios para suceder a Moisés y guiar a Israel (Josué 1:1-2)."
+    },
+    {
+      "question": "¿Cuántos años reinó el rey David?",
+      "options": ["30", "33", "40", "50"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "David reinó 40 años sobre Israel: 7 en Hebrón y 33 en Jerusalén (2 Samuel 5:4-5)."
+    },
+    {
+      "question": "¿Qué apóstol fue llamado 'el discípulo amado'?",
+      "options": ["Pedro", "Juan", "Santiago", "Andrés"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "Juan es identificado como 'el discípulo a quien Jesús amaba' (Juan 13:23)."
+    },
+    {
+      "question": "¿Qué animal habló con Balaam?",
+      "options": ["Caballo", "Asno", "Camello", "Buey"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Un asno habló con Balaam para advertirle del ángel en el camino (Números 22:28)."
+    },
+    {
+      "question": "¿Quién fue la esposa de Abraham?",
+      "options": ["Rebeca", "Raquel", "Sara", "Lea"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Sara fue la esposa de Abraham y madre de Isaac (Génesis 18:9)."
+    },
+    {
+      "question": "¿Qué significa el nombre 'Jesús'?",
+      "options": ["Rey", "Profeta", "Salvador", "Maestro"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Jesús significa 'Salvador' o 'Yahvé salva' (Mateo 1:21)."
+    },
+    {
+      "question": "¿Cuántos discípulos envió Jesús a predicar?",
+      "options": ["12", "24", "36", "72"],
+      "correct": 3,
+      "difficulty": "medio",
+      "explanation": "Jesús envió a 72 discípulos de dos en dos a predicar (Lucas 10:1)."
+    },
+    {
+      "question": "¿Qué profeta ungió a David como rey?",
+      "options": ["Elías", "Eliseo", "Samuel", "Natán"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Samuel ungió a David como rey de Israel (1 Samuel 16:13)."
+    },
+    {
+      "question": "¿Cuántos años tenía Noé cuando nació Sem?",
+      "options": ["100", "150", "200", "500"],
+      "correct": 0,
+      "difficulty": "dificil",
+      "explanation": "Noé tenía 500 años cuando engendró a Sem, Cam y Jafet (Génesis 5:32)."
+    },
+    {
+      "question": "¿Qué libro bíblico no menciona a Dios?",
+      "options": ["Job", "Salmos", "Ester", "Proverbios"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "El libro de Ester es el único que no menciona explícitamente a Dios."
+    },
+    {
+      "question": "¿Cuántos cánticos tiene el Cantar de los Cantares?",
+      "options": ["5", "6", "7", "8"],
+      "correct": 3,
+      "difficulty": "dificil",
+      "explanation": "El Cantar de los Cantares tiene 8 cánticos o secciones poéticas."
+    },
+    {
+      "question": "¿Qué hizo Jesús con los mercaderes del templo?",
+      "options": ["Los bendijo", "Los echó", "Los ignoró", "Les predicó"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Jesús echó a los mercaderes del templo porque lo habían convertido en un mercado (Juan 2:13-16)."
+    },
+    {
+      "question": "¿Quién fue el padre de Juan el Bautista?",
+      "options": ["José", "Zacarías", "Elías", "Juan"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Zacarías fue el padre de Juan el Bautista (Lucas 1:13)."
+    },
+    {
+      "question": "¿Qué milagro hizo Jesús en las bodas de Caná?",
+      "options": ["Curó a un ciego", "Convirtió agua en vino", "Resucitó a un muerto", "Caminó sobre el agua"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Jesús convirtió agua en vino en las bodas de Caná (Juan 2:1-11)."
+    },
+    {
+      "question": "¿Cuántos años sirvió Jacob a Labán por Raquel?",
+      "options": ["7", "10", "14", "20"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Jacob sirvió 14 años a Labán: 7 por Raquel y 7 más por ella (Génesis 29:27)."
+    },
+    {
+      "question": "¿Qué rey de Judá reformó el templo?",
+      "options": ["Josías", "Ezequías", "Manasés", "Joás"],
+      "correct": 0,
+      "difficulty": "dificil",
+      "explanation": "El rey Josías reformó el templo y restauró la adoración a Dios (2 Reyes 22-23)."
+    },
+    {
+      "question": "¿Cuántos panes y peces usó Jesús para alimentar a 5000?",
+      "options": ["2 panes y 3 peces", "5 panes y 2 peces", "7 panes y 4 peces", "10 panes y 5 peces"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Jesús multiplicó 5 panes y 2 peces para alimentar a 5000 hombres (Mateo 14:17-21)."
+    },
+    {
+      "question": "¿Qué hizo Dios en el séptimo día?",
+      "options": ["Creó el sol", "Descansó", "Creó los animales", "Creó al hombre"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Dios terminó su obra de creación y descansó el séptimo día (Génesis 2:2)."
+    },
+    {
+      "question": "¿Quién fue el hermano de Moisés?",
+      "options": ["José", "Aarón", "Caleb", "Josué"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Aarón fue el hermano mayor de Moisés y su portavoz (Éxodo 4:14)."
+    },
+    {
+      "question": "¿Qué ciudad destruyó Josué?",
+      "options": ["Sodoma", "Gomorra", "Jerico", "Babilonia"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Josué y los israelitas destruyeron las murallas de Jericó con trompetas (Josué 6)."
+    },
+    {
+      "question": "¿Cuántos hijos tuvo Rut?",
+      "options": ["0", "1", "2", "3"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Rut tuvo un hijo llamado Obed, abuelo del rey David (Rut 4:17)."
+    },
+    {
+      "question": "¿Qué profeta fue arrojado al foso de los leones?",
+      "options": ["Isaías", "Jeremías", "Daniel", "Ezequiel"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Daniel fue arrojado al foso de los leones por orar a Dios (Daniel 6)."
+    },
+    {
+      "question": "¿Quién fue el suegro de Moisés?",
+      "options": ["Jetro", "Labán", "Putiel", "Ragúel"],
+      "correct": 0,
+      "difficulty": "medio",
+      "explanation": "Jetro, sacerdote de Madián, fue el suegro de Moisés (Éxodo 3:1)."
+    },
+    {
+      "question": "¿Cuántos años vivió Matusalén?",
+      "options": ["500", "700", "900", "969"],
+      "correct": 3,
+      "difficulty": "dificil",
+      "explanation": "Matusalén vivió 969 años, el hombre más longevo de la Biblia (Génesis 5:27)."
+    },
+    {
+      "question": "¿Qué significa 'Emanuel'?",
+      "options": ["Rey de reyes", "Dios con nosotros", "Príncipe de paz", "Luz del mundo"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "Emanuel significa 'Dios con nosotros' (Isaías 7:14)."
+    },
+    {
+      "question": "¿Cuántos capítulos tiene el libro de Isaías?",
+      "options": ["50", "60", "66", "70"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "El libro de Isaías tiene 66 capítulos."
+    },
+    {
+      "question": "¿Qué animal guió a los magos?",
+      "options": ["Camello", "Estrella", "Ángel", "Paloma"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Una estrella guió a los magos hasta el lugar donde nació Jesús (Mateo 2:9)."
+    },
+    {
+      "question": "¿Quién fue la madre de Samuel?",
+      "options": ["Sara", "Ana", "Elisabet", "María"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Ana fue la madre de Samuel, dedicada a Dios desde niño (1 Samuel 1)."
+    },
+    {
+      "question": "¿Qué rey tuvo un sueño de una estatua?",
+      "options": ["David", "Salomón", "Nabucodonosor", "Ciro"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Nabucodonosor soñó con una estatua que Daniel interpretó (Daniel 2)."
+    },
+    {
+      "question": "¿Cuántos años reinó Salomón?",
+      "options": ["20", "30", "40", "50"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Salomón reinó 40 años sobre Israel (1 Reyes 11:42)."
+    },
+    {
+      "question": "¿Qué hizo Jesús con los niños?",
+      "options": ["Los envió lejos", "Los bendijo", "Les enseñó", "Los curó"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Jesús bendijo a los niños y dijo que el reino de Dios es de los que son como ellos (Marcos 10:16)."
+    },
+    {
+      "question": "¿Quién escribió el libro de Hechos?",
+      "options": ["Pedro", "Pablo", "Lucas", "Juan"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Lucas, compañero de Pablo, escribió el libro de Hechos (Lucas 1:1-4)."
+    },
+    {
+      "question": "¿Qué apóstol traicionó a Jesús?",
+      "options": ["Pedro", "Juan", "Judas", "Tomás"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Judas Iscariote traicionó a Jesús por 30 monedas de plata (Mateo 26:14-16)."
+    },
+    {
+      "question": "¿Cuántos libros tiene el Antiguo Testamento?",
+      "options": ["27", "30", "39", "46"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "El Antiguo Testamento tiene 39 libros en la Biblia protestante."
+    },
+    {
+      "question": "¿Qué comió Elías en el desierto?",
+      "options": ["Miel", "Pan y agua", "Carne", "Frutas"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Un cuervo llevó pan y carne a Elías por la mañana y por la tarde (1 Reyes 17:6)."
+    },
+    {
+      "question": "¿Qué profeta predijo la venida de Jesús?",
+      "options": ["Jeremías", "Ezequiel", "Isaías", "Daniel"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Isaías profetizó la venida del Mesías (Isaías 7:14, 9:6)."
+    },
+    {
+      "question": "¿Cuántos años tenía Sara cuando nació Isaac?",
+      "options": ["70", "80", "90", "100"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Sara tenía 90 años cuando dio a luz a Isaac (Génesis 17:17)."
+    },
+    {
+      "question": "¿Qué hizo Pedro en el mar?",
+      "options": ["Nadó", "Caminó sobre el agua", "Pescó", "Se hundió"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Pedro caminó sobre el agua hacia Jesús, pero comenzó a hundirse por falta de fe (Mateo 14:28-30)."
+    },
+    {
+      "question": "¿Quién fue el primer mártir cristiano?",
+      "options": ["Pablo", "Pedro", "Esteban", "Juan"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Esteban fue apedreado y se convirtió en el primer mártir cristiano (Hechos 7)."
+    },
+    {
+      "question": "¿Qué libro es llamado 'el libro de la consolación'?",
+      "options": ["Jeremías", "Isaías", "Lamentaciones", "Ezequiel"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Isaías es llamado 'el libro de la consolación' por sus profecías de esperanza."
+    },
+    {
+      "question": "¿Cuántos capítulos tiene el libro de Salmos?",
+      "options": ["100", "120", "150", "180"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "El libro de Salmos tiene 150 capítulos o salmos."
+    },
+    {
+      "question": "¿Qué día resucitó Jesús?",
+      "options": ["Viernes", "Sábado", "Domingo", "Lunes"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Jesús resucitó al tercer día, que fue un domingo (Mateo 28:1)."
+    },
+    {
+      "question": "¿Quién fue el sucesor de Elías?",
+      "options": ["Eliseo", "Isaías", "Jeremías", "Amós"],
+      "correct": 0,
+      "difficulty": "medio",
+      "explanation": "Eliseo sucedió a Elías como profeta (2 Reyes 2:9-10)."
+    },
+    {
+      "question": "¿Qué mujer habló con Jesús junto al pozo?",
+      "options": ["María Magdalena", "La samaritana", "Marta", "María"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Jesús habló con la mujer samaritana junto al pozo de Jacob (Juan 4)."
+    },
+    {
+      "question": "¿Cuántos años tenía Adán cuando murió?",
+      "options": ["700", "800", "930", "1000"],
+      "correct": 2,
+      "difficulty": "dificil",
+      "explanation": "Adán vivió 930 años (Génesis 5:5)."
+    },
+    {
+      "question": "¿Qué hizo Jesús en la última cena?",
+      "options": ["Curó a los enfermos", "Lavó los pies a sus discípulos", "Enseñó parábolas", "Oró solo"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Jesús lavó los pies a sus discípulos como ejemplo de humildad (Juan 13:1-17)."
+    },
+    {
+      "question": "¿Cuál fue el primer milagro de Jesús?",
+      "options": ["Curó a un ciego", "Convirtió agua en vino", "Caminó sobre el agua", "Resucitó a Lázaro"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Jesús convirtió agua en vino en las bodas de Caná, su primer milagro público (Juan 2:1-11)."
+    },
+    {
+      "question": "¿Qué significa 'Abba'?",
+      "options": ["Padre", "Hijo", "Espíritu", "Amén"],
+      "correct": 0,
+      "difficulty": "facil",
+      "explanation": "'Abba' es una palabra aramea que significa 'Padre' o 'Papá' (Marcos 14:36)."
+    },
+    {
+      "question": "¿Cuántos días estuvo Jesús en la tumba?",
+      "options": ["1", "2", "3", "4"],
+      "correct": 2,
+      "difficulty": "facil",
+      "explanation": "Jesús estuvo en la tumba tres días y tres noches antes de resucitar (Mateo 12:40)."
+    },
+    {
+      "question": "¿Qué profeta predijo el nacimiento de Jesús en Belén?",
+      "options": ["Isaías", "Jeremías", "Miqueas", "Zacarías"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Miqueas profetizó que el Mesías nacería en Belén (Miqueas 5:2)."
+    },
+    {
+      "question": "¿Cuál es el libro más corto de la Biblia?",
+      "options": ["2 Juan", "3 Juan", "Judas", "Filemón"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "3 Juan es el libro más corto de la Biblia con 14 versículos."
+    },
+    {
+      "question": "¿Qué hizo Dios el primer día de la creación?",
+      "options": ["Creó la luz", "Creó el cielo", "Creó la tierra", "Creó el sol"],
+      "correct": 0,
+      "difficulty": "facil",
+      "explanation": "En el primer día, Dios dijo: 'Sea la luz; y fue la luz' (Génesis 1:3)."
+    },
+    {
+      "question": "¿Quién fue el rey que construyó el templo de Salomón?",
+      "options": ["David", "Salomón", "Josías", "Ezequías"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Salomón construyó el primer templo en Jerusalén (1 Reyes 6)."
+    },
+    {
+      "question": "¿Qué animal representaba a cada una de las tribus de Israel?",
+      "options": ["León", "Águila", "Buey", "Hombre"],
+      "correct": 3,
+      "difficulty": "dificil",
+      "explanation": "En la visión de Ezequiel, cada tribu estaba representada por un querubín con forma diferente (Ezequiel 10)."
+    },
+    {
+      "question": "¿Cuántos años tenía Sara cuando dio a luz a Isaac?",
+      "options": ["70", "80", "90", "100"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Sara tenía 90 años cuando nació Isaac (Génesis 17:17)."
+    },
+    {
+      "question": "¿Qué discípulo negó a Jesús tres veces?",
+      "options": ["Juan", "Pedro", "Santiago", "Andrés"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Pedro negó conocer a Jesús tres veces antes del canto del gallo (Juan 18:25-27)."
+    },
+    {
+      "question": "¿Cuál es el río donde Jesús fue bautizado?",
+      "options": ["Nilo", "Éufrates", "Jordán", "Tigris"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Juan bautizó a Jesús en el río Jordán (Mateo 3:13)."
+    },
+    {
+      "question": "¿Qué significa 'Cristo'?",
+      "options": ["Rey", "Ungido", "Profeta", "Sacerdote"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "'Cristo' viene del griego 'Christos' que significa 'ungido' (Lucas 2:11)."
+    },
+    {
+      "question": "¿Cuántos salmos escribió David?",
+      "options": ["50", "73", "100", "150"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "David escribió aproximadamente 73 de los 150 salmos."
+    },
+    {
+      "question": "¿Qué hizo Jesús con los vendedores del templo?",
+      "options": ["Los bendijo", "Los echó fuera", "Les predicó", "Los ignoró"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Jesús echó a los mercaderes del templo porque lo habían convertido en cueva de ladrones (Juan 2:13-16)."
+    },
+    {
+      "question": "¿Quién fue el sumo sacerdote que condenó a Jesús?",
+      "options": ["Anás", "Caifás", "Pilato", "Herodes"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Caifás fue el sumo sacerdote que declaró que Jesús debía morir (Juan 11:49-50)."
+    },
+    {
+      "question": "¿Qué libro bíblico no menciona a Dios ni una vez?",
+      "options": ["Job", "Ester", "Salmos", "Proverbios"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "El libro de Ester es el único que no menciona explícitamente a Dios."
+    },
+    {
+      "question": "¿Cuántos hijos tuvo Jacob?",
+      "options": ["10", "11", "12", "13"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Jacob tuvo 12 hijos que se convirtieron en las 12 tribus de Israel (Génesis 35:23-26)."
+    },
+    {
+      "question": "¿Qué profeta fue tragado por un gran pez?",
+      "options": ["Isaías", "Jonás", "Jeremías", "Ezequiel"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Jonás fue tragado por un gran pez y estuvo en su vientre tres días (Jonás 1:17)."
+    },
+    {
+      "question": "¿Cuál es el mandamiento más importante?",
+      "options": ["No matarás", "Amarás a Dios", "No robarás", "Honrarás padre y madre"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Jesús dijo que el mandamiento más importante es amar a Dios con todo el corazón (Marcos 12:30)."
+    },
+    {
+      "question": "¿Qué significa 'Pentecostés'?",
+      "options": ["Quincuagésimo", "Primero", "Último", "Medio"],
+      "correct": 0,
+      "difficulty": "dificil",
+      "explanation": "'Pentecostés' significa 'quincuagésimo' día, celebrándose 50 días después de la Pascua."
+    },
+    {
+      "question": "¿Quién escribió la mayoría de las epístolas del Nuevo Testamento?",
+      "options": ["Pedro", "Pablo", "Juan", "Santiago"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Pablo escribió 13 de las 21 epístolas del Nuevo Testamento."
+    },
+    {
+      "question": "¿Qué hizo Dios con la torre de Babel?",
+      "options": ["La bendijo", "La destruyó", "Confundió los idiomas", "La ignoró"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "Dios confundió los idiomas de los constructores de la torre de Babel (Génesis 11:7)."
+    },
+    {
+      "question": "¿Cuántos libros tiene el Antiguo Testamento?",
+      "options": ["27", "30", "39", "46"],
+      "correct": 2,
+      "difficulty": "medio",
+      "explanation": "El Antiguo Testamento tiene 39 libros en la Biblia protestante."
+    },
+    {
+      "question": "¿Qué discípulo era pescador de profesión?",
+      "options": ["Mateo", "Pedro", "Leví", "Zaqueo"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Pedro, Santiago y Juan eran pescadores antes de seguir a Jesús (Lucas 5:10)."
+    },
+    {
+      "question": "¿Cuál es el último libro de la Biblia?",
+      "options": ["Apocalipsis", "Judas", "Hebreos", "3 Juan"],
+      "correct": 0,
+      "difficulty": "facil",
+      "explanation": "Apocalipsis es el último libro de la Biblia (Apocalipsis 22:21)."
+    },
+    {
+      "question": "¿Qué significa 'evangelio'?",
+      "options": ["Buenas noticias", "Mala noticia", "Historia", "Carta"],
+      "correct": 0,
+      "difficulty": "medio",
+      "explanation": "'Evangelio' significa 'buenas noticias' o 'buen anuncio' (Marcos 1:1)."
+    },
+    {
+      "question": "¿Cuántos discípulos envió Jesús inicialmente?",
+      "options": ["12", "24", "36", "72"],
+      "correct": 3,
+      "difficulty": "medio",
+      "explanation": "Jesús envió a 72 discípulos de dos en dos a predicar (Lucas 10:1)."
+    },
+    {
+      "question": "¿Qué rey de Israel escribió cánticos?",
+      "options": ["David", "Salomón", "Josafat", "Asa"],
+      "correct": 1,
+      "difficulty": "medio",
+      "explanation": "Salomón escribió el Cantar de los Cantares y otros cánticos (1 Reyes 4:32)."
+    },
+    {
+      "question": "¿Cuál es el libro más largo de la Biblia?",
+      "options": ["Salmos", "Isaías", "Jeremías", "Génesis"],
+      "correct": 1,
+      "difficulty": "dificil",
+      "explanation": "Isaías es el libro más largo del Antiguo Testamento con 66 capítulos."
+    },
+    {
+      "question": "¿Qué hizo Jesús después de resucitar?",
+      "options": ["Se fue al cielo", "Apareció a sus discípulos", "Curó enfermos", "Enseñó multitudes"],
+      "correct": 1,
+      "difficulty": "facil",
+      "explanation": "Jesús se apareció a sus discípulos después de resucitar (Juan 20:19)."
     }
   ]
 }
+
 
 

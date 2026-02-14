@@ -1,0 +1,604 @@
+{
+  "curiosities": [
+    {
+      "id": 1,
+      "title": "Autores de la Biblia",
+      "fact": "La Biblia fue escrita por más de 40 autores diferentes, incluyendo reyes, pescadores, médicos, pastores y profetas.",
+      "category": "composicion"
+    },
+    {
+      "id": 2,
+      "title": "Tres continentes",
+      "fact": "La Biblia fue escrita en tres continentes diferentes: Asia, África y Europa.",
+      "category": "composicion"
+    },
+    {
+      "id": 3,
+      "title": "1500 años de escritura",
+      "fact": "La composición de la Biblia abarcó aproximadamente 1500 años, desde Moisés hasta el apóstol Juan.",
+      "category": "composicion"
+    },
+    {
+      "id": 4,
+      "title": "Libro más largo",
+      "fact": "El libro más largo de la Biblia es Salmos, con 150 capítulos y más de 2400 versículos.",
+      "category": "libros"
+    },
+    {
+      "id": 5,
+      "title": "Libro más corto",
+      "fact": "El libro más corto de la Biblia es 2 Juan, con solo 13 versículos.",
+      "category": "libros"
+    },
+    {
+      "id": 6,
+      "title": "Palabra más repetida",
+      "fact": "La palabra 'Dios' aparece más de 4000 veces en la Biblia Reina Valera.",
+      "category": "palabras"
+    },
+    {
+      "id": 7,
+      "title": "Milagros de Jesús",
+      "fact": "Jesús realizó 37 milagros registrados en los cuatro Evangelios, incluyendo sanidades, multiplicación de alimentos y resurrecciones.",
+      "category": "milagros"
+    },
+    {
+      "id": 8,
+      "title": "Edad de Noé",
+      "fact": "Noé tenía 600 años cuando llegó el diluvio universal (Génesis 7:6).",
+      "category": "edades"
+    },
+    {
+      "id": 9,
+      "title": "Longevidad de Adán",
+      "fact": "Adán, el primer hombre, vivió 930 años según Génesis 5:5.",
+      "category": "edades"
+    },
+    {
+      "id": 10,
+      "title": "Profecías cumplidas",
+      "fact": "La Biblia contiene más de 300 profecías sobre el Mesías que se cumplieron en Jesús, con probabilidades matemáticas imposibles de ser coincidencia.",
+      "category": "profecias"
+    },
+    {
+      "id": 11,
+      "title": "El Mar Rojo",
+      "fact": "Dios partió el Mar Rojo en dos para que los israelitas cruzaran a pie seco durante el Éxodo (Éxodo 14).",
+      "category": "milagros"
+    },
+    {
+      "id": 12,
+      "title": "Jesús camina sobre el agua",
+      "fact": "Jesús caminó sobre las aguas del Mar de Galilea, y Pedro también lo hizo momentáneamente hasta que dudó (Mateo 14:22-33).",
+      "category": "milagros"
+    },
+    {
+      "id": 13,
+      "title": "Daniel en el foso",
+      "fact": "Daniel fue arrojado al foso de los leones por orar a Dios, pero Dios cerró la boca de los leones y Daniel salió ileso (Daniel 6).",
+      "category": "milagros"
+    },
+    {
+      "id": 14,
+      "title": "Maná del cielo",
+      "fact": "Los israelitas comieron maná (pan del cielo) durante 40 años en el desierto, suficiente para alimentar a más de 2 millones de personas diariamente.",
+      "category": "providencia"
+    },
+    {
+      "id": 15,
+      "title": "Caída de Jericó",
+      "fact": "Las murallas de Jericó cayeron ante los israelitas después de marchar alrededor de la ciudad durante 7 días y tocar trompetas (Josué 6).",
+      "category": "conquistas"
+    },
+    {
+      "id": 16,
+      "title": "El arca de Noé",
+      "fact": "El arca de Noé medía aproximadamente 137 metros de largo, 23 metros de ancho y 14 metros de alto, con capacidad para cientos de animales.",
+      "category": "construcciones"
+    },
+    {
+      "id": 17,
+      "title": "Gedeón y su ejército",
+      "fact": "Gedeón redujo su ejército de 32.000 hombres a solo 300 para derrotar a los madianitas, demostrando que Dios da la victoria (Jueces 7).",
+      "category": "batallas"
+    },
+    {
+      "id": 18,
+      "title": "David y Goliat",
+      "fact": "Goliat medía aproximadamente 3 metros de altura y pesaba más de 150 kg, pero David lo derrotó con una honda y una piedra (1 Samuel 17).",
+      "category": "batallas"
+    },
+    {
+      "id": 19,
+      "title": "La torre de Babel",
+      "fact": "La torre de Babel fue construida para 'llegar hasta el cielo', pero Dios confundió los idiomas de los constructores (Génesis 11).",
+      "category": "historias"
+    },
+    {
+      "id": 20,
+      "title": "El sueño de José",
+      "fact": "José interpretó correctamente sueños que predijeron 7 años de abundancia seguidos de 7 años de hambruna en Egipto (Génesis 41).",
+      "category": "profecias"
+    },
+    {
+      "id": 21,
+      "title": "Elías y los profetas de Baal",
+      "fact": "Elías desafió a 450 profetas de Baal en el Monte Carmelo, y Dios envió fuego del cielo para consumir el sacrificio de Elías (1 Reyes 18).",
+      "category": "milagros"
+    },
+    {
+      "id": 22,
+      "title": "Jonás y la ballena",
+      "fact": "Jonás fue tragado por un gran pez (posiblemente una ballena) y permaneció en su interior 3 días y 3 noches antes de ser vomitado (Jonás 1-2).",
+      "category": "milagros"
+    },
+    {
+      "id": 23,
+      "title": "La conversión de Pablo",
+      "fact": "Pablo (Saulo) fue cegado por una luz celestial en el camino a Damasco y se convirtió del perseguidor al apóstol más grande del cristianismo (Hechos 9).",
+      "category": "conversiones"
+    },
+    {
+      "id": 24,
+      "title": "Los 5000 alimentados",
+      "fact": "Jesús multiplicó 5 panes y 2 peces para alimentar a 5000 hombres (más mujeres y niños), resultando en 12 canastas de sobras (Juan 6).",
+      "category": "milagros"
+    },
+    {
+      "id": 25,
+      "title": "La resurrección de Lázaro",
+      "fact": "Jesús resucitó a Lázaro después de 4 días en la tumba, siendo este el milagro que más impactó a los testigos (Juan 11).",
+      "category": "milagros"
+    },
+    {
+      "id": 26,
+      "title": "Número total de libros",
+      "fact": "La Biblia cristiana contiene 66 libros en total: 39 en el Antiguo Testamento y 27 en el Nuevo Testamento.",
+      "category": "libros"
+    },
+    {
+      "id": 27,
+      "title": "Libro más corto",
+      "fact": "El libro más corto de la Biblia es 2 Juan, con solo 13 versículos. ¡Cabe en una página!",
+      "category": "libros"
+    },
+    {
+      "id": 28,
+      "title": "Palabra más repetida",
+      "fact": "Después de 'Dios', la palabra 'amor' aparece más de 500 veces en la Biblia, mostrando su importancia central.",
+      "category": "palabras"
+    },
+    {
+      "id": 29,
+      "title": "Parábolas de Jesús",
+      "fact": "Jesús contó 37 parábolas registradas en los Evangelios, usando historias simples para enseñar verdades profundas.",
+      "category": "ensenanzas"
+    },
+    {
+      "id": 30,
+      "title": "Epístolas de Pablo",
+      "fact": "El apóstol Pablo escribió 13 de las 21 epístolas del Nuevo Testamento, más que cualquier otro autor.",
+      "category": "autores"
+    },
+    {
+      "id": 31,
+      "title": "Salmo más largo",
+      "fact": "El Salmo 119 es el más largo de la Biblia con 176 versículos, todos ellos alabando la Palabra de Dios.",
+      "category": "libros"
+    },
+    {
+      "id": 32,
+      "title": "Idiomas de la Biblia",
+      "fact": "La Biblia ha sido traducida completa o parcialmente a más de 2000 idiomas, llegando a casi todos los pueblos de la tierra.",
+      "category": "traducciones"
+    },
+    {
+      "id": 33,
+      "title": "Capítulos de Isaías",
+      "fact": "El libro de Isaías tiene exactamente 66 capítulos, igual que el número total de libros de la Biblia.",
+      "category": "libros"
+    },
+    {
+      "id": 34,
+      "title": "Río Jordán",
+      "fact": "Cuando los israelitas cruzaron el río Jordán hacia la Tierra Prometida, las aguas se detuvieron milagrosamente como el Mar Rojo.",
+      "category": "milagros"
+    },
+    {
+      "id": 35,
+      "title": "Fin del maná",
+      "fact": "El maná dejó de caer del cielo cuando los israelitas entraron a Canaán y pudieron cosechar alimentos de la tierra.",
+      "category": "providencia"
+    },
+    {
+      "id": 36,
+      "title": "Templo de Salomón",
+      "fact": "La construcción del templo de Salomón tomó exactamente 7 años y empleó a 183.600 trabajadores.",
+      "category": "construcciones"
+    },
+    {
+      "id": 37,
+      "title": "Daniel el profeta",
+      "fact": "Daniel sirvió como gobernador y consejero de reyes durante 70 años, interpretando sueños y visiones con precisión divina.",
+      "category": "profetas"
+    },
+    {
+      "id": 38,
+      "title": "Tres días de Jonás",
+      "fact": "Jonás estuvo exactamente 3 días y 3 noches en el vientre del gran pez, prefigurando la resurrección de Jesús.",
+      "category": "profecias"
+    },
+    {
+      "id": 39,
+      "title": "Libro más antiguo",
+      "fact": "El libro de Job es considerado el libro más antiguo de la Biblia, posiblemente escrito por Moisés.",
+      "category": "libros"
+    },
+    {
+      "id": 40,
+      "title": "Pentateuco",
+      "fact": "Moisés escribió los primeros cinco libros de la Biblia (Génesis, Éxodo, Levítico, Números y Deuteronomio), conocidos como el Pentateuco.",
+      "category": "autores"
+    },
+    {
+      "id": 41,
+      "title": "Apocalipsis",
+      "fact": "El libro de Apocalipsis fue escrito por el apóstol Juan mientras estaba exiliado en la isla de Patmos por su fe en Cristo.",
+      "category": "libros"
+    },
+    {
+      "id": 42,
+      "title": "Más de 3000 promesas",
+      "fact": "La Biblia contiene más de 3000 promesas de Dios, desde Génesis hasta Apocalipsis, todas respaldadas por su fidelidad.",
+      "category": "promesas"
+    },
+    {
+      "id": 43,
+      "title": "Salmos diversos autores",
+      "fact": "El libro de Salmos fue escrito por al menos 7 autores diferentes: David (73 salmos), Asaf, los hijos de Coré, Salomón, Moisés, Hemán y Etán.",
+      "category": "autores"
+    },
+    {
+      "id": 44,
+      "title": "Proverbios de Salomón",
+      "fact": "El libro de Proverbios tiene exactamente 31 capítulos, uno para cada día del mes, para lectura diaria.",
+      "category": "libros"
+    },
+    {
+      "id": 45,
+      "title": "Eclesiastés",
+      "fact": "El libro de Eclesiastés fue escrito por el rey Salomón, quien reflexiona sobre la vanidad de la vida sin Dios.",
+      "category": "autores"
+    },
+    {
+      "id": 46,
+      "title": "Cantar de los Cantares",
+      "fact": "El Cantar de los Cantares es un hermoso poema de amor que describe el amor entre Cristo y su iglesia.",
+      "category": "libros"
+    },
+    {
+      "id": 47,
+      "title": "Lamentaciones",
+      "fact": "El libro de Lamentaciones fue escrito por el profeta Jeremías mientras lloraba la destrucción de Jerusalén.",
+      "category": "autores"
+    },
+    {
+      "id": 48,
+      "title": "Profecías precisas",
+      "fact": "El libro de Daniel contiene profecías tan precisas que algunos críticos modernos las han llamado 'imposibles' sin revelación divina.",
+      "category": "profecias"
+    },
+    {
+      "id": 49,
+      "title": "El libro de los Hechos",
+      "fact": "El libro de los Hechos registra el crecimiento explosivo de la iglesia primitiva, de 120 seguidores a miles en pocos años.",
+      "category": "historias"
+    },
+    {
+      "id": 50,
+      "title": "Romanos: epístola magna",
+      "fact": "La epístola a los Romanos es considerada la más profunda teológicamente, explicando la justificación por fe en Cristo.",
+      "category": "libros"
+    },
+    {
+      "id": 51,
+      "title": "Tres idiomas principales",
+      "fact": "La Biblia fue escrita originalmente en tres idiomas principales: hebreo (Antiguo Testamento), arameo (partes del AT) y griego (Nuevo Testamento).",
+      "category": "composicion"
+    },
+    {
+      "id": 52,
+      "title": "Ester: único libro sin Dios",
+      "fact": "El libro de Ester es el único libro de la Biblia que no menciona explícitamente el nombre de Dios, aunque su presencia se siente en toda la historia.",
+      "category": "libros"
+    },
+    {
+      "id": 53,
+      "title": "Esposas de Salomón",
+      "fact": "El rey Salomón tuvo 700 esposas y 300 concubinas, lo que eventualmente lo llevó a alejarse de Dios (1 Reyes 11:3).",
+      "category": "personajes"
+    },
+    {
+      "id": 54,
+      "title": "Job: libro más antiguo",
+      "fact": "El libro de Job es considerado uno de los libros más antiguos de la Biblia, posiblemente escrito por Moisés o incluso antes.",
+      "category": "libros"
+    },
+    {
+      "id": 55,
+      "title": "Más de 31.000 versículos",
+      "fact": "La Biblia completa contiene más de 31.000 versículos, distribuidos en 1.189 capítulos y 66 libros.",
+      "category": "estadisticas"
+    },
+    {
+      "id": 56,
+      "title": "Capítulo más largo",
+      "fact": "El capítulo más largo de la Biblia es el Salmo 119, con 176 versículos dedicados a alabar la Palabra de Dios.",
+      "category": "libros"
+    },
+    {
+      "id": 57,
+      "title": "Versículo más largo",
+      "fact": "El versículo más largo de la Biblia es Ester 8:9, con 90 palabras en español describiendo el decreto del rey Asuero.",
+      "category": "libros"
+    },
+    {
+      "id": 58,
+      "title": "120 años de Noé",
+      "fact": "Noé trabajó en la construcción del arca durante 120 años, tiempo que Dios dio a la humanidad para arrepentirse (Génesis 6:3).",
+      "category": "construcciones"
+    },
+    {
+      "id": 59,
+      "title": "120 años de Moisés",
+      "fact": "Moisés vivió exactamente 120 años: 40 en Egipto, 40 en Madián y 40 liderando a Israel (Deuteronomio 34:7).",
+      "category": "edades"
+    },
+    {
+      "id": 60,
+      "title": "Abraham a los 100 años",
+      "fact": "Abraham tenía 100 años cuando nació su hijo Isaac, y Sara tenía 90 años, demostrando que 'para Dios no hay nada imposible' (Génesis 18:14).",
+      "category": "edades"
+    },
+    {
+      "id": 61,
+      "title": "Esaú y Jacob gemelos",
+      "fact": "Esaú y Jacob fueron gemelos, pero Jacob nació agarrando el talón de Esaú, lo que simbolizaba su futuro liderazgo (Génesis 25:26).",
+      "category": "personajes"
+    },
+    {
+      "id": 62,
+      "title": "14 años de Jacob",
+      "fact": "Jacob trabajó 14 años para Labán para obtener a sus esposas Raquel y Lea: 7 años por Raquel y 7 años adicionales (Génesis 29).",
+      "category": "personajes"
+    },
+    {
+      "id": 63,
+      "title": "José vendido por 20 piezas",
+      "fact": "José fue vendido por sus hermanos a mercaderes ismaelitas por 20 piezas de plata (Génesis 37:28).",
+      "category": "personajes"
+    },
+    {
+      "id": 64,
+      "title": "430 años en Egipto",
+      "fact": "Los israelitas estuvieron en esclavitud en Egipto durante 430 años antes de que Dios los liberara por medio de Moisés (Éxodo 12:40).",
+      "category": "historias"
+    },
+    {
+      "id": 65,
+      "title": "40 años en el desierto",
+      "fact": "La travesía de los israelitas por el desierto duró 40 años debido a su incredulidad y rebelión contra Dios (Números 14:33).",
+      "category": "historias"
+    },
+    {
+      "id": 66,
+      "title": "110 años de Josué",
+      "fact": "Josué, el sucesor de Moisés, vivió 110 años y fue enterrado en Timnat-sera, en la región montañosa de Efraín (Josué 24:29).",
+      "category": "edades"
+    },
+    {
+      "id": 67,
+      "title": "Débora: única mujer juez",
+      "fact": "Débora fue la única mujer que sirvió como juez en Israel, conocida por su sabiduría y liderazgo en la batalla contra Sísara (Jueces 4-5).",
+      "category": "personajes"
+    },
+    {
+      "id": 68,
+      "title": "Sansón y su cabello",
+      "fact": "La fuerza sobrenatural de Sansón residía en su cabello nazareo; cuando Dalila lo cortó, perdió su fuerza (Jueces 16).",
+      "category": "personajes"
+    },
+    {
+      "id": 69,
+      "title": "Rut la moabita",
+      "fact": "Rut era moabita, no israelita, pero su lealtad a su suegra Noemí y a Dios la convirtió en bisabuela del rey David (Rut 1-4).",
+      "category": "personajes"
+    },
+    {
+      "id": 70,
+      "title": "40 años de David como rey",
+      "fact": "David reinó sobre Israel durante 40 años: 7 años y 6 meses en Hebrón, y 33 años en Jerusalén (1 Reyes 2:11).",
+      "category": "personajes"
+    },
+    {
+      "id": 71,
+      "title": "Sabiduría de Salomón",
+      "fact": "Cuando Dios le ofreció a Salomón cualquier cosa que pidiera, él pidió sabiduría para gobernar bien al pueblo (1 Reyes 3:9-12).",
+      "category": "personajes"
+    },
+    {
+      "id": 72,
+      "title": "Reina de Saba visita Salomón",
+      "fact": "La reina de Saba viajó desde Arabia para probar la sabiduría de Salomón con preguntas difíciles y quedó maravillada (1 Reyes 10).",
+      "category": "personajes"
+    },
+    {
+      "id": 73,
+      "title": "Elías al cielo",
+      "fact": "El profeta Elías no murió, sino que fue llevado vivo al cielo en un carro de fuego, acompañado por caballos de fuego (2 Reyes 2:11).",
+      "category": "profetas"
+    },
+    {
+      "id": 74,
+      "title": "Doble porción para Eliseo",
+      "fact": "Eliseo recibió 'doble porción' del espíritu de Elías, realizando el doble de milagros que su maestro (2 Reyes 2:9).",
+      "category": "profetas"
+    },
+    {
+      "id": 75,
+      "title": "16 milagros de Eliseo",
+      "fact": "El profeta Eliseo realizó 16 milagros registrados en la Biblia, incluyendo la multiplicación del aceite, la curación de Naamán y la resurrección de un niño.",
+      "category": "milagros"
+    },
+    {
+      "id": 76,
+      "title": "Tres amigos en el horno",
+      "fact": "Sadrac, Mesac y Abed-nego sobrevivieron ilesos en un horno de fuego ardiente después de negarse a adorar la imagen de oro del rey Nabucodonosor (Daniel 3).",
+      "category": "milagros"
+    },
+    {
+      "id": 77,
+      "title": "Esdras reconstruye el templo",
+      "fact": "Esdras, un sacerdote y escriba, lideró la reconstrucción del templo de Jerusalén y la restauración de la adoración a Dios (Libro de Esdras).",
+      "category": "historias"
+    },
+    {
+      "id": 78,
+      "title": "Nehemías reconstruye murallas",
+      "fact": "Nehemías reconstruyó las murallas de Jerusalén en solo 52 días, a pesar de la oposición de los enemigos de Israel (Libro de Nehemías).",
+      "category": "historias"
+    },
+    {
+      "id": 79,
+      "title": "Ester se convierte en reina",
+      "fact": "Ester, una joven judía huérfana, se convirtió en reina de Persia y salvó a su pueblo del exterminio planeado por Amán (Libro de Ester).",
+      "category": "personajes"
+    },
+    {
+      "id": 80,
+      "title": "Fe de Job",
+      "fact": "Job perdió todo - familia, riquezas y salud - pero mantuvo su fe diciendo: 'Aunque Él me matare, en Él esperaré' (Job 13:15).",
+      "category": "personajes"
+    },
+    {
+      "id": 81,
+      "title": "Jesús nace en Belén",
+      "fact": "Jesús nació en Belén de Judea, cumpliendo la profecía de Miqueas 5:2, en un establo porque no había lugar en la posada (Lucas 2:11).",
+      "category": "nacimiento"
+    },
+    {
+      "id": 82,
+      "title": "Jesús a los 12 años",
+      "fact": "A los 12 años, Jesús se quedó en el templo de Jerusalén discutiendo con los maestros de la ley, asombrándolos con su entendimiento (Lucas 2:46-47).",
+      "category": "infancia"
+    },
+    {
+      "id": 83,
+      "title": "Bautismo de Jesús",
+      "fact": "Jesús fue bautizado por Juan el Bautista en el río Jordán, marcando el inicio de su ministerio público (Mateo 3:13-17).",
+      "category": "ministerio"
+    },
+    {
+      "id": 84,
+      "title": "12 apóstoles elegidos",
+      "fact": "Jesús eligió personalmente a 12 apóstoles para que fueran sus compañeros constantes y testigos de su ministerio (Marcos 3:13-19).",
+      "category": "ministerio"
+    },
+    {
+      "id": 85,
+      "title": "Alimentación de los 5000",
+      "fact": "Jesús multiplicó 5 panes y 2 peces para alimentar a 5000 hombres (más mujeres y niños), resultando en 12 canastas de sobras (Juan 6:1-13).",
+      "category": "milagros"
+    },
+    {
+      "id": 86,
+      "title": "Jesús camina sobre el agua",
+      "fact": "Jesús caminó sobre las aguas del Mar de Galilea durante una tormenta, y Pedro también lo hizo momentáneamente hasta que dudó (Mateo 14:25-31).",
+      "category": "milagros"
+    },
+    {
+      "id": 87,
+      "title": "Resurrección de Lázaro",
+      "fact": "Jesús resucitó a Lázaro de Betania después de 4 días en la tumba, siendo este el milagro que más convenció a los testigos de su divinidad (Juan 11).",
+      "category": "milagros"
+    },
+    {
+      "id": 88,
+      "title": "Jesús y la samaritana",
+      "fact": "Jesús habló con una mujer samaritana en el pozo de Jacob, ofreciéndole 'agua viva' (vida eterna) y revelándose como el Mesías (Juan 4:1-42).",
+      "category": "ensenanzas"
+    },
+    {
+      "id": 89,
+      "title": "Jesús lava los pies",
+      "fact": "Jesús lavó los pies de sus discípulos durante la Última Cena, enseñándoles el principio de servir humildemente a otros (Juan 13:1-17).",
+      "category": "ensenanzas"
+    },
+    {
+      "id": 90,
+      "title": "Jesús en Getsemaní",
+      "fact": "En el huerto de Getsemaní, Jesús oró con tanta intensidad que sudó gotas de sangre, aceptando la voluntad del Padre (Lucas 22:44).",
+      "category": "oracion"
+    },
+    {
+      "id": 91,
+      "title": "Juicio de Jesús",
+      "fact": "Jesús fue juzgado injustamente por Poncio Pilato, quien se lavó las manos simbólicamente para declarar su inocencia (Mateo 27:24).",
+      "category": "pasión"
+    },
+    {
+      "id": 92,
+      "title": "Jesús en la cruz",
+      "fact": "Jesús murió en la cruz del Calvario, llevando los pecados de toda la humanidad y reconciliándonos con Dios (1 Pedro 2:24).",
+      "category": "pasión"
+    },
+    {
+      "id": 93,
+      "title": "Resurrección de Jesús",
+      "fact": "Jesús resucitó al tercer día, apareciendo a más de 500 testigos durante 40 días antes de ascender al cielo (1 Corintios 15:3-6).",
+      "category": "resurrección"
+    },
+    {
+      "id": 94,
+      "title": "Ascensión de Jesús",
+      "fact": "Jesús ascendió al cielo 40 días después de su resurrección, siendo visto por sus discípulos hasta que una nube lo ocultó (Hechos 1:9).",
+      "category": "ascensión"
+    },
+    {
+      "id": 95,
+      "title": "Pentecostés",
+      "fact": "El día de Pentecostés, el Espíritu Santo descendió sobre los 120 discípulos en Jerusalén, iniciando la era de la iglesia (Hechos 2).",
+      "category": "iglesia"
+    },
+    {
+      "id": 96,
+      "title": "Conversión de Pablo",
+      "fact": "Pablo (Saulo) fue cegado por una luz celestial en el camino a Damasco y se convirtió del perseguidor al más grande apóstol del cristianismo (Hechos 9).",
+      "category": "conversiones"
+    },
+    {
+      "id": 97,
+      "title": "Pedro y Cornelio",
+      "fact": "Pedro recibió una visión de Dios que le mostró que el evangelio era para todos, no solo para los judíos, llevando al bautismo de Cornelio y su familia (Hechos 10).",
+      "category": "iglesia"
+    },
+    {
+      "id": 98,
+      "title": "Pablo en Atenas",
+      "fact": "Pablo predicó en el Areópago de Atenas, citando al poeta griego Arato: 'Porque de Él también somos linaje' (Hechos 17:28).",
+      "category": "evangelismo"
+    },
+    {
+      "id": 99,
+      "title": "Crecimiento de la iglesia",
+      "fact": "La iglesia primitiva creció rápidamente de 120 seguidores a miles, caracterizada por la comunión, la oración y el compartir (Hechos 2:42-47).",
+      "category": "iglesia"
+    },
+    {
+      "id": 100,
+      "title": "Apocalipsis: libro final",
+      "fact": "El libro de Apocalipsis fue escrito por Juan en la isla de Patmos, revelando eventos futuros y la victoria final de Cristo sobre el mal.",
+      "category": "libros"
+    }
+  ]
+}

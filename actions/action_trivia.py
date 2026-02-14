@@ -13,14 +13,39 @@ class ActionIniciarTrivia(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         migrate()
         user_id = tracker.sender_id
-        session = trivia_engine.start_trivia(user_id, 5)
+        
+        # Detectar nivel de dificultad del intent o slot
+        intent = tracker.get_intent_of_latest_message()
+        difficulty = None
+        
+        if intent == "seleccionar_nivel_facil":
+            difficulty = "facil"
+        elif intent == "seleccionar_nivel_medio":
+            difficulty = "medio"
+        elif intent == "seleccionar_nivel_dificil":
+            difficulty = "dificil"
+        else:
+            # Intentar obtener del slot
+            difficulty = tracker.get_slot("nivel_dificultad")
+        
+        session = trivia_engine.start_trivia(user_id, 5, difficulty)
         if not session.get("questions"):
             dispatcher.utter_message(text="No hay preguntas disponibles ahora.")
             return []
+        
         q = session["questions"][0]
         options = "\n".join([f"{i+1}. {opt}" for i, opt in enumerate(q.get("options", []))])
-        dispatcher.utter_message(text=f"Trivia bíblica (1/5)\n\n{q.get('question')}\n\n{options}")
-        return [SlotSet("quiz_session_id", "local"), SlotSet("quiz_data", session)]
+        
+        # Mensaje personalizado según dificultad
+        nivel_texto = {
+            "facil": "Nivel Fácil ⭐",
+            "medio": "Nivel Medio ⭐⭐",
+            "dificil": "Nivel Difícil ⭐⭐⭐"
+        }.get(difficulty, "")
+        
+        mensaje = f"Trivia bíblica (1/5) {nivel_texto}\n\n{q.get('question')}\n\n{options}"
+        dispatcher.utter_message(text=mensaje)
+        return [SlotSet("quiz_session_id", "local"), SlotSet("quiz_data", session), SlotSet("nivel_dificultad", difficulty)]
 
 
 class ActionResponderTrivia(Action):

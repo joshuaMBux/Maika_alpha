@@ -27,6 +27,7 @@ stories:
   - action: utter_animar
   - action: utter_eso_ayudo
   - intent: negar
+  - action: action_reset_juego_activo
   - action: utter_despedida
 
 # Nuevas historias para educación bíblica
@@ -91,6 +92,7 @@ stories:
   - intent: preguntar_eventos
   - action: action_obtener_eventos
   - intent: despedida
+  - action: action_reset_juego_activo
   - action: utter_despedida
 
 # Nuevas historias para funcionalidades avanzadas
@@ -99,10 +101,30 @@ stories:
   - intent: buscar_por_tema
   - action: action_buscar_por_tema
 
-- story: empezar quiz
+- story: empezar quiz genérico
   steps:
   - intent: start_quiz
+  - action: action_set_juego_activo
+  - action: utter_preguntar_nivel
+  - action: action_set_esperando_nivel
+
+- story: seleccionar nivel fácil
+  steps:
+  - intent: seleccionar_nivel_facil
   - action: action_start_quiz
+  - action: action_reset_esperando_nivel
+
+- story: seleccionar nivel medio
+  steps:
+  - intent: seleccionar_nivel_medio
+  - action: action_start_quiz
+  - action: action_reset_esperando_nivel
+
+- story: seleccionar nivel difícil
+  steps:
+  - intent: seleccionar_nivel_dificil
+  - action: action_start_quiz
+  - action: action_reset_esperando_nivel
 
 - story: mostrar estadísticas
   steps:
@@ -133,18 +155,74 @@ stories:
   - intent: confirmar_respuesta
   - action: action_confirm_response
   - intent: start_quiz
-  - action: action_start_quiz
+  - action: action_set_juego_activo
+  - action: utter_preguntar_nivel
+  - action: action_set_esperando_nivel
   - intent: despedida
+  - action: action_reset_juego_activo
   - action: utter_despedida
 
-- story: flujo de quiz completo
+- story: iniciar quiz simple
   steps:
   - intent: start_quiz
-  - action: action_start_quiz
-  - intent: responder_quiz
-  - action: action_process_quiz_answer
-  - intent: responder_quiz
-  - action: action_process_quiz_answer
-  - intent: responder_quiz
-  - action: action_process_quiz_answer
+  - action: action_set_juego_activo
+  - action: utter_preguntar_nivel
+  - action: action_set_esperando_nivel
+
+# Nuevas historias cristianas
+- story: usuario agradece y se despide
+  steps:
+  - intent: agradecer
+  - action: utter_agradecer
+  - intent: despedida
+  - action: action_reset_juego_activo
+  - action: utter_despedida
+
+- story: usuario comparte testimonio
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: pedir_testimonio
+  - action: utter_testimonio
+  - intent: agradecer
+  - action: utter_agradecer
+
+- story: usuario busca salvación
+  steps:
+  - intent: preguntar_como_ser_salvo
+  - action: utter_salvacion
+  - intent: afirmar
+  - action: utter_feliz
+
+- story: usuario necesita fortaleza
+  steps:
+  - intent: estado_mal
+  - action: utter_animar
+  - intent: pedir_fortaleza
+  - action: utter_fortaleza
+  - intent: agradecer
+  - action: utter_agradecer
+
+- story: usuario busca promesa y ora
+  steps:
+  - intent: pedir_promesa_biblica
+  - action: utter_promesa_biblica
+  - intent: preguntar_oracion
+  - action: action_oracion_guiada
+  - intent: agradecer
+  - action: utter_agradecer
+
+- story: flujo completo de bendición
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: estado_bien
+  - action: utter_feliz
+  - intent: pedir_alabanza
+  - action: utter_alabanza
+  - intent: agradecer
+  - action: utter_agradecer
+  - intent: despedida
+  - action: action_reset_juego_activo
+  - action: utter_despedida
 
