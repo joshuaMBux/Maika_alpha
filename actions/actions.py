@@ -21,7 +21,7 @@ def send_emotional_message(
     emotion: Text = "neutral",
     **kwargs: Any,
 ) -> None:
-  """Envía un mensaje con una emoción adjunta para el avatar."""
+    """Envía un mensaje con una emoción adjunta para el avatar."""
     dispatcher.utter_message(
         text=text,
         json_message={"emotion": emotion},
