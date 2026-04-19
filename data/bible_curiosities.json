@@ -599,6 +599,66 @@
       "title": "Apocalipsis: libro final",
       "fact": "El libro de Apocalipsis fue escrito por Juan en la isla de Patmos, revelando eventos futuros y la victoria final de Cristo sobre el mal.",
       "category": "libros"
+    },
+    {
+      "id": 101,
+      "title": "Aceite que nunca se acabó",
+      "fact": "En 2 Reyes 4, el profeta Eliseo oró y el aceite de una viuda se multiplicó milagrosamente hasta llenar todas las vasijas disponibles, permitiéndole pagar sus deudas.",
+      "category": "milagros"
+    },
+    {
+      "id": 102,
+      "title": "La burra que habló",
+      "fact": "En Números 22, Dios abrió la boca de la burra de Balaam y ella habló para advertirle que un ángel con una espada estaba bloqueando el camino.",
+      "category": "historias"
+    },
+    {
+      "id": 103,
+      "title": "Matusalén, el más longevo",
+      "fact": "Matusalén vivió 969 años, siendo la persona con más edad registrada en la Biblia (Génesis 5:27).",
+      "category": "edades"
+    },
+    {
+      "id": 104,
+      "title": "Profecía del nacimiento en Belén",
+      "fact": "Siglos antes del nacimiento de Jesús, el profeta Miqueas anunció que el Mesías nacería en Belén (Miqueas 5:2), profecía cumplida en los evangelios.",
+      "category": "profecias"
+    },
+    {
+      "id": 105,
+      "title": "Victoria sin pelear",
+      "fact": "En 2 Crónicas 20, el rey Josafat vio cómo Dios derrotaba a un gran ejército enemigo mientras el pueblo solo alababa; los enemigos se destruyeron entre sí.",
+      "category": "batallas"
+    },
+    {
+      "id": 106,
+      "title": "Un santuario portátil",
+      "fact": "El tabernáculo construido en tiempos de Moisés era un santuario portátil que el pueblo desmontaba y armaba durante su travesía por el desierto (Éxodo 25–27).",
+      "category": "construcciones"
+    },
+    {
+      "id": 107,
+      "title": "El carcelero de Filipos",
+      "fact": "En Hechos 16, después de un terremoto milagroso, el carcelero de Filipos y toda su casa creyeron en Jesús y fueron bautizados esa misma noche.",
+      "category": "conversiones"
+    },
+    {
+      "id": 108,
+      "title": "Autor desconocido de Hebreos",
+      "fact": "La epístola a los Hebreos tiene un profundo contenido teológico, pero su autor humano permanece desconocido; algunos proponen a Pablo, Apolos o Bernabé.",
+      "category": "libros"
+    },
+    {
+      "id": 109,
+      "title": "Aleluya en el Nuevo Testamento",
+      "fact": "La palabra 'aleluya' aparece en el Nuevo Testamento solo en el libro de Apocalipsis (capítulo 19), en cánticos de alabanza celestial.",
+      "category": "palabras"
+    },
+    {
+      "id": 110,
+      "title": "Libros no ordenados por fecha",
+      "fact": "Aunque muchas personas lo piensan, la Biblia no está ordenada cronológicamente; los libros se agrupan por tipo (ley, historia, poesía, profecía, evangelios y cartas).",
+      "category": "composicion"
     }
   ]
 }

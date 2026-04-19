@@ -13,6 +13,21 @@ import random
 from datetime import datetime
 import re
 from collections import defaultdict
+
+
+def send_emotional_message(
+    dispatcher: CollectingDispatcher,
+    text: Text,
+    emotion: Text = "neutral",
+    **kwargs: Any,
+) -> None:
+  """Envía un mensaje con una emoción adjunta para el avatar."""
+    dispatcher.utter_message(
+        text=text,
+        json_message={"emotion": emotion},
+        **kwargs,
+    )
+
 import unicodedata
 
 # Importar el sistema de métricas SQLite
@@ -264,9 +279,10 @@ class ActionExplicarConcepto(Action):
         
         if concepto and concepto.lower() in conceptos_adicionales:
             response = f"**{concepto.title()}**: {conceptos_adicionales[concepto.lower()]}"
-            dispatcher.utter_message(text=response)
+            send_emotional_message(dispatcher, response, emotion="feliz")
         else:
-            dispatcher.utter_message(text="Los conceptos bíblicos fundamentales incluyen fe, gracia, arrepentimiento, salvación y adoración. ¿Te gustaría que te explique alguno en particular?")
+            respuesta = "Los conceptos bíblicos fundamentales incluyen fe, gracia, arrepentimiento, salvación y adoración. ¿Te gustaría que te explique alguno en particular?"
+            send_emotional_message(dispatcher, respuesta, emotion="dudando")
         
         dispatcher.utter_message(text="¿Te fue útil esta respuesta?")
         return []
@@ -304,7 +320,7 @@ class ActionGenerarDevocional(Action):
         
         response = f"**{devocional['titulo']}**\n\n**Versículo del día:** {devocional['versiculo']}\n\n{devocional['texto']}\n\n**Reflexión:** {devocional['reflexion']}"
         
-        dispatcher.utter_message(text=response)
+        send_emotional_message(dispatcher, response, emotion="feliz")
         dispatcher.utter_message(text="¿Te fue útil esta respuesta?")
         return []
 
@@ -328,7 +344,7 @@ class ActionObtenerEventos(Action):
         response = "**Próximos eventos en la iglesia:**\n\n" + "\n".join(eventos)
         response += "\n\nPara más información, contacta a la oficina de la iglesia."
         
-        dispatcher.utter_message(text=response)
+        send_emotional_message(dispatcher, response, emotion="feliz")
         dispatcher.utter_message(text="¿Te fue útil esta respuesta?")
         return []
 
@@ -354,7 +370,7 @@ class ActionObtenerHorarios(Action):
         response += f"\n**Dirección:** {address}\n"
         response += f"**Pastor:** {pastor}"
         
-        dispatcher.utter_message(text=response)
+        send_emotional_message(dispatcher, response, emotion="feliz")
         dispatcher.utter_message(text="¿Te fue útil esta respuesta?")
         return []
 
@@ -384,7 +400,7 @@ class ActionOracionGuiada(Action):
         
         response = f"**Oración guiada:**\n\n{oracion}\n\nTómate un momento para meditar en estas palabras y hacer tu propia oración."
         
-        dispatcher.utter_message(text=response)
+        send_emotional_message(dispatcher, response, emotion="triste")
         dispatcher.utter_message(text="¿Te fue útil esta respuesta?")
         return []
 
@@ -725,6 +741,170 @@ class ActionFallback(Action):
         dispatcher.utter_message(text=response)
         return []
 
+
+class ActionAdivinanzaCristiana(Action):
+    """Hace una adivinanza cristiana aleatoria sin repetir en la misma conversaciﾃｳn."""
+
+    def name(self) -> Text:
+        return "action_adivinanza_cristiana"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        # Lista base de adivinanzas cristianas
+        riddles = [
+            {
+                "id": "r1",
+                "question": "Me vio Zaqueo desde un ﾃ｡rbol y cenﾃｩ con pecadores para mostrar amor y perdﾃｳn. ﾂｿQuiﾃｩn soy?",
+                "answer": "Jesﾃｺs",
+            },
+            {
+                "id": "r2",
+                "question": "En un arca de madera salvﾃｩ a mi familia y a muchos animales del diluvio. ﾂｿQuiﾃｩn soy?",
+                "answer": "Noﾃｩ",
+            },
+            {
+                "id": "r3",
+                "question": "Derrotﾃｩ a un gigante con una honda y una piedra porque confiﾃｩ en Dios. ﾂｿQuiﾃｩn soy?",
+                "answer": "David",
+            },
+            {
+                "id": "r4",
+                "question": "Soy un libro lleno de sabidurﾃｭa; si me lees cada dﾃｭa, conocerﾃ｡s mﾃ｡s a Dios. ﾂｿQuﾃｩ soy?",
+                "answer": "La Biblia",
+            },
+            {
+                "id": "r5",
+                "question": "No soy luz elﾃｩctrica ni vela encendida, pero alumbro tu camino si en mﾃｭ confﾃｭas. ﾂｿQuﾃｩ soy segﾃｺn la Palabra de Dios?",
+                "answer": "La Palabra de Dios / la Biblia",
+            },
+            {
+                "id": "r6",
+                "question": "Estuve tres dﾃｭas dentro de un gran pez por desobedecer, pero Dios tuvo misericordia de mﾃｭ. ﾂｿQuiﾃｩn soy?",
+                "answer": "Jonﾃ｡s",
+            },
+        ]
+
+        used = tracker.get_slot("adivinanzas_usadas") or []
+        if not isinstance(used, list):
+            used = []
+
+        # Filtrar adivinanzas no usadas en esta conversaciﾃｳn
+        available = [r for r in riddles if r["id"] not in used]
+
+        # Si ya se usaron todas, reiniciar el ciclo
+        if not available:
+            used = []
+            available = riddles[:]
+
+        riddle = random.choice(available)
+        used.append(riddle["id"])
+
+        dispatcher.utter_message(
+            text=(
+                "Adivinanza cristiana:\n\n"
+                f"{riddle['question']}\n\n"
+                "Cuando tengas una respuesta, cuﾃｩntamela y seguimos jugando."
+            )
+        )
+
+        return [
+            SlotSet("adivinanzas_usadas", used),
+            SlotSet("adivinanza_actual", riddle["id"]),
+            SlotSet("juego_activo", "adivinanza"),
+        ]
+
+
+class ActionResponderAdivinanza(Action):
+    """Evalﾃｺa la respuesta del usuario a la ﾃｺltima adivinanza."""
+
+    def name(self) -> Text:
+        return "action_responder_adivinanza"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        # Misma lista de adivinanzas que en ActionAdivinanzaCristiana
+        riddles = {
+            "r1": {
+                "question": "Me vio Zaqueo desde un ﾃ｡rbol y cenﾃｩ con pecadores para mostrar amor y perdﾃｳn. ﾂｿQuiﾃｩn soy?",
+                "answers": ["jesus", "jesﾃｺs"],
+            },
+            "r2": {
+                "question": "En un arca de madera salvﾃｩ a mi familia y a muchos animales del diluvio. ﾂｿQuiﾃｩn soy?",
+                "answers": ["noe", "noﾃｩ"],
+            },
+            "r3": {
+                "question": "Derrotﾃｩ a un gigante con una honda y una piedra porque confiﾃｩ en Dios. ﾂｿQuiﾃｩn soy?",
+                "answers": ["david"],
+            },
+            "r4": {
+                "question": "Soy un libro lleno de sabidurﾃｭa; si me lees cada dﾃｭa, conocerﾃ｡s mﾃ｡s a Dios. ﾂｿQuﾃｩ soy?",
+                "answers": ["biblia", "la biblia"],
+            },
+            "r5": {
+                "question": "No soy luz elﾃｩctrica ni vela encendida, pero alumbro tu camino si en mﾃｭ confﾃｭas. ﾂｿQuﾃｩ soy segﾃｺn la Palabra de Dios?",
+                "answers": ["la biblia", "biblia", "palabra de dios", "la palabra de dios"],
+            },
+            "r6": {
+                "question": "Estuve tres dﾃｭas dentro de un gran pez por desobedecer, pero Dios tuvo misericordia de mﾃｭ. ﾂｿQuiﾃｩn soy?",
+                "answers": ["jonas", "jonﾃ｡s"],
+            },
+        }
+
+        current_id = tracker.get_slot("adivinanza_actual")
+        if not current_id or current_id not in riddles:
+            dispatcher.utter_message(
+                text="Por ahora no tengo registrada una adivinanza activa. Pﾃｭdeme una con 'dame una adivinanza cristiana' y jugamos de nuevo."
+            )
+            return []
+
+        user_text = tracker.latest_message.get("text", "")
+        norm_user = normalize(user_text)
+
+        # Detectar si el usuario admite que no sabe
+        if "no se" in norm_user or "no lo se" in norm_user or "no tengo idea" in norm_user:
+            correct_answers = riddles[current_id]["answers"]
+            principal = correct_answers[0]
+            dispatcher.utter_message(
+                text=(
+                    f"No pasa nada si no lo sabes. 😊\n\n"
+                    f"La respuesta correcta es: **{principal.capitalize()}**.\n"
+                    "ﾂｿQuieres que te haga otra adivinanza cristiana?"
+                )
+            )
+            return [SlotSet("juego_activo", "adivinanza")]
+
+        answers = riddles[current_id]["answers"]
+        is_correct = any(ans in norm_user for ans in answers)
+
+        principal = answers[0]
+
+        if is_correct:
+            dispatcher.utter_message(
+                text=(
+                    f"ﾂ｡Correcto! 🎉 Era **{principal.capitalize()}**.\n"
+                    "Me alegra ver que conoces bien la Biblia.\n"
+                    "ﾂｿQuieres otra adivinanza cristiana?"
+                )
+            )
+        else:
+            dispatcher.utter_message(
+                text=(
+                    f"Casi, pero no del todo. 😉\n\n"
+                    f"La respuesta correcta es: **{principal.capitalize()}**.\n"
+                    "Lo importante es que sigas aprendiendo. ﾂｿProbamos con otra adivinanza?"
+                )
+            )
+
+        return [SlotSet("juego_activo", "adivinanza")]
+
 class ActionShowStats(Action):
     """Muestra estadísticas del usuario"""
     
@@ -753,8 +933,9 @@ class ActionShowStats(Action):
         response += "\n**Top 5 del Ranking:**\n"
         for i, player in enumerate(leaderboard, 1):
             response += f"{i}. Usuario {player['user_id'][:8]}... - {player['best_percentage']:.1f}% ({player['best_score']}/{3})\n"
-        
-        dispatcher.utter_message(text=response)
+
+        # Logro / estadística positiva: cara de celebración
+        send_emotional_message(dispatcher, response, emotion="feliz_logro")
         return []
 
 

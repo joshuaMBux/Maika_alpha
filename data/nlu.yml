@@ -415,7 +415,6 @@ nlu:
     - no sé qué quieres decir
     - no comprendo
     - no entiendo tu respuesta
-    - no sé qué hacer
     - no entiendo lo que dices
     - no comprendo tu mensaje
     - no sé qué quieres
@@ -616,6 +615,25 @@ nlu:
     - ¿en qué andas?
     - ¿qué planes tienes?
 
+- intent: pedir_guia_maika
+  examples: |
+    - ¿qué puedes hacer?
+    - qué puedes hacer
+    - ¿qué sabes hacer?
+    - en qué me ayudas
+    - ¿en qué me puedes ayudar?
+    - qué ofreces
+    - cuéntame qué puedes hacer
+    - para qué sirves
+    - qué cosas puedes hacer
+    - qué me puedes ofrecer
+    - dime qué puedes hacer
+    - qué opciones tienes
+    - qué cosas haces
+    - dame una guía de lo que haces
+    - ¿qué cosas me puedes dar?
+    - muéstrame qué puedes hacer
+
 - intent: pedir_sugerencias_maika
   examples: |
     - ¿qué sugieres?
@@ -655,6 +673,99 @@ nlu:
     - eres increíble
     - te aprecio
 
+# Conversación cotidiana (12-16)
+- intent: smalltalk_escuela
+  examples: |
+    - estoy estresado por el cole
+    - tengo mucha tarea
+    - mañana tengo examen
+    - me fue mal en un examen
+    - no entiendo matemáticas
+    - me cuesta esta materia
+    - el profe me tiene cansado
+    - no me concentro para estudiar
+    - me siento presionado en la escuela
+    - no quiero ir al colegio
+    - tengo problemas en el colegio
+    - me da miedo reprobar
+    - estoy saturado de tareas
+    - me siento nervioso por una prueba
+
+- intent: smalltalk_amigos
+  examples: |
+    - estoy peleado con mis amigos
+    - mis amigos me ignoran
+    - me siento solo en el cole
+    - no tengo amigos
+    - me dejaron de lado
+    - me hicieron bullying
+    - me molesta lo que dijo mi amigo
+    - siento que no encajo
+    - un amigo me falló
+    - me cuesta hacer amigos
+    - me traicionaron
+    - me siento excluido
+    - tengo problemas con mis amigos
+
+- intent: smalltalk_familia
+  examples: |
+    - discutí con mi mamá
+    - discutí con mi papá
+    - me pelee con mis padres
+    - me siento incomprendido en casa
+    - en mi casa hay muchas peleas
+    - no me escuchan en casa
+    - tengo problemas con mi familia
+    - me retaron y estoy triste
+    - mis papás no me entienden
+    - estoy enojado con mi familia
+    - me siento mal en casa
+    - mi familia me estresa
+
+- intent: smalltalk_estres
+  examples: |
+    - estoy estresado
+    - estoy muy ansioso
+    - me siento con ansiedad
+    - no puedo con esto
+    - estoy abrumado
+    - siento presión
+    - tengo mucho en la cabeza
+    - no puedo dormir por pensar tanto
+    - me siento triste y cansado
+    - me siento agotado
+    - necesito calma
+    - me siento frustrado
+    - estoy nervioso
+
+- intent: smalltalk_aburrido
+  examples: |
+    - me aburro
+    - estoy aburrido
+    - estoy muy aburrida
+    - no sé qué hacer
+    - no tengo nada que hacer
+    - estoy sin ganas
+    - quiero distraerme
+    - estoy aquí sin hacer nada
+    - necesito algo divertido
+    - proponme algo
+
+- intent: smalltalk_logro
+  examples: |
+    - hoy me fue bien
+    - saqué buena nota
+    - aprobé el examen
+    - logré algo importante
+    - estoy orgulloso de mí
+    - me siento feliz por lo que logré
+    - gané un partido
+    - me felicitaron hoy
+    - hice algo difícil y me salió
+    - terminé una tarea complicada
+    - hice las paces con alguien
+    - cumplí una meta
+
 # Intents para curiosidades bíblicas
 - intent: pedir_curiosidad_biblica
   examples: |
@@ -684,4 +795,38 @@ nlu:
     - dato sobre [conversiones](categoria_curiosidad:conversiones)
     - cuéntame una rareza sobre [libros](categoria_curiosidad:libros)
     - curiosidad de [palabras](categoria_curiosidad:palabras)
-    - dato interesante sobre [composicion](categoria_curiosidad:composicion)
+      - dato interesante sobre [composicion](categoria_curiosidad:composicion)
+
+- intent: pedir_adivinanza_cristiana
+  examples: |
+    - dame una adivinanza
+    - dame una adivinanza cristiana
+    - quiero una adivinanza bﾃｭblica
+    - hazme una adivinanza cristiana
+    - otra adivinanza
+    - otra adivinanza bﾃｭblica
+    - ponme una adivinanza sobre la Biblia
+    - un acertijo cristiano
+    - un acertijo de la Biblia
+    - dame un juego de adivinanzas cristianas
+
+- intent: responder_adivinanza
+  examples: |
+    - Noﾃｩ
+    - Noe
+    - Jesﾃｺs
+    - Jesus
+    - David
+    - la Biblia
+    - Biblia
+    - la Palabra de Dios
+    - palabra de Dios
+    - creo que es Noﾃｩ
+    - creo que es Jesus
+    - creo que es Jesﾃｺs
+    - creo que es David
+    - creo que es la Biblia
+    - no sﾃｩ
+    - no lo sﾃｩ
+    - no tengo idea
+    - no estoy seguro

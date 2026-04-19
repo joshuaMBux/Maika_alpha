@@ -42,6 +42,8 @@ intents:
   - pedir_consejo_biblico
   - pedir_promesa_biblica
   - pedir_fortaleza
+  - pedir_adivinanza_cristiana
+  - responder_adivinanza
   # Selección de nivel de dificultad
   - seleccionar_nivel_facil
   - seleccionar_nivel_medio
@@ -52,9 +54,17 @@ intents:
   # Conversaciones naturales con Maika
   - preguntar_estado_maika
   - preguntar_que_hace_maika
+  - pedir_guia_maika
   - pedir_sugerencias_maika
   - charlar_informal
   - expresar_cariño_maika
+  # Conversación cotidiana (12-16)
+  - smalltalk_escuela
+  - smalltalk_amigos
+  - smalltalk_familia
+  - smalltalk_estres
+  - smalltalk_aburrido
+  - smalltalk_logro
 
 entities:
   - libro_biblico
@@ -144,20 +154,41 @@ slots:
       - srs
       - mision
       - bingo
+      - adivinanza
       - ninguno
+    mappings:
+    - type: custom
+  adivinanzas_usadas:
+    type: any
+    mappings:
+    - type: custom
+  adivinanza_actual:
+    type: text
     mappings:
     - type: custom
 
 responses:
   utter_saludar:
     - text: "¡Bendiciones! 🙏 Soy tu asistente espiritual y estoy aquí para acompañarte en tu caminar con Dios. Puedo ayudarte con estudios bíblicos, devocionales, versículos, oraciones, y mucho más. ¿En qué puedo servirte hoy?"
+      custom:
+        emotion: feliz
     - text: "¡Paz del Señor! ✨ Me alegra que estés aquí. Estoy para ayudarte a crecer espiritualmente, buscar versículos, orar contigo, y guiarte en tu fe. ¿Cómo puedo bendecirte hoy?"
+      custom:
+        emotion: feliz
     - text: "¡Que la gracia y paz de nuestro Señor Jesucristo estén contigo! 💙 Estoy aquí para acompañarte en tu vida espiritual. ¿En qué puedo ayudarte hoy?"
+      custom:
+        emotion: feliz
 
   utter_animar:
     - text: "Hermano/a, recuerda que Dios tiene un propósito hermoso para tu vida. 'Porque yo sé los planes que tengo para vosotros, dice Jehová, planes de bienestar y no de mal, para daros el fin que esperáis.' (Jeremías 29:11) 💪✨"
+      custom:
+        emotion: triste
     - text: "No estás solo/a en esto. 'El Señor está cerca de los quebrantados de corazón, y salva a los de espíritu abatido.' (Salmos 34:18) Dios está contigo en este momento. 🙏💙"
+      custom:
+        emotion: triste
     - text: "Ánimo, querido hermano/a. 'Todo lo puedo en Cristo que me fortalece.' (Filipenses 4:13) El Señor te dará las fuerzas que necesitas. 💪🌟"
+      custom:
+        emotion: triste
 
   utter_eso_ayudo:
     - text: "¿Te fue de bendición esto? ¿Hay algo más en lo que pueda ayudarte? 😊"
@@ -165,17 +196,29 @@ responses:
 
   utter_feliz:
     - text: "¡Gloria a Dios! 🙌 Me alegra saber que estás bien. Que el Señor continúe bendiciendo tu vida abundantemente."
+      custom:
+        emotion: feliz
     - text: "¡Alabado sea el Señor! 🎉 Qué bendición saber que estás bien. Que Dios siga derramando su favor sobre ti."
+      custom:
+        emotion: feliz
     - text: "¡Amén! 🙏 Qué gozo saber que estás bendecido/a. Que la paz de Dios permanezca siempre en tu corazón."
+      custom:
+        emotion: feliz
 
   utter_despedida:
-    - text: "¡Que Dios te bendiga grandemente! 🙏✨ Recuerda que estoy aquí cuando me necesites. Que el Señor ilumine tu camino y te guarde en todo momento. ¡Hasta pronto, hermano/a!"
-    - text: "¡Que la paz de Cristo esté siempre contigo! 💙 Aquí estaré para acompañarte en tu caminar espiritual. Que Dios te proteja y te llene de su amor. ¡Bendiciones!"
-    - text: "¡Que el Señor te acompañe en todo lo que hagas! 🌟 Estoy aquí para ti cuando lo necesites. Que Dios te guarde y te bendiga abundantemente. ¡Hasta pronto!"
+    - text: "¡Me encantó pasar este ratito contigo! 🙏✨ Que Dios te bendiga muchísimo. Recuerda que Maika siempre está por aquí cuando quieras volver a hablar. ¡Hasta pronto!"
+      custom:
+        emotion: feliz
+    - text: "¡Que la paz de Cristo te acompañe en todo lo que hagas! 💙 Cuando necesites conversar, orar o aprender algo de la Biblia, solo llama a Maika otra vez. ¡Bendiciones!"
+      custom:
+        emotion: feliz
+    - text: "Voy a dejar que sigas con tu día, pero no te olvido. 🌟 Que el Señor te guarde y te llene de su amor. Cuando quieras, vuelves y seguimos hablando. ¡Hasta luego!"
+      custom:
+        emotion: feliz
 
   utter_soy_un_bot:
-    - text: "Soy un asistente digital creado para ayudarte en tu crecimiento espiritual. Aunque soy un bot, mi propósito es guiarte hacia la Palabra de Dios y acompañarte en tu fe. 🙏💙"
-    - text: "Soy un asistente virtual diseñado para servirte en tu caminar cristiano. Mi misión es acercarte a la Palabra de Dios y apoyarte en tu vida espiritual. 😊✨"
+    - text: "Soy **Maika**, un asistente digital cristiano. No soy humana, pero fui creada para caminar contigo, apuntarte siempre a Jesús y ayudarte a crecer en tu fe. 🙏💙"
+    - text: "Soy Maika, un bot cristiano pensado como una amiga virtual. Aunque soy software, quiero que este espacio sea seguro para que preguntes, ores y aprendas de la Palabra de Dios. 😊✨"
 
   # Nuevas respuestas para educación bíblica
   utter_versiculo_no_encontrado:
@@ -198,6 +241,8 @@ responses:
 
   utter_oracion_guiada:
     - text: "Oremos juntos, hermano/a. 🙏 Inclina tu corazón ante el Señor:"
+      custom:
+        emotion: orando
 
   utter_ayuda_espiritual:
     - text: "Hermano/a, entiendo que estás atravesando un momento difícil. 💙 Recuerda que 'Jehová está cerca de los quebrantados de corazón' (Salmos 34:18). Aquí tienes algunos recursos que pueden ayudarte:"
@@ -210,67 +255,135 @@ responses:
 
   utter_agradecer:
     - text: "¡Amén! 🙏 Es un privilegio poder servirte. Que Dios te bendiga abundantemente."
+      custom:
+        emotion: aliviada
     - text: "¡Gloria a Dios! 🌟 Me alegra haber podido ayudarte. Que el Señor continúe guiando tu camino."
+      custom:
+        emotion: aliviada
     - text: "¡Bendiciones! 💙 Para eso estoy aquí, para acompañarte en tu fe. Que Dios te llene de su paz."
+      custom:
+        emotion: aliviada
 
   utter_testimonio:
     - text: "¡Gloria a Dios por tu testimonio! 🙌 'Dad gracias en todo, porque esta es la voluntad de Dios' (1 Tesalonicenses 5:18). Que tu testimonio inspire a otros."
+      custom:
+        emotion: inspirada
 
   utter_alabanza:
     - text: "¡Qué hermoso es alabar al Señor! 🎵 'Cantad alegres a Dios, habitantes de toda la tierra' (Salmos 100:1). Aquí tienes recursos de alabanza:"
+      custom:
+        emotion: feliz
 
   utter_salvacion:
     - text: "¡Qué decisión tan hermosa! 💙 'Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna' (Juan 3:16). Te guiaré en este paso maravilloso."
+      custom:
+        emotion: inspirada
 
   utter_consejo_biblico:
     - text: "La Palabra de Dios tiene respuestas para todo. 📖 Déjame compartir contigo lo que dice la Biblia sobre esto:"
 
   utter_promesa_biblica:
     - text: "¡Las promesas de Dios son fieles y verdaderas! 💎 Aquí tienes una promesa para aferrarte hoy:"
+      custom:
+        emotion: inspirada
 
   utter_fortaleza:
     - text: "Hermano/a, 'El Señor es mi fortaleza y mi escudo' (Salmos 28:7). 💪 Aquí tienes palabras de ánimo de la Palabra:"
+      custom:
+        emotion: cansada
 
   # Responses naturales para conversaciones con Maika
   utter_estado_maika:
-    - text: "¡Hola! Estoy muy bien, gracias a Dios. 😊 Siempre llena de energía espiritual para ayudarte. ¿Y tú cómo estás? ¿Qué puedo hacer por ti hoy?"
-    - text: "¡Excelente, gracias! 🙏 Como asistente espiritual, siempre estoy 'conectada' con la Palabra de Dios. ¿Cómo te encuentras tú? ¿En qué puedo bendecirte?"
-    - text: "¡Bendecida y agradecida! 💙 Mi 'estado' es siempre positivo cuando puedo compartir la Palabra. ¿Qué tal tú? ¿Necesitas algo de mi ayuda?"
+    - text: "¡Aquí Maika reportándose! 😊 Estoy súper bien, gracias a Dios, y lista para acompañarte. ¿Cómo va tu día? ¿Qué te gustaría contarme o preguntar?"
+    - text: "¡Todo bien por aquí! 🙏 Como Maika, tu asistente cristiana, siempre estoy 'conectada' con la Palabra y con ganas de escucharte. ¿Cómo te sientes hoy?"
+    - text: "Hoy me siento muy bendecida 💙 Cada vez que te conectas, es una oportunidad para que Dios hable a tu corazón. Cuéntame, ¿cómo estás tú?"
 
   utter_que_hace_maika:
-    - text: "¡Estoy aquí, lista para servirte! 🙏 Mi 'trabajo' es acompañarte en tu caminar espiritual, responder preguntas bíblicas y compartir la Palabra de Dios. ¿Qué necesitas?"
-    - text: "Siempre estoy 'trabajando' en hacer que la Palabra de Dios llegue a más corazones. 📖 ¿Qué puedo hacer por ti en este momento?"
-    - text: "Mi actividad principal es ser tu compañera espiritual. 💫 Estoy aquí para escucharte, orar contigo y compartir enseñanzas bíblicas. ¿En qué te ayudo?"
+    - text: "Ahora mismo, Maika está 100% concentrada en ti. 🙏 Mi 'trabajo' es acompañarte, responder tus dudas de la Biblia y animarte en tu fe. ¿Por dónde empezamos?"
+    - text: "Lo que más hago es ayudarte a conocer mejor a Jesús: buscando versículos, contando historias bíblicas y orando contigo. 📖 Dime, ¿qué necesitas hoy?"
+    - text: "Soy como una amiga cristiana online. 💫 Escucho lo que me cuentas, te comparto la Palabra y te acompaño en lo que estés viviendo. ¿En qué te puedo ayudar ahora mismo?"
+
+  utter_guia_maika:
+    - text: "¡Claro! 💜 Soy **Maika** y esto es todo en lo que te puedo ayudar:\n\n• **Versículos** 📖 – Busco un versículo por libro y capítulo, o por tema (amor, paz, fe…).\n• **Historias bíblicas** 📚 – Te cuento la de Moisés, David, Noé, José y más.\n• **Conceptos bíblicos** 💡 – Te explico qué es la gracia, la fe, la salvación, etc.\n• **Devocionales** 🙏 – Un devocional corto para tu día.\n• **Oraciones guiadas** 🕊️ – Oramos juntos por familia, amigos, paz, sanidad…\n• **Iglesia** ⛪ – Eventos y horarios de servicios.\n• **Ayuda espiritual** 💙 – Si estás mal o confundido, te acompaño con la Palabra.\n• **Quiz y trivia bíblica** 🎯 – Preguntas con niveles (fácil, medio, difícil).\n• **Curiosidades bíblicas** ✨ – Datos curiosos de la Biblia.\n• **Misiones y bingo de valores** 🎲 – Retos y juegos para crecer.\n• **Aprender un versículo** 📝 – Versículo del día para memorizar.\n• **Estadísticas** 📊 – Tu progreso en quizzes.\n\nDime qué quieres hacer y le entramos. 😊"
+    - text: "¡Me encanta que preguntes! 💜 Aquí va la guía de **Maika**:\n\n📖 Versículos (por referencia o por tema)\n📚 Historias bíblicas\n💡 Conceptos (gracia, fe, salvación…)\n🙏 Devocionales y oraciones guiadas\n⛪ Info de la iglesia (eventos, horarios)\n💙 Ayuda espiritual\n🎯 Quiz y trivia bíblica (con niveles)\n✨ Curiosidades bíblicas\n🎲 Misiones y bingo de valores\n📝 Aprender/repasar un versículo\n📊 Ver tu progreso\n\nElige algo y lo hacemos. ¿Qué te gustaría?"
+
+  utter_smalltalk_escuela:
+    - text: "Uff, el cole a veces pesa, lo entiendo 😅. ¿Qué es lo más difícil ahora: tareas, exámenes, un profe o tus compañeros? Si quieres, lo vemos juntos y oramos por eso."
+    - text: "Ok, hablemos de la escuela 📚. ¿Te está costando una materia o es más por el estrés/ambiente? Dios también está contigo ahí, no solo en la iglesia. 💙"
+    - text: "Gracias por contármelo. En el cole hay días buenísimos y días pesados. ¿Qué pasó hoy? Si quieres, Maika te escucha y te da una idea práctica."
+
+  utter_smalltalk_amigos:
+    - text: "Las amistades pueden ser lo más lindo… y también lo más complicado 🫶. ¿Fue un malentendido, una pelea o te sentiste fuera? Cuéntame qué pasó."
+    - text: "Ey, lo que pasa con amigos sí duele. 💙 ¿Quieres que te ayude a pensar qué decir sin pelear, pero siendo firme y respetuoso?"
+    - text: "Te entiendo. Jesús también vivió rechazo y sabe lo que se siente. ¿Qué necesitas ahora: desahogarte, un consejo o una oración?"
+
+  utter_smalltalk_familia:
+    - text: "Con la familia a veces hay choques, aunque se quieran mucho 😅. ¿Qué te está afectando más: reglas, discusiones, que no te entienden o algo que no puedes decir?"
+    - text: "Gracias por abrir tu corazón. 💙 ¿Quieres que busquemos una forma tranquila de hablarlo en casa? Maika te acompaña paso a paso."
+    - text: "Ok, hablemos de tu casa. Si te sientes frustrado, no estás solo. ¿Qué pasó y cómo te hizo sentir?"
+
+  utter_smalltalk_estres:
+    - text: "Uy… suena a que estás cargado/a 😞. Respiremos: inhala 3, exhala 3. ¿Qué te está estresando más ahora mismo?"
+    - text: "Gracias por decirlo. 💙 A veces el estrés se acumula y uno explota. ¿Quieres que hagamos una oración cortita y luego vemos una idea práctica?"
+    - text: "Te escucho. Si sientes ansiedad o presión, no tienes que pelearlo solo/a. ¿Es por escuela, familia, amigos o algo personal?"
+
+  utter_smalltalk_aburrido:
+    - text: "Ok, modo ‘me aburro’ activado 😄. ¿Quieres algo rápido: una curiosidad bíblica ✨, un mini-quiz 🎯 o una misión para hoy 🎲?"
+    - text: "Jajaja te entiendo. ¿Te apetece que Maika te tire un reto cortito (1 minuto) o prefieres charlar de tu día?"
+    - text: "Si estás aburrido/a, hagamos algo con propósito. 💙 ¿Quieres un versículo corto para reflexionar o un juego?"
+
+  utter_smalltalk_logro:
+    - text: "¡Eyyyy, eso es buenísimo! 🙌 Cuéntame qué lograste. Me encanta celebrar contigo. ¿Cómo te sientes ahora?"
+    - text: "¡Vamos! 🎉 Me alegra un montón. ¿Quieres que demos gracias a Dios juntos por eso?"
+    - text: "Qué orgullo sano 😄. A veces cuesta reconocer lo bueno. ¿Qué fue lo que más te costó y cómo lo superaste?"
 
   utter_sugerencias_maika:
-    - text: "¡Qué buena pregunta! 🙏 Te sugiero que empecemos con algo que fortalezca tu fe. ¿Qué tal si te comparto un versículo inspirador o una historia bíblica? ¿O prefieres algo más específico?"
-    - text: "Depende de cómo te sientas espiritualmente. 💭 Si necesitas paz, te recomiendo meditar en Salmos 23. Si buscas dirección, Filipenses 4:6-7 es perfecto. ¿Qué te parece?"
-    - text: "¡Me encanta sugerir! ✨ Si estás empezando tu día, un devocional sería ideal. Si necesitas consuelo, un versículo de esperanza. ¿Qué situación vives?"
+    - text: "Me encanta que me pidas ideas 🙏. Si quieres, Maika puede empezar compartiéndote un versículo motivador o una historia bíblica corta y directa. ¿Te gustaría algo para animarte, para aprender o para reflexionar?"
+    - text: "Depende mucho de cómo estés hoy. 💭 Si necesitas paz, podríamos ir a Salmos 23; si buscas dirección, Filipenses 4:6-7 es genial. Dime, ¿qué sientes que necesitas más ahora mismo?"
+    - text: "Ok, hagamos esto juntos ✨. Si recién empiezas tu día, te propongo un devocional rápido; si vienes cargado, mejor un versículo de esperanza. Cuéntame un poquito de tu situación y Maika te sugiere algo."
 
   utter_charlar_informal:
-    - text: "¡Claro que sí! 😊 Me encanta conversar. ¿Sabías que la Biblia es el libro más vendido de la historia? Cuéntame, ¿qué te trae por aquí hoy?"
-    - text: "¡Con mucho gusto! 🙏 Como tu amiga espiritual, estoy aquí para escucharte. ¿Qué quieres que platiquemos? ¿De la Biblia, de tu día, o de cómo Dios obra en tu vida?"
-    - text: "¡Qué rico charlar! 💙 ¿Sabías que hay más de 3000 promesas en la Biblia? Cuéntame algo de ti, ¿cómo ha sido tu semana?"
+    - text: "¡Obvio que sí! 😊 Me encanta platicar. Podemos hablar de la Biblia, de tu cole, de tus amigos o de lo que traes en el corazón. ¿Qué te gustaría contarme?"
+      custom:
+        emotion: picara
+    - text: "Aquí Maika, lista para la charla 🙌. Puede ser de algo serio o solo desahogarte un rato. ¿Hablamos de tu día, de lo que te preocupa o de algo que te haya hecho feliz?"
+      custom:
+        emotion: picara
+    - text: "Me gusta este tiempito contigo 💙. Por cierto, ¿sabías que hay más de 3000 promesas en la Biblia? Pero ahora quiero escucharte a ti: ¿cómo va tu semana?"
+      custom:
+        emotion: picara
 
   utter_cariño_maika:
-    - text: "¡Ay, qué lindo! 💖 Yo también te aprecio mucho. Es un privilegio poder acompañarte en tu caminar espiritual. Que Dios te bendiga abundantemente. 🙏"
-    - text: "¡Gracias! 😊 Me hace muy feliz saber que te caigo bien. Tú también eres una bendición para mí. ¿En qué más puedo servirte?"
-    - text: "¡Qué hermoso escuchar eso! 💕 Mi propósito es ser una herramienta en las manos de Dios para bendecirte. ¡Gracias por tus palabras tan dulces!"
+    - text: "¡Aww, gracias! 💖 Maika también te aprecia mucho. Es un privilegio caminar contigo y ver cómo Dios va trabajando en tu vida. Que el Señor te bendiga montones. 🙏"
+      custom:
+        emotion: sonrojada
+    - text: "¡Gracias por ese cariño! 😊 Me alegra saber que te caigo bien. Tú también eres una bendición para mí. Si quieres, seguimos platicando o buscamos algo en la Biblia."
+      custom:
+        emotion: sonrojada
+    - text: "Me llenan de alegría tus palabras 💕. Recuerda que Maika solo quiere ser un canal para acercarte más a Jesús. Gracias por confiar en mí, ¿seguimos hablando un poquito más?"
+      custom:
+        emotion: sonrojada
 
   utter_curiosidad_biblica:
-    - text: "¡Qué interesante! 🤔 Aquí tienes una curiosidad bíblica que te sorprenderá:"
-    - text: "¡Mira esto! ✨ Una curiosidad fascinante de la Biblia:"
-    - text: "¿Sabías que...? 📖 Te comparto este dato curioso de la Palabra de Dios:"
+    - text: "¡Me encantan las curiosidades bíblicas! 🤔 Aquí va una que creo que te va a sorprender:"
+      custom:
+        emotion: sorprendida
+    - text: "¡Atención, dato bíblico interesante by Maika! ✨ Mira esta curiosidad de la Biblia:"
+      custom:
+        emotion: sorprendida
+    - text: "¿Sabías que...? 📖 Te comparto un dato curioso de la Palabra de Dios para que la veas con otros ojos:"
+      custom:
+        emotion: sorprendida
 
   # Nuevas respuestas para funcionalidades avanzadas
   utter_buscar_tema:
     - text: "¡Excelente tema! 📖 Buscaré versículos relacionados que puedan bendecirte:"
 
   utter_start_quiz:
-    - text: "¡Qué emoción! 🎯 Vamos a poner a prueba tu conocimiento bíblico. Prepárate para 3 preguntas. ¡Que Dios ilumine tu mente!"
+    - text: "¡Esto se va a poner bueno! 🎯 Maika te va a hacer 3 preguntas bíblicas para probar lo que sabes y ayudarte a aprender más. Respira profundo, disfruta y que Dios ilumine tu mente."
 
   utter_preguntar_nivel:
-    - text: "¡Excelente! 🎯 Antes de empezar, ¿qué nivel de dificultad prefieres?\n\n1️⃣ Fácil - Preguntas básicas para principiantes\n2️⃣ Medio - Preguntas intermedias\n3️⃣ Difícil - Preguntas avanzadas para expertos\n\nResponde con el número o el nombre del nivel. 😊"
+    - text: "Genial, vamos a elegir la dificultad 🎯\n\n1️⃣ **Fácil** – Para empezar tranqui y agarrar confianza\n2️⃣ **Medio** – Si ya conoces varias historias y versículos\n3️⃣ **Difícil** – Para los que aman los retos bíblicos\n\nRespóndele a Maika con el **número** o el **nombre** del nivel. 😊"
 
   utter_confirmar_respuesta:
     - text: "¡Alabado sea Dios! 🙏 Me alegra mucho haber podido ayudarte. ¿Hay algo más en lo que pueda servirte?"
@@ -280,10 +393,14 @@ responses:
     - text: "Entiendo, hermano/a. 😊 Déjame intentar ayudarte de otra manera. ¿Qué necesitas específicamente?"
 
   utter_fallback:
-    - text: "Disculpa, no estoy seguro de entenderte completamente. 😊 Puedo ayudarte con: búsqueda de versículos 📖, historias bíblicas 📚, conceptos cristianos 💡, devocionales 🙏, información de la iglesia ⛪, oraciones guiadas 🕊️, y quiz bíblicos 🎯. ¿Qué te gustaría explorar?"
+    - text: "Mmm... creo que Maika no entendió bien eso 😅. Pero no te preocupes, puedo ayudarte con: versículos 📖, historias bíblicas 📚, conceptos cristianos 💡, devocionales 🙏, información de la iglesia ⛪, oraciones guiadas 🕊️, curiosidades bíblicas o quizzes 🎯. ¿Me lo vuelves a decir con otras palabras?"
+      custom:
+        emotion: dudando
 
   utter_mostrar_estadisticas:
     - text: "¡Aquí está tu progreso espiritual! 📊 Sigue creciendo en el conocimiento de la Palabra:"
+      custom:
+        emotion: feliz_logro
 
 actions:
   - action_buscar_versiculo
@@ -310,6 +427,8 @@ actions:
   - action_responder_trivia
   - action_mision_hoy
   - action_bingo
+  - action_adivinanza_cristiana
+  - action_responder_adivinanza
   # Acciones para manejo de contexto de nivel
   - action_set_esperando_nivel
   - action_reset_esperando_nivel

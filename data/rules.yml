@@ -185,6 +185,41 @@ rules:
   - intent: preguntar_que_hace_maika
   - action: action_respuesta_natural_maika
 
+- rule: mostrar guía de Maika cuando preguntan qué puede hacer
+  steps:
+  - intent: pedir_guia_maika
+  - action: utter_guia_maika
+
+- rule: conversación cotidiana - escuela
+  steps:
+  - intent: smalltalk_escuela
+  - action: utter_smalltalk_escuela
+
+- rule: conversación cotidiana - amigos
+  steps:
+  - intent: smalltalk_amigos
+  - action: utter_smalltalk_amigos
+
+- rule: conversación cotidiana - familia
+  steps:
+  - intent: smalltalk_familia
+  - action: utter_smalltalk_familia
+
+- rule: conversación cotidiana - estrés / ansiedad
+  steps:
+  - intent: smalltalk_estres
+  - action: utter_smalltalk_estres
+
+- rule: conversación cotidiana - aburrimiento
+  steps:
+  - intent: smalltalk_aburrido
+  - action: utter_smalltalk_aburrido
+
+- rule: conversación cotidiana - logros
+  steps:
+  - intent: smalltalk_logro
+  - action: utter_smalltalk_logro
+
 - rule: dar sugerencias de Maika
   steps:
   - intent: pedir_sugerencias_maika
@@ -206,6 +241,18 @@ rules:
   - intent: pedir_curiosidad_biblica
   - action: action_contar_curiosidad_biblica
 
+# Reglas para adivinanzas cristianas
+- rule: hacer adivinanza cristiana
+  steps:
+  - intent: pedir_adivinanza_cristiana
+  - action: action_adivinanza_cristiana
+- rule: responder adivinanza cristiana
+  condition:
+  - slot_was_set:
+    - juego_activo: adivinanza
+  steps:
+  - intent: responder_adivinanza
+  - action: action_responder_adivinanza
 - rule: contar curiosidad por categoría
   steps:
   - intent: pedir_curiosidad_por_categoria

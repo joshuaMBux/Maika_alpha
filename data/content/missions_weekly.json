@@ -2,11 +2,37 @@
   "daily": [
     {"title": "Verso y dibujo", "description": "Lee un versículo y haz un dibujo que lo represente."},
     {"title": "Ayuda en casa", "description": "Ayuda en una tarea del hogar sin que te lo pidan."},
-    {"title": "Gracias a Dios", "description": "Escribe tres cosas por las que estás agradecido hoy."}
+    {"title": "Gracias a Dios", "description": "Escribe tres cosas por las que estás agradecido hoy."},
+    {"title": "Versículo para un amigo", "description": "Envía a un amigo o familiar un versículo que lo anime (con un mensaje corto y amable)."},
+    {"title": "Oración de 60 segundos", "description": "Tómate 1 minuto para orar: agradece, pide ayuda y entrega tu día a Dios."},
+    {"title": "Perdón en pequeño", "description": "Si estás molesto con alguien, decide perdonar (aunque sea en tu corazón) y ora por esa persona."},
+    {"title": "Elogio sincero", "description": "Dile algo bueno y real a alguien (en casa o en el cole) para levantarle el ánimo."},
+    {"title": "Un acto de bondad secreta", "description": "Haz una buena acción sin decir que fuiste tú (limpiar algo, ordenar, ayudar)."},
+    {"title": "Mini lectura", "description": "Lee un capítulo corto (por ejemplo, Salmo 23 o Proverbios 3) y anota 1 frase que te hable."},
+    {"title": "Paz en una discusión", "description": "Hoy intenta bajar el tono en una discusión: responde con calma y respeto, como Jesús."},
+    {"title": "Apaga y conecta", "description": "Deja el celular 15 minutos y usa ese tiempo para hablar con Dios o leer un versículo."},
+    {"title": "Mi versículo favorito", "description": "Elige un versículo que te guste y escribe por qué te ayuda (una frase)."},
+    {"title": "Gratitud por alguien", "description": "Agradece a alguien por algo específico que hizo por ti (en persona o por mensaje)."},
+    {"title": "Canción de alabanza", "description": "Escucha una canción cristiana y escribe una línea que te haya llegado al corazón."},
+    {"title": "Ayuda en clase", "description": "Si alguien tiene dificultad con una tarea, ofrécele ayuda con paciencia y buena actitud."},
+    {"title": "Ora por tu escuela", "description": "Ora por tu salón/curso: por paz, respeto, amistades sanas y buenos valores."},
+    {"title": "Verso en acción", "description": "Elige un versículo sobre amor y haz una acción concreta que lo refleje hoy."},
+    {"title": "Diario de ánimo", "description": "Escribe 3 frases de ánimo (para ti mismo o para alguien más) basadas en la Biblia."}
   ],
   "weekly": [
     {"title": "Memoriza un versículo", "description": "Aprende de memoria Juan 3:16 y recítalo a alguien."},
-    {"title": "Servicio a otros", "description": "Haz una acción de servicio por alguien de tu iglesia o familia."}
+    {"title": "Servicio a otros", "description": "Haz una acción de servicio por alguien de tu iglesia o familia."},
+    {"title": "Plan de lectura 5 días", "description": "Lee 5 días seguidos un capítulo corto (Salmos, Proverbios o un evangelio) y anota 1 idea por día."},
+    {"title": "Versículo para ansiedad/estrés", "description": "Busca un versículo sobre paz (por ejemplo Filipenses 4:6-7) y practícalo en un momento de estrés."},
+    {"title": "Desafío de gratitud", "description": "Cada día escribe 1 cosa por la que agradeces a Dios (7 días)."},
+    {"title": "Amistades sanas", "description": "Ora por tus amigos y decide ser influencia buena: evita chismes y responde con respeto."},
+    {"title": "Tiempo con un adulto", "description": "Habla 15 minutos con un adulto de confianza sobre cómo vas (sin pantallas). Luego ora por él/ella."},
+    {"title": "Servicio en casa", "description": "Elige una tarea de la casa y hazla durante 3 días sin que te lo pidan (con buena actitud)."},
+    {"title": "Versículo para memorizar", "description": "Memoriza Salmos 119:105 o Filipenses 4:13 y repítelo cada mañana durante una semana."},
+    {"title": "Comparte esperanza", "description": "Escribe un mensaje corto de esperanza (con un versículo) y compártelo con alguien que lo necesite."},
+    {"title": "Ayuno de quejas", "description": "Durante 3 días, cada vez que te quejes, cámbialo por una oración o una frase de gratitud."},
+    {"title": "Un gesto en la iglesia", "description": "Saluda a alguien nuevo en la iglesia y hazlo sentir bienvenido (con amabilidad y respeto)."},
+    {"title": "Proyecto creativo", "description": "Crea algo (dibujo, playlist, nota, poema) inspirado en un salmo y compártelo con tu familia."}
   ]
 }
 
